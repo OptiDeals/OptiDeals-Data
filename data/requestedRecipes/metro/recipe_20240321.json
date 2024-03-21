@@ -1,0 +1,28 @@
+[
+    {
+      "name": "Prosciutto and Veggie Stir Fry",
+      "description": "A delicious stir fry with prosciutto and a variety of fresh vegetables.",
+      "ingredients": [
+        {"product": "Prosciutto", "amount": "100g", "cost": 3.99},
+        {"product": "Broccoli", "amount": "1", "cost": 3.99},
+        {"product": "Zucchini", "amount": "1", "cost": 1.08},
+        {"product": "Yellow Onions", "amount": "1 lb", "cost": 1.25},
+        {"product": "Fried Rice and Vermicelli", "amount": "177 g", "cost": 1.79},
+        {"product": "Italian White Wine", "amount": "200 mL", "cost": 4.67}
+      ],
+      "total_cost": 16.77
+    },
+    {
+      "name": "Mixed Berry Salad with Grilled Sausage",
+      "description": "A refreshing salad with mixed berries and grilled sausage.",
+      "ingredients": [
+        {"product": "BBQ Debreziner Sausage", "amount": "250 g", "cost": 3.99},
+        {"product": "Strawberries", "amount": "227 g", "cost": 2.50},
+        {"product": "Blueberries", "amount": "85 g", "cost": 2.00},
+        {"product": "Red Seedless Grapes", "amount": "500 g", "cost": 4.40},
+        {"product": "Spring Mix Organic Salad", "amount": "100 g", "cost": 2.50},
+        {"product": "French Onion Flavoured Dip", "amount": "113.5 g", "cost": 2.25}
+      ],
+      "total_cost": 17.64
+    }
+]
