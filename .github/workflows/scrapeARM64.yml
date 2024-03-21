@@ -1,0 +1,31 @@
+name: ARM Weekly Python Scraper
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * 4"  # Run every Thursday at 7 AM (EST)
+
+jobs:
+  build:
+    runs-on: chancepi
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
+        
+      - name: Run Python Script
+        run: |
+          python3 scripts/metroAndFoodBasics.py
+          
+      - name: Commit and push if it changed
+        run: |
+          git diff
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Add changes" -a || echo "No changes to commit"
+          git pull origin main --rebase
+          git push origin main
+
