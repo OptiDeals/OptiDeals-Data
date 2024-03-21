@@ -1,28 +1,60 @@
 [
-    {
-      "name": "Prosciutto and Veggie Stir Fry",
-      "description": "A delicious stir fry with prosciutto and a variety of fresh vegetables.",
-      "ingredients": [
-        {"product": "Prosciutto", "amount": "100g", "cost": 3.99},
-        {"product": "Broccoli", "amount": "1", "cost": 3.99},
-        {"product": "Zucchini", "amount": "1", "cost": 1.08},
-        {"product": "Yellow Onions", "amount": "1 lb", "cost": 1.25},
-        {"product": "Fried Rice and Vermicelli", "amount": "177 g", "cost": 1.79},
-        {"product": "Italian White Wine", "amount": "200 mL", "cost": 4.67}
-      ],
-      "total_cost": 16.77
-    },
-    {
-      "name": "Mixed Berry Salad with Grilled Sausage",
-      "description": "A refreshing salad with mixed berries and grilled sausage.",
-      "ingredients": [
-        {"product": "BBQ Debreziner Sausage", "amount": "250 g", "cost": 3.99},
-        {"product": "Strawberries", "amount": "227 g", "cost": 2.50},
-        {"product": "Blueberries", "amount": "85 g", "cost": 2.00},
-        {"product": "Red Seedless Grapes", "amount": "500 g", "cost": 4.40},
-        {"product": "Spring Mix Organic Salad", "amount": "100 g", "cost": 2.50},
-        {"product": "French Onion Flavoured Dip", "amount": "113.5 g", "cost": 2.25}
-      ],
-      "total_cost": 17.64
-    }
+  {
+    "name": "Beef and Veggie Stir Fry",
+    "description": "A hearty stir fry with lean ground beef and a variety of fresh vegetables.",
+    "ingredients": [
+      {"name": "Lean Ground Beef", "amount": "450 g", "cost": 5.01},
+      {"name": "Yellow Onions", "amount": "1 lb", "cost": 0.84},
+      {"name": "Zucchini", "amount": "1", "cost": 1.07},
+      {"name": "Red Cluster Tomatoes", "amount": "2 tomatoes", "cost": 1.36},
+      {"name": "Garlic and Fine Herbs Fresh Cheese", "amount": "75 g", "cost": 1.99},
+      {"name": "Fresh Ginger", "amount": "1 piece", "cost": 0.21},
+      {"name": "Baby Spinach", "amount": "156 g", "cost": 2.44}
+    ],
+    "total_cost": 12.92,
+    "serves": 2
+  },
+  {
+    "name": "Hearty Beef and Potato Bake",
+    "description": "A comforting bake with lean ground beef, creamer potatoes, and a touch of sweetness from raisin bread.",
+    "ingredients": [
+      {"name": "Lean Ground Beef", "amount": "450 g", "cost": 5.01},
+      {"name": "Yellow Creamer Potatoes, Boomer Gold", "amount": "340 g", "cost": 1.49},
+      {"name": "Yellow Onions", "amount": "1 lb", "cost": 0.84},
+      {"name": "Garlic and Fine Herbs Fresh Cheese", "amount": "75 g", "cost": 1.99},
+      {"name": "Raisin bread", "amount": "225 g", "cost": 2.25},
+      {"name": "Local Mini Cucumbers", "amount": "198.5 g", "cost": 1.49},
+      {"name": "Grape Tomatoes", "amount": "113.5 g", "cost": 1.49}
+    ],
+    "total_cost": 14.56,
+    "serves": 2
+  },
+  {
+    "name": "Prosciutto and Veggie Stir Fry",
+    "description": "A delicious stir fry with prosciutto and a variety of fresh vegetables.",
+    "ingredients": [
+      {"name": "Prosciutto", "amount": "100g", "cost": 3.99},
+      {"name": "Broccoli", "amount": "1", "cost": 3.99},
+      {"name": "Zucchini", "amount": "1", "cost": 1.08},
+      {"name": "Yellow Onions", "amount": "1 lb", "cost": 1.25},
+      {"name": "Fried Rice and Vermicelli", "amount": "177 g", "cost": 1.79},
+      {"name": "Italian White Wine", "amount": "200 mL", "cost": 4.67}
+    ],
+    "total_cost": 16.77,
+    "serves": 2
+  },
+  {
+    "name": "Mixed Berry Salad with Grilled Sausage",
+    "description": "A refreshing salad with mixed berries and grilled sausage.",
+    "ingredients": [
+      {"name": "BBQ Debreziner Sausage", "amount": "250 g", "cost": 3.99},
+      {"name": "Strawberries", "amount": "227 g", "cost": 2.50},
+      {"name": "Blueberries", "amount": "85 g", "cost": 2.00},
+      {"name": "Red Seedless Grapes", "amount": "500 g", "cost": 4.40},
+      {"name": "Spring Mix Organic Salad", "amount": "100 g", "cost": 2.50},
+      {"name": "French Onion Flavoured Dip", "amount": "113.5 g", "cost": 2.25}
+    ],
+    "total_cost": 17.64,
+    "serves": 2
+  }
 ]
