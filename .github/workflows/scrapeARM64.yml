@@ -17,8 +17,6 @@ jobs:
                                
       - name: Install dependencies
         run: |
-          # Update Python
-          python3 -m ensurepip --upgrade
           # Update pip
           python3 -m pip install --upgrade pip
           # Install other dependencies from requirements.txt
