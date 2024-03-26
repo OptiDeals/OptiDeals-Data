@@ -4,7 +4,7 @@ on:
     workflow_dispatch:
     workflow_run:
         workflows: ['ARM Weekly Python Scraper']
-        types: [success]
+        types: [completed]
         branches:
             - 'main'
 
