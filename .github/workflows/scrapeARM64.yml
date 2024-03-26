@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: chancepi
+    runs-on: container
 
     steps:
       - name: Checkout code
