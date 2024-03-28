@@ -10,7 +10,7 @@ today = datetime.today().strftime('%Y%m%d')
 
 # Define the URLs for the Food Basics and Metro websites
 foodBasicsURL = "https://www.foodbasics.ca/search-page-{page}?sortOrder=popularity&filter=%3Apopularity%3Adeal%3AFlyer+%26+Deals%2F%3Adeal%3AFlyer+%26+Deals&fromEcomFlyer=true"
-metroURL = "https://www.metro.ca/en/online-grocery/flyer-page-{page}"
+metroURL = "https://www.metro.ca/en/online-grocery/flyer-page-{page}?sortOrder=relevance&filter=%3Arelevance%3Adeal%3AFlyer+%26+Deals"
 
 # Define a function to scrape product data from a given URL
 def scrape_products(base_url, csv_file_path):
