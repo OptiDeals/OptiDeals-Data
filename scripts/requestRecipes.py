@@ -54,7 +54,17 @@ recipes = response['choices'][0]['message']['content']
 # Convert the recipes to JSON format
 recipes_json = json.dumps(recipes)
 
-file_path = f'data/requestedRecipes/metro/recipes_{date.today()}.json'
-# Save recipes to a JSON file
-with open(file_path, 'w') as file:
+# Define the file paths
+file_path1 = f'data/requestedRecipes/metro/recipes_{date.today()}.json'
+file_path2 = f'data/requestedRecipes/metro/recipes.json'
+
+# Save recipes to the first JSON file
+with open(file_path1, 'w') as file:
     file.write(recipes_json)
+
+# Save recipes to the second JSON file
+with open(file_path2, 'w') as file:
+    file.write(recipes_json)
+
+# Print a success message
+print(f"The recipes are successfully saved to {file_path1} and {file_path2}.")
