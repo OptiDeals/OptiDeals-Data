@@ -36,5 +36,6 @@ jobs:
         run: |
           for CSV_FILE_PATH in scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
           do
-            python scripts/removeDuplicates.py $CSV_FILE_PATH
+            export CSV_FILE_PATH=${CSV_FILE_PATH}
+            python scripts/removeDuplicates.py
           done
