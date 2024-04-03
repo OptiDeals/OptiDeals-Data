@@ -3,7 +3,7 @@ name: OpenAI Script
 on:
     workflow_dispatch:
     workflow_run:
-        workflows: ['ARM Weekly Python Scraper']
+        workflows: ['Remove Duplicates']
         types: [completed]
         branches:
             - 'main'
