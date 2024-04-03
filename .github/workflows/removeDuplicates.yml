@@ -34,7 +34,7 @@ jobs:
 
       - name: Process CSV files
         run: |
-          for CSV_FILE_PATH in data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
+          for CSV_FILE_PATH in scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
           do
-            python data/scripts/removeDuplicates.py $CSV_FILE_PATH
+            python scripts/removeDuplicates.py $CSV_FILE_PATH
           done
