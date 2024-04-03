@@ -26,8 +26,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas
 
+      - name: Get current date
+        id: date
+        run: |
+          echo "::set-output name=date::$(date +'%Y%m%d')"
+
       - name: Process CSV files
         run: |
-          python script.py
+          python script.py ${{ env.CSV_FILE_PATH1 }}
+          python script.py ${{ env.CSV_FILE_PATH2 }}
         env:
-          CSV_FILE_PATH: ${{ github.workspace }}/path_to_your_csv_file.csv
+          CSV_FILE_PATH1: ${{ github.workspace }}/data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv
+          CSV_FILE_PATH2: ${{ github.workspace }}/data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
