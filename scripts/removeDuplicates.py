@@ -3,14 +3,6 @@ import os
 
 
 print("Starting to remove duplications")
-def check_file_exists(file_path):
-    # Check if the file exists
-    if os.path.isfile(file_path):
-        print(f"The file {file_path} exists.")
-        return True
-    else:
-        print(f"The file {file_path} does not exist.")
-        return False
 def remove_duplicates_from_csv(csv_file):
     # Check if the file exists
     print("Starting script to remove duplicates.")
@@ -52,6 +44,5 @@ def remove_duplicates_from_csv(csv_file):
 
 
 
-check_file_exists(os.getenv('CSV_FILE_PATH'))
 remove_duplicates_from_csv(os.getenv('CSV_FILE_PATH'))
 print("Script Finished!")
