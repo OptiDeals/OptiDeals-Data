@@ -1,6 +1,7 @@
 name: Remove Duplicates
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ['ARM Weekly Python Scraper']
     types: 
