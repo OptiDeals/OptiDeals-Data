@@ -33,8 +33,7 @@ jobs:
 
       - name: Process CSV files
         run: |
-          python script.py ${{ env.CSV_FILE_PATH1 }}
-          python script.py ${{ env.CSV_FILE_PATH2 }}
-        env:
-          CSV_FILE_PATH1: ${{ github.workspace }}/data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv
-          CSV_FILE_PATH2: ${{ github.workspace }}/data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
+          for CSV_FILE_PATH in ${{ github.workspace }}/data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv ${{ github.workspace }}/data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
+          do
+            python script.py $CSV_FILE_PATH
+          done
