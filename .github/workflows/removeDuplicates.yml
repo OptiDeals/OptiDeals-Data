@@ -39,3 +39,13 @@ jobs:
             export CSV_FILE_PATH=${CSV_FILE_PATH}
             python scripts/removeDuplicates.py
           done
+
+      - name: Commit and push if it changed
+        run: |
+          git diff
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Add changes" -a || echo "No changes to commit"
+          git pull origin main --rebase
+          git push origin main
