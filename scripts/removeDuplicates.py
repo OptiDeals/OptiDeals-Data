@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 print("Starting to remove duplications and unwanted words")
-def clean_csv_file(csv_file):
+def clean_csv_file(csv_file, unwanted_words_file):
     # Check if the file exists
     print("Starting script to remove duplicates and unwanted words.")
     if not os.path.isfile(csv_file):
@@ -27,8 +27,13 @@ def clean_csv_file(csv_file):
         # Remove duplicate rows
         df.drop_duplicates(inplace=True)
 
-    # Define unwanted words
-    unwanted_words = ['toilet', 'soap', 'bathroom', 'diaper']
+    # Read unwanted words from file
+    try:
+        with open(unwanted_words_file, 'r') as f:
+            unwanted_words = [line.strip().lower() for line in f]
+    except Exception as e:
+        print(f"An error occurred while reading the file {unwanted_words_file}: {e}")
+        return
 
     # Remove rows that contain unwanted words
     for word in unwanted_words:
@@ -43,5 +48,5 @@ def clean_csv_file(csv_file):
 
     print(f"Duplicates and rows with unwanted words have been successfully removed from {csv_file}.")
 
-clean_csv_file(os.getenv('CSV_FILE_PATH'))
+clean_csv_file(os.getenv('CSV_FILE_PATH'), os.getenv('UNWANTED_WORDS_FILE_PATH'))
 print("Script Finished!")
