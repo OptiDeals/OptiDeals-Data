@@ -15,3 +15,8 @@ fabric
 pet
 bleach
 detergent
+pill
+medicine
+vitamin
+allergy
+relief
