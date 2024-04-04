@@ -42,7 +42,7 @@ jobs:
           for CSV_FILE_PATH in data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
           do
             export CSV_FILE_PATH=${CSV_FILE_PATH}
-            export UNWANTED_WORDS_FILE_PATH=unwanted_words.csv
+            export UNWANTED_WORDS_FILE_PATH=unwanted_words.txt
             python scripts/cleanData.py
           done
 
