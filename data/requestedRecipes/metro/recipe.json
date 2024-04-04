@@ -1,6 +1,6 @@
 [
     {
-        "recipe_name": "Beef Stir-Fry",
+        "name": "Beef Stir-Fry",
         "description": "A delicious beef stir-fry with vegetables",
         "ingredients": [
             {
@@ -30,10 +30,10 @@
             }
         ],
         "total_cost": 17.44,
-        "servings": 2
+        "serves": 2
     },
     {
-        "recipe_name": "Grilled Lamb Chops",
+        "name": "Grilled Lamb Chops",
         "description": "Juicy grilled lamb chops seasoned to perfection",
         "ingredients": [
             {
@@ -48,10 +48,10 @@
             }
         ],
         "total_cost": 14.5,
-        "servings": 2
+        "serves": 2
     },
     {
-        "recipe_name": "Pork Tenderloin with Apple Sauce",
+        "name": "Pork Tenderloin with Apple Sauce",
         "description": "Tender pork tenderloin served with apple sauce",
         "ingredients": [
             {
@@ -76,10 +76,10 @@
             }
         ],
         "total_cost": 12.49,
-        "servings": 2
+        "serves": 2
     },
     {
-        "recipe_name": "Bacon-Wrapped Chicken",
+        "name": "Bacon-Wrapped Chicken",
         "description": "Chicken breast wrapped in crispy bacon",
         "ingredients": [
             {
@@ -99,10 +99,10 @@
             }
         ],
         "total_cost": 10.5,
-        "servings": 2
+        "serves": 2
     },
     {
-        "recipe_name": "Salmon Fillet with Lemon Butter Sauce",
+        "name": "Salmon Fillet with Lemon Butter Sauce",
         "description": "Pan-seared salmon fillet with a tangy lemon butter sauce",
         "ingredients": [
             {
@@ -127,10 +127,10 @@
             }
         ],
         "total_cost": 12.49,
-        "servings": 2
+        "serves": 2
     },
     {
-        "recipe_name": "BBQ Ribs",
+        "name": "BBQ Ribs",
         "description": "Slow-cooked BBQ ribs with a smoky flavor",
         "ingredients": [
             {
@@ -155,10 +155,10 @@
             }
         ],
         "total_cost": 17.99,
-        "servings": 2
+        "serves": 2
     },
     {
-        "recipe_name": "Steak with Mushroom Sauce",
+        "name": "Steak with Mushroom Sauce",
         "description": "Tender steak topped with a creamy mushroom sauce",
         "ingredients": [
             {
@@ -183,6 +183,6 @@
             }
         ],
         "total_cost": 23.49,
-        "servings": 2
+        "serves": 2
     }
 ]
