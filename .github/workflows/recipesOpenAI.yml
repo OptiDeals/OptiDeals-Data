@@ -38,4 +38,4 @@ jobs:
         TOTAL_COST: 25
         IS_VEGAN: false
         TOTAL_SERVINGS: 2
-      run: python scripts/requestRecipes.py
+      run: python scripts/recipesOpenAI.py
