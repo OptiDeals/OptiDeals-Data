@@ -1,4 +1,4 @@
-name: Remove Duplicates
+name: Clean Data
 
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
           do
             export CSV_FILE_PATH=${CSV_FILE_PATH}
             export UNWANTED_WORDS_FILE_PATH=unwanted_words.csv
-            python scripts/removeDuplicates.py
+            python scripts/cleanData.py
           done
 
       - name: Commit and push if it changed
