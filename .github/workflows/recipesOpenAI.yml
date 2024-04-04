@@ -23,6 +23,8 @@ jobs:
 
     - name: Install dependencies
       run: |
+        sudo apt-get install npm
+        npm install openai dotenv fs module
         python -m pip install --upgrade pip
         pip install openai
 
@@ -35,7 +37,9 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         CSV_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
         NUM_RECIPES: 10
+        DIET_TYPE: vegetarian
+        STORE_NAME: metro
         TOTAL_COST: 25
         IS_VEGAN: false
         TOTAL_SERVINGS: 2
-      run: python scripts/recipesOpenAI.py
+      run: node scripts/requestRecipesNode.js
