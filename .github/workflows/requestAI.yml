@@ -3,7 +3,7 @@ name: OpenAI Script
 on:
     workflow_dispatch:
     workflow_run:
-        workflows: ['Remove Duplicates']
+        workflows: ['Clean Data']
         types: [completed]
         branches:
             - 'main'
