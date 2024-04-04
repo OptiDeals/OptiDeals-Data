@@ -14,3 +14,4 @@ outdoor
 fabric
 pet
 bleach
+detergent
