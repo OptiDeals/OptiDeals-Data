@@ -20,3 +20,59 @@ medicine
 vitamin
 allergy
 relief
+supplement
+conditioner
+deodorant
+toothpaste
+mouthwash
+floss
+razor
+shaving
+lotion
+sunscreen
+insect
+repellent
+sanitizer
+disinfectant
+bandage
+first aid
+painkiller
+antacid
+cough
+antihistamine
+laundry
+softener
+lightbulb
+battery
+trash
+broom
+sponge
+freshener
+candle
+napkin
+plastic
+aluminum
+foil
+tape
+glue
+book
+pen
+marker
+paper
+fork
+spoon
+plate
+cleaning
+cloth
+clothes
+wash
+dandruff
+air fresh
+baby food
+baby puree
+baby purée
+hypoallergenic
+dishwash
+dish
+wash
+mopping
