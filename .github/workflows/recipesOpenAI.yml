@@ -1,4 +1,4 @@
-name: OpenAI Script
+name: Recipes OpenAI
 
 on:
     workflow_dispatch:
