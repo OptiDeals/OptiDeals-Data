@@ -15,25 +15,25 @@ for await (var file of list) {
 const assistant1 = await openai.beta.assistants.retrieve("asst_x4VQbYi72W6pgafutM97jqrT");
 console.log(assistant1);
 const thread = await openai.beta.threads.create();
-const metroFile = process.env.CSV_FILE_PATH;
-const metroFileName = `${process.env.STORE_NAME}_${yyyymmdd()}.csv`;
+const dataFilePath = process.env.CSV_FILE_PATH;
+const dataFileStoreName = `${process.env.STORE_NAME}_${yyyymmdd()}.csv`;
 const dietType = process.env.DIET_TYPE;
 const metroStoreName = `${process.env.STORE_NAME}`;
-fs.readFile(metroFile,'utf-8',async(err,data)=>{
+fs.readFile(dataFilePath,'utf-8',async(err,data)=>{
     if(err){
         console.error(err);
       return;
     }
     //upload file to assistant
     const file = await openai.files.create({
-        file: fs.createReadStream(metroFile),
+        file: fs.createReadStream(dataFilePath),
         purpose: "assistants",
     });
     await openai.beta.assistants.update(assistant1.id, {
         file_ids: [file.id],
     });
     const messageContent = 
-    `${metroFileName} is a csv file with the first line providing context for the file contents.`+
+    `${dataFileStoreName} is a csv file with the first line providing context for the file contents.`+
     `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
     `all the ingredients used in the recipes are ${dietType}. `+
     "Include the recipe name, description, ingredient names from the csv file and their "+
@@ -64,7 +64,6 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
                         const fileName = fileData.filename.split('/mnt/data/')[1];
                         const storeName = getStoreName(fileName);
                         const folderPath = `../data/requestedRecipes/${storeName}/`;
-
                         const file_path1 = `../data/requestedRecipes/metro/recipes_${yyyymmdd()}.json`
                         const file_path2 = '../data/requestedRecipes/metro/recipes.json'
                         const bufferView = new Uint8Array(await fileContent.arrayBuffer());
