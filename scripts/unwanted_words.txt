@@ -4,3 +4,13 @@ bathroom
 diaper
 cleaner
 kitchen
+tissue
+paper
+towel
+shampoo
+dog
+cat
+outdoor
+fabric
+pet
+bleach
