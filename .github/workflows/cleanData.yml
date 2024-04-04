@@ -39,7 +39,7 @@ jobs:
 
       - name: Process CSV files
         run: |
-          for CSV_FILE_PATH in data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
+          for CSV_FILE_PATH in data/scrapedData/foodBasics/foodbasics_20240328.csv data/scrapedData/metro/metro_20240328.csv
           do
             export CSV_FILE_PATH=${CSV_FILE_PATH}
             export UNWANTED_WORDS_FILE_PATH=scripts/unwanted_words.txt
