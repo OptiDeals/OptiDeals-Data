@@ -1,4 +1,4 @@
-name: Nodejs Request Recipes Workflow
+name: Request Recipes OpenAI
 on:
     workflow_dispatch:
     workflow_run:
