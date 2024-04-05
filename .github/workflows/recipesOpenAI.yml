@@ -1,5 +1,4 @@
-name: Recipes OpenAI
-
+name: Nodejs Request Recipes Workflow
 on:
     workflow_dispatch:
     workflow_run:
@@ -7,7 +6,6 @@ on:
         types: [completed]
         branches:
             - 'main'
-
 jobs:
   build:
 
@@ -15,31 +13,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+    
+    - name: Set up Nodejs
+      uses: actions/setup-node@v2
+      with: 
+        node-version: '20'
 
     - name: Install dependencies
-      run: |
-        sudo apt-get install npm
-        npm install openai dotenv fs module
-        python -m pip install --upgrade pip
-        pip install openai
-
+      run: npm install openai dotenv fs module path
+    
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%Y%m%d')"
 
     - name: Run script
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      env: 
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be decalred in secrets
         CSV_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
-        NUM_RECIPES: 10
+        ASSISTANT_ID: asst_x4VQbYi72W6pgafutM97jqrT # should be placed in secrets
         DIET_TYPE: vegetarian
         STORE_NAME: metro
-        TOTAL_COST: 25
-        IS_VEGAN: false
-        TOTAL_SERVINGS: 2
+        DELAY_TIME: 90000
       run: node scripts/requestRecipesNode.js
