@@ -28,10 +28,20 @@ jobs:
 
     - name: Run script
       env: 
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be decalred in secrets
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
         CSV_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
         ASSISTANT_ID: asst_x4VQbYi72W6pgafutM97jqrT # should be placed in secrets
         DIET_TYPE: vegetarian
         STORE_NAME: metro
         DELAY_TIME: 90000
       run: node scripts/requestRecipesNode.js
+      
+    - name: Commit and push if it changed
+      run: |
+        git diff
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Pushing Recipes" -a || echo "No changes to commit"
+        git pull origin main --rebase
+        git push origin main
