@@ -3,6 +3,8 @@ import * as path from "path";
 import { OpenAI } from "openai";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
+const fs = require('fs');
+
 //create openai object with api key
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
