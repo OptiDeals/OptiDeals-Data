@@ -3,12 +3,6 @@ import * as path from "path";
 import { OpenAI } from "openai";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-//setting .env path so that project cna be run from OptiDeals-data folder vs. in scripts folder
-const dotenvPath = path.resolve("scripts", ".env");
-dotenv.config({ path: dotenvPath });
-const fs = require("fs");
-dotenv.config();
-
 //create openai object with api key
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
