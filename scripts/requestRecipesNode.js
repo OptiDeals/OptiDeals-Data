@@ -20,9 +20,6 @@ if (!fs.existsSync(process.env.CSV_FILE_PATH)) {
     process.exit(1);
 }
 
-// Rest of your code...
-
-
 //create openai object with api key
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
@@ -36,15 +33,10 @@ for await (var file of list) {
 
 //retreive asssistant for requests
 const assistant1 = await openai.beta.assistants.retrieve(process.env.ASSISTANT_ID);
-//asst_x4VQbYi72W6pgafutM97jqrT
-//console.log(process.env.ASSISTANT_ID);
 console.log(assistant1);
 
-//create thread to send messages through
 const thread = await openai.beta.threads.create();
-//retreive an older thread
-//const thread = await openai.beta.threads.retrieve("thread_rLCdFvkULL9H70ruJaVvsxyo");
-//console.log(thread);
+
 
 //include filename or filepath for files to upload
 const metroFile = process.env.CSV_FILE_PATH;
