@@ -134,12 +134,8 @@ function getStoreName(filename) {
 }
 //function to get date in yyyymmdd format 
 function yyyymmdd() {
-    var x = new Date();
-    var y = x.getFullYear().toString();
-    var m = (x.getMonth() + 1).toString();
-    var d = x.getDate().toString();
-    (d.length == 1) && (d = '0' + d);
-    (m.length == 1) && (m = '0' + m);
-    var yyyymmdd = y + m + d;
-    return yyyymmdd;
+    var date = new Date();
+    var options = { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' };
+    var estDate = date.toLocaleString('en-US', options);
+    return estDate.replace(/\//g, '');
 }
