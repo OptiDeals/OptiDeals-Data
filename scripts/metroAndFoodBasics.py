@@ -1,19 +1,5 @@
-# Import necessary libraries
-import requests
-from bs4 import BeautifulSoup
-import csv
-import time
-from datetime import datetime
-
-# Get today's date in the format YYYYMMDD
-today = datetime.today().strftime('%Y%m%d')
-
-# Define the URLs for the Food Basics and Metro websites
-foodBasicsURL = "https://www.foodbasics.ca/search-page-{page}?sortOrder=popularity&filter=%3Apopularity%3Adeal%3AFlyer+%26+Deals%2F%3Adeal%3AFlyer+%26+Deals&fromEcomFlyer=true"
-metroURL = "https://www.metro.ca/en/online-grocery/flyer-page-{page}?sortOrder=relevance&filter=%3Arelevance%3Adeal%3AFlyer+%26+Deals"
-
-# Define a function to scrape product data from a given URL
-def scrape_products(base_url, csv_file_path):
+# Define a function to scrape product data from a given URL and store it in two files
+def scrape_products(base_url, csv_file_path, store_name):
     product_data = []  # Initialize an empty list to store product data
 
     # Get the first page to find the last page number
@@ -25,7 +11,6 @@ def scrape_products(base_url, csv_file_path):
         return
     else:
         last_page_number = int(pagination.find_all('a', class_='ppn--element')[-2].text)
-        #last_page_number = 1 #Testing purposes
         print(f"Found {last_page_number} pages of products.")
 
     # Loop through each page until the last page
@@ -74,8 +59,22 @@ def scrape_products(base_url, csv_file_path):
 
     print(f"Data has been successfully written to {csv_file_path}.")  # Print a success message
 
+    # Write the data to a CSV file with just the store name
+    with open(f"{store_name}.csv", mode='w', newline='', encoding='utf-8') as file:
+        fieldnames = ["Product", "Amount", "Price"]  # Define the fieldnames for the CSV file
+        writer = csv.DictWriter(file, fieldnames=fieldnames)  # Create a CSV writer
+
+        # Write header
+        writer.writeheader()
+
+        # Write data
+        for product in product_data:
+            writer.writerow(product)  # Write each product to the CSV file
+
+    print(f"Data has been successfully written to {store_name}.csv.")  # Print a success message
+
 # Call the function with the URLs and output files
 print("Scraping Food Basics...")
-scrape_products(foodBasicsURL, f"data/scrapedData/foodBasics/foodbasics_{today}.csv")
+scrape_products(foodBasicsURL, f"data/scrapedData/foodBasics/foodbasics_{today}.csv", "foodBasics")
 print("Scraping Metro...")
-scrape_products(metroURL, f"data/scrapedData/metro/metro_{today}.csv")
+scrape_products(metroURL, f"data/scrapedData/metro/metro_{today}.csv", "metro")
