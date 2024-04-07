@@ -5,6 +5,24 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const fs = require('fs');
 
+// Load environment variables
+dotenv.config();
+
+// Check if necessary environment variables are set
+if (!process.env.OPENAI_API_KEY || !process.env.ASSISTANT_ID || !process.env.CSV_FILE_PATH || !process.env.STORE_NAME || !process.env.DIET_TYPE || !process.env.DELAY_TIME) {
+    console.error("Error: Missing necessary environment variables.");
+    process.exit(1);
+}
+
+// Check if the CSV file exists
+if (!fs.existsSync(process.env.CSV_FILE_PATH)) {
+    console.error(`Error: File ${process.env.CSV_FILE_PATH} does not exist.`);
+    process.exit(1);
+}
+
+// Rest of your code...
+
+
 //create openai object with api key
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
