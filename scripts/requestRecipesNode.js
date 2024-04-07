@@ -62,7 +62,7 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
     });
 
     //create message prompt for assistant for vegetarian recipes
-    const recipes = [
+    const recipes = `[
   {
     "name": "#",
     "description": "#",
@@ -81,7 +81,8 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
     "total_cost": #,
     "serves": #
   }
-];
+]`;
+
 
 const messageContent = 
   `${metroFileName} is a csv file with the first line providing context for the file contents.`+
