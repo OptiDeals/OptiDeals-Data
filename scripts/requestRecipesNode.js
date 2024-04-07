@@ -135,7 +135,8 @@ function getStoreName(filename) {
 //function to get date in yyyymmdd format 
 function yyyymmdd() {
     var date = new Date();
-    var options = { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' };
-    var estDate = date.toLocaleString('en-US', options);
-    return estDate.replace(/\//g, '');
+    var localOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    var localDate = date.toLocaleString('en-US', localOptions);
+    var estDate = new Date(localDate).toLocaleString('en-US', { timeZone: 'America/New_York' });
+    return estDate.split(',')[0].replace(/\//g, '');
 }
