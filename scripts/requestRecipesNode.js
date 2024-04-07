@@ -62,15 +62,42 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
     });
 
     //create message prompt for assistant for vegetarein recipes
-    const messageContent = 
-    //console.log(`${metroFileName} ${vegDiet}`);
-    `${metroFileName} is a csv file with the first line providing context for the file contents.`+
-    `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
-    `all the ingredients used in the recipes are ${dietType}. `+
-    "Include the recipe name, description, ingredient names from the csv file and their "+
-    "amounts and costs, total recipe cost, and how many it serves. Assume persons have "+
-    "basic essentials like butter, milk, eggs, oil, rice, and seasonings. Output everything "+
-    `in JSON format to a downloadable file named '${metroStoreName}_${dietType}_recipes'`
+    const recipes = [
+  {
+    "name": "#",
+    "description": "#",
+    "ingredients": [
+      {"name": "#", "amount": "#", "cost": #},
+    ],
+    "total_cost": #,
+    "serves": #
+  },
+  {
+    "name": "#",
+    "description": "#",
+    "ingredients": [
+      {"name": "#", "amount": "#", "cost": #},
+    ],
+    "total_cost": #,
+    "serves": #
+  }
+];
+
+const metroFileName = '#';
+const dietType = '#';
+const metroStoreName = '#';
+
+const messageContent = 
+  `${metroFileName} is a csv file with the first line providing context for the file contents.`+
+  `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
+  `all the ingredients used in the recipes are ${dietType}. `+
+  "Include the recipe name, description, ingredient names from the csv file and their "+
+  "amounts and costs, total recipe cost, and how many it serves. Assume persons have "+
+  "basic essentials like butter, milk, eggs, oil, rice, and seasonings. Output everything "+
+  `in JSON format to a downloadable file named '${metroStoreName}_${dietType}_recipes'`;
+
+// Add the JSON format to message content request
+messageContent += '\n' + JSON.stringify(recipes, null, 2);
 
 
     //create message 
@@ -82,15 +109,9 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
     const run = await openai.beta.threads.runs.create(thread.id, {
         assistant_id: assistant1.id
     });
-     
-    //we want to query assistant after about a minute, to give it enguh time to process
+
     setTimeout(async()=>{
-        //block to check messages to see convo, in case file doesn't appear
-        // const message = await openai.beta.threads.messages.list(thread.id);
-        // message.body.data.forEach((m) => {
-        //     console.log(m.content);
-        //  });
-        
+
         //grab list of all files in this openai account
          const list = await openai.files.list();
          console.log(list);
@@ -104,8 +125,7 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
                     //ensuring file is ready for download
                     if(fileData.status == 'processed'){
                         const fileContent = await openai.files.content(file.id);
-                        //assitant output files aways start with this /mnt/data/
-                        //so we are removing this from file name for internal storage
+
                         const fileName = fileData.filename.split('/mnt/data/')[1];
                         const storeName = getStoreName(fileName);
                         //creating folder path and file
@@ -130,8 +150,7 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
 
 // Function to extract the store name from the filename
 function getStoreName(filename) {
-    // Logic to extract the store name based on the filename pattern
-    // This can be customized based on the naming convention used for the files
+
 
     if (filename.includes('metro')) {
         return 'metro';
@@ -145,8 +164,8 @@ function getStoreName(filename) {
 //function to get date in yyyymmdd format 
 function yyyymmdd() {
     var date = new Date();
-    var localOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    var localDate = date.toLocaleString('en-US', localOptions);
-    var estDate = new Date(localDate).toLocaleString('en-US', { timeZone: 'America/New_York' });
-    return estDate.split(',')[0].replace(/\//g, '');
+    var estDate = new Date(date.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    var isoDate = estDate.toISOString();
+    return isoDate.slice(0,10).replace(/-/g, '');
 }
+
