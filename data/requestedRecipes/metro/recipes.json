@@ -1,0 +1,108 @@
+{
+    "recipe_1": {
+        "name": "Cucumber Salad",
+        "description": "A refreshing and simple salad made with local mini cucumbers",
+        "ingredients": [
+            {
+                "name": "Local Mini Cucumbers",
+                "amount": "397 g",
+                "cost": 2.99
+            }
+        ],
+        "total_cost": 2.99,
+        "serves": 2
+    },
+    "recipe_2": {
+        "name": "Cheddar Cheese Platter",
+        "description": "An elegant cheese platter featuring extra old white cheddar cheese",
+        "ingredients": [
+            {
+                "name": "Extra Old White Cheddar Cheese",
+                "amount": "400 g",
+                "cost": 4.77
+            }
+        ],
+        "total_cost": 4.77,
+        "serves": 4
+    },
+    "recipe_3": {
+        "name": "Raspberry Smoothie",
+        "description": "A delicious and healthy smoothie packed with raspberries",
+        "ingredients": [
+            {
+                "name": "Raspberries",
+                "amount": "170 g",
+                "cost": 2.5
+            }
+        ],
+        "total_cost": 2.5,
+        "serves": 1
+    },
+    "recipe_4": {
+        "name": "Stuffed Pepper Surprise",
+        "description": "Colorful bell peppers stuffed with savory fillings",
+        "ingredients": [
+            {
+                "name": "Stuffed Peppers",
+                "amount": "2 pieces",
+                "cost": 8.99
+            },
+            {
+                "name": "Spinach",
+                "amount": "100 g",
+                "cost": 1.5
+            }
+        ],
+        "total_cost": 10.49,
+        "serves": 2
+    },
+    "recipe_5": {
+        "name": "Creamy Tomato Soup",
+        "description": "Rich and creamy tomato soup, perfect for a cozy meal",
+        "ingredients": [
+            {
+                "name": "Tomato Soup",
+                "amount": "1 can",
+                "cost": 3.25
+            }
+        ],
+        "total_cost": 3.25,
+        "serves": 2
+    },
+    "recipe_6": {
+        "name": "Cheesy Veggie Chili",
+        "description": "Hearty vegetarian chili packed with vegetables and cheese",
+        "ingredients": [
+            {
+                "name": "Vegetarian Chili",
+                "amount": "400 g",
+                "cost": 5.99
+            },
+            {
+                "name": "Extra Old White Cheddar Cheese",
+                "amount": "200 g",
+                "cost": 2.38
+            }
+        ],
+        "total_cost": 8.37,
+        "serves": 4
+    },
+    "recipe_7": {
+        "name": "Fruit and Cheese Platter",
+        "description": "A delightful platter featuring a variety of fruits and cheddar cheese",
+        "ingredients": [
+            {
+                "name": "Raspberries",
+                "amount": "170 g",
+                "cost": 2.5
+            },
+            {
+                "name": "Extra Old White Cheddar Cheese",
+                "amount": "200 g",
+                "cost": 2.38
+            }
+        ],
+        "total_cost": 4.88,
+        "serves": 2
+    }
+}
