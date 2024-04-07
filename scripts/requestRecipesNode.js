@@ -40,7 +40,7 @@ const thread = await openai.beta.threads.create();
 
 //include filename or filepath for files to upload
 const metroFile = process.env.CSV_FILE_PATH;
-const metroFileName = `${process.env.STORE_NAME}_${yyyymmdd()}.csv`;
+const metroFileName = `${process.env.STORE_NAME}.csv`;
 const dietType = process.env.DIET_TYPE;
 const metroStoreName = `${process.env.STORE_NAME}`;
 
