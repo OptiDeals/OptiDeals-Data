@@ -34,7 +34,7 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
         CSV_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
         ASSISTANT_ID: asst_x4VQbYi72W6pgafutM97jqrT # should be placed in secrets
-        DIET_TYPE: vegetarian
+        DIET_TYPE: normal
         STORE_NAME: metro
         CURRENT_DATE: ${{ steps.date.outputs.date }}
         DELAY_TIME: 90000
