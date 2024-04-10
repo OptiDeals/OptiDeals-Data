@@ -1,6 +1,7 @@
 // Import necessary modules
 import * as dotenv from "dotenv";
 import { OpenAI } from "openai";
+import * as path from "path";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const fs = require('fs');
