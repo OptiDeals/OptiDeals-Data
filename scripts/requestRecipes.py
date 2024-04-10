@@ -11,7 +11,7 @@ STORE_NAME = os.getenv('STORE_NAME')
 CURRENT_DATE = os.getenv('CURRENT_DATE')
 RECIPE_NUMBER = os.getenv('RECIPE_NUMBER')
 RECIPE_FILE_PATH = os.getenv('RECIPE_FILE_PATH')
-JSON_FORMAT_PATH = os.genenv('JSON_FORMAT_PATH')
+JSON_FORMAT_PATH = os.getenv('JSON_FORMAT_PATH')
 
 # Check if environment variables are set
 assert OPENAI_API_KEY, "OPENAI_API_KEY is not set"
