@@ -1,4 +1,7 @@
 // Import necessary modules
+const dotenv = require("dotenv");
+const OpenAI = require("openai");
+const fs = require('fs');
 import dotenv from "dotenv";
 import { OpenAI } from "openai";
 import fs from 'fs';
