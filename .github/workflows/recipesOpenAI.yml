@@ -27,7 +27,7 @@ jobs:
     
     - name: Get current date
       id: date
-      run: echo "::set-output name=date::$(date +'%Y%m%d')"
+      run: echo "::set-output name=date::$(TZ=America/Toronto date +'%Y%m%d')"
 
     - name: Run script
       env: 
