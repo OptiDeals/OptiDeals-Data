@@ -31,7 +31,7 @@ jobs:
           git diff
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A
+          git add data/*
           git commit -m "Pushing scraped data." -a || echo "No changes to commit"
           git pull origin main --rebase
           git push origin main
