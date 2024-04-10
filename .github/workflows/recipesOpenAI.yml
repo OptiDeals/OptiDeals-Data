@@ -43,7 +43,7 @@ jobs:
     - name: Run script foodBasics
       env: 
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
-        CSV_FILE_PATH: data/scrapedData/foodBasics/foodBasics_${{ steps.date.outputs.date }}.csv
+        CSV_FILE_PATH: data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv
         ASSISTANT_ID: asst_x4VQbYi72W6pgafutM97jqrT # should be placed in secrets
         DIET_TYPE: normal
         STORE_NAME: foodBasics
