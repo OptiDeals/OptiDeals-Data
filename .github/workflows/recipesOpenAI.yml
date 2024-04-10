@@ -38,7 +38,7 @@ jobs:
         STORE_NAME: metro
         CURRENT_DATE: ${{ steps.date.outputs.date }}
         DELAY_TIME: 90000
-      run: python scripts/requestRecipesNode.py
+      run: python scripts/requestRecipes.py
       
     - name: Commit and push if it changed
       run: |
