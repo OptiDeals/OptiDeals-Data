@@ -11,6 +11,7 @@ STORE_NAME = os.getenv('STORE_NAME')
 CURRENT_DATE = os.getenv('CURRENT_DATE')
 RECIPE_NUMBER = os.getenv('RECIPE_NUMBER')
 RECIPE_FILE_PATH = os.getenv('RECIPE_FILE_PATH')
+JSON_FORMAT_PATH = os.genenv('JSON_FORMAT_PATH')
 
 # Check if environment variables are set
 assert OPENAI_API_KEY, "OPENAI_API_KEY is not set"
@@ -20,7 +21,15 @@ assert STORE_NAME, "STORE_NAME is not set"
 assert CURRENT_DATE, "CURRENT_DATE is not set"
 assert RECIPE_NUMBER, "RECIPE_NUMBER is not set"
 assert RECIPE_FILE_PATH, "RECIPE_FILE_PATH is not set"
+assert JSON_FORMAT_PATH, "JSON_FORMAT_PATH is not set"
 
+try:
+    with open(JSON_FORMAT_PATH, 'r') as file:
+        JSON_FORMAT = json.load(file)
+except FileNotFoundError:
+    print(f"File {JSON_FORMAT_PATH} not found")
+    exit(1)
+    
 # Initialize OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -37,7 +46,7 @@ except FileNotFoundError:
 messages = [
     {
         "role": "system",
-        "content": "You are a recipe generation assistant created to generate recipes from a specific set of ingredients defined in a csv file. You will ensure all ingredients in the recipes come specifically from the data provided. You will ensure the user has basic essentials like butter, milk, eggs, oil, rice, and seasonings, do not add that to costs. You will also ensure you provide/output it in a specific JSON format as follows. \n[\n {\n \"name\": \"Recipe Name\",\n \"description\": \"Description of Recipe\",\n \"ingredients\": [\n {\"name\": \"Ingredient 1\", \"amount\": \"Amount\", \"cost\": \"Cost\"},\n {\"name\": \"Ingredient ...\", \"amount\": \"Amount\", \"cost\": \"Cost\"}`\n ],`\n \"total_cost\": \"Total Cost for Recipe\",\n \"serves\": \"Number of Servings for Recipe\",\n \"vegan\": \"true or false\n },\n {\n \"name\": \"Recipe Name\",\n \"description\": \"Description of Recipe\",\n \"ingredients\": [`\n {\"name\": \"Ingredient 1\", \"amount\": \"Amount\", \"cost\": \"Cost\"},\n {\"name\": \"Ingredient ...\", \"amount\": \"Amount\", \"cost\": \"Cost\"}\n ],`\n \"total_cost\": \"Total Cost for Recipe \",\n \"serves\": \"Number of Servings for Recipe \",\n \"vegan\": \"true or false\"\n },\n ...\n ]"
+        "content": f"You are a recipe generation assistant created to generate recipes from a specific set of ingredients defined in a csv file. You will ensure all ingredients in the recipes come specifically from the data provided. You will ensure the user has basic essentials like butter, milk, eggs, oil, rice, and seasonings, do not add that to costs. You will also ensure you provide/output it in a specific JSON format as follows. {JSON_FORMAT}"
     },
     {
         "role": "user",
