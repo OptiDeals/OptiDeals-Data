@@ -21,7 +21,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install openai dotenv
+      run: pip install openai python-dotenv
     
     - name: Get current date
       id: date
