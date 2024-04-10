@@ -56,13 +56,13 @@ fs.readFile(process.env.CSV_FILE_PATH, 'utf-8', async (err, data) => {
 
     // Create message 
     const messageContent = 
-    `${metroFileName} is a csv file with the first line providing context for the file contents.`+
+    `${process.env.STORE_NAME}}.csv is a csv file with the first line providing context for the file contents.`+
     `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
     `all the ingredients used in the recipes are ${dietType}, and that there are 7 recipes. `+
     "Include the recipe name, description, ingredient names from the csv file and their "+
     "amounts and costs, total recipe cost, and how many it serves. Assume persons have "+
     "basic essentials like butter, milk, eggs, oil, rice, and seasonings. Output everything "+
-    `in JSON format to a downloadable file named '${metroStoreName}_${dietType}_recipes, following this format:\n'`
+    `in JSON format following this format:\n'`
     +`[`
 +`      {`
 +`          "name": "Recipe Name",`
