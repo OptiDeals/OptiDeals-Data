@@ -1,433 +1,213 @@
 [
     {
-        "name": "Vegetable Stir-Fry",
-        "description": "Classic spaghetti carbonara with a creamy sauce and crispy bacon.",
+        "name": "Recipe 1",
+        "description": "Delicious Omelette",
         "ingredients": [
             {
-                "name": "1% Banana Flavoured Drinkable Yogurt, Nan\u00f6",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Eggs",
+                "amount": "2",
+                "cost": "0.50"
             },
             {
-                "name": "Frozen Hallal Butter Chicken Flavoured Samosas",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Bacon",
+                "amount": "100g",
+                "cost": "1.00"
             },
             {
-                "name": "Bone-in Chicken Thighs, Raised without Antibiotics, ...",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "White Cheddar Cheese",
+                "amount": "50g",
+                "cost": "0.60"
             },
             {
-                "name": "Orange and Mango Hydration Drink",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Spinach",
+                "amount": "50g",
+                "cost": "0.75"
             },
             {
-                "name": "Sweet and Spicy Ketchup Flavoured Kettle Cooked Chips",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "Plain 2% Yogurt",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Tomatoes",
+                "amount": "1",
+                "cost": "0.30"
             }
         ],
-        "total_cost": "$17",
-        "serves": 3
+        "total_cost": "3.15",
+        "serves": "2"
     },
     {
-        "name": "Vegetable Curry",
-        "description": "Aromatic and spicy vegetable curry with a mix of veggies and spices.",
+        "name": "Recipe 2",
+        "description": "Classic Caesar Salad",
         "ingredients": [
             {
-                "name": "Frozen Chicken Nuggets",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Romaine Lettuce",
+                "amount": "1 head",
+                "cost": "1.50"
             },
             {
-                "name": "Hot 'N Spicy Wieners, Juicy Jumbos",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Chicken Breast",
+                "amount": "200g",
+                "cost": "2.50"
             },
             {
-                "name": "Clementine Flavoured Carbonated Water",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Extra Old White Cheddar Cheese",
+                "amount": "50g",
+                "cost": "0.60"
             },
             {
-                "name": "Frozen Raw Pacific White Shrimp and Bay Scallops",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Caesar Dressing",
+                "amount": "60ml",
+                "cost": "1.20"
             },
             {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Croutons",
+                "amount": "50g",
+                "cost": "0.50"
             }
         ],
-        "total_cost": "$15",
-        "serves": 5
+        "total_cost": "6.30",
+        "serves": "4"
     },
     {
-        "name": "Beef Tacos",
-        "description": "Delicious beef tacos with all the toppings for a satisfying meal.",
+        "name": "Recipe 3",
+        "description": "Pasta Carbonara",
         "ingredients": [
             {
-                "name": "Grain Fed Veal Shoulder Blade Chop",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Spaghetti",
+                "amount": "200g",
+                "cost": "1.00"
             },
             {
-                "name": "Rancher Choice Dressing",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Bacon",
+                "amount": "100g",
+                "cost": "1.00"
             },
             {
-                "name": "Low Sodium Club Soda",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Eggs",
+                "amount": "2",
+                "cost": "0.50"
             },
             {
-                "name": "Spicy Butter Chicken Cooking Sauce",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Cream",
+                "amount": "100ml",
+                "cost": "1.00"
             },
             {
-                "name": "Ketchup Sriracha Flavoured Hot Rolled Tortilla Chips...",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Parmesan Cheese",
+                "amount": "50g",
+                "cost": "0.75"
             }
         ],
-        "total_cost": "$14",
-        "serves": 6
+        "total_cost": "4.25",
+        "serves": "3"
     },
     {
-        "name": "Chicken Alfredo Pasta",
-        "description": "Simple and flavorful tomato basil pasta with fresh ingredients.",
+        "name": "Recipe 4",
+        "description": "Fruit Salad",
         "ingredients": [
             {
-                "name": "Oats 'N Honey Crunch Cereal, Cheerios",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Raspberries",
+                "amount": "100g",
+                "cost": "1.00"
             },
             {
-                "name": "Frozen Shrimps and White Wine Sauce",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Blueberries",
+                "amount": "100g",
+                "cost": "1.50"
             },
             {
-                "name": "Banana and Chocolate Kids Cereal Bars, Naturalia",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Kiwi",
+                "amount": "1",
+                "cost": "0.50"
             },
             {
-                "name": "Soda, Doc Pop",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Honey",
+                "amount": "30ml",
+                "cost": "0.60"
             }
         ],
-        "total_cost": "$29",
-        "serves": 2
+        "total_cost": "3.60",
+        "serves": "2"
     },
     {
-        "name": "Spaghetti Carbonara",
-        "description": "Creamy chicken alfredo pasta with a rich and flavorful sauce.",
+        "name": "Recipe 5",
+        "description": "Cucumber and Tomato Salad",
         "ingredients": [
             {
-                "name": "Chicken Breast Strips",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Local Mini Cucumbers",
+                "amount": "300g",
+                "cost": "2.50"
             },
             {
-                "name": "Hot Mortadella",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Tomatoes",
+                "amount": "2",
+                "cost": "0.60"
             },
             {
-                "name": "Bone-in Chicken Breasts",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Red Onion",
+                "amount": "1",
+                "cost": "0.40"
             },
             {
-                "name": "Lean Ground Beef",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Feta Cheese",
+                "amount": "50g",
+                "cost": "0.75"
             },
             {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Olive Oil",
+                "amount": "15ml",
+                "cost": "0.40"
             }
         ],
-        "total_cost": "$28",
-        "serves": 6
+        "total_cost": "4.65",
+        "serves": "4"
     },
     {
-        "name": "Tomato Basil Pasta",
-        "description": "Juicy shrimp cooked with lemon and garlic for a light and zesty dish.",
+        "name": "Recipe 6",
+        "description": "Caprese Salad",
         "ingredients": [
             {
-                "name": "Hot Mini Pepperoni",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Tomatoes",
+                "amount": "2",
+                "cost": "0.60"
             },
             {
-                "name": "Orange Flavoured Sparkling Water",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Bocconcini Cheese",
+                "amount": "100g",
+                "cost": "1.50"
             },
             {
-                "name": "Almond Dark Chocolate Bar, Burnt Almond",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Fresh Basil",
+                "amount": "20g",
+                "cost": "0.75"
             },
             {
-                "name": "Frozen Prime Rib Beef Burgers",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Balsamic Vinegar",
+                "amount": "15ml",
+                "cost": "0.30"
             }
         ],
-        "total_cost": "$30",
-        "serves": 5
+        "total_cost": "3.15",
+        "serves": "2"
     },
     {
-        "name": "Lemon Garlic Shrimp",
-        "description": "A quick and healthy vegetable stir-fry loaded with colorful veggies.",
+        "name": "Recipe 7",
+        "description": "Bacon and Cheese Quesadillas",
         "ingredients": [
             {
-                "name": "Double Dill Salad Kit",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Flour Tortillas",
+                "amount": "4",
+                "cost": "1.50"
             },
             {
-                "name": "Spicy Butter Chicken Cooking Sauce",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Bacon",
+                "amount": "100g",
+                "cost": "1.00"
             },
             {
-                "name": "Shredded Mozzarella Cheese",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "1% Milk, PurFiltre",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "Greek Salad Mix",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "Natural Raspberry Flavour Iced Tea",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "butter",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "milk",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "eggs",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "oil",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "rice",
-                "amount": "to taste",
-                "cost": "varies"
-            },
-            {
-                "name": "seasonings",
-                "amount": "to taste",
-                "cost": "varies"
+                "name": "Extra Old White Cheddar Cheese",
+                "amount": "50g",
+                "cost": "0.60"
             }
         ],
-        "total_cost": "$26",
-        "serves": 4
+        "total_cost": "3.10",
+        "serves": "2"
     }
 ]
