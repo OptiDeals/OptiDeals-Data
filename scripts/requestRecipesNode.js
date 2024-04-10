@@ -61,40 +61,37 @@ fs.readFile(metroFile,'utf-8',async(err,data)=>{
         file_ids: [file.id],
     });
 
-    //create message prompt for assistant for vegetarian recipes
-    const recipes = `[
-  {
-    "name": "#",
-    "description": "#",
-    "ingredients": [
-      {"name": "#", "amount": "#", "cost": #},
-    ],
-    "total_cost": #,
-    "serves": #
-  },
-  {
-    "name": "#",
-    "description": "#",
-    "ingredients": [
-      {"name": "#", "amount": "#", "cost": #},
-    ],
-    "total_cost": #,
-    "serves": #
-  }
-]`;
-
-
 const messageContent = 
-  `${metroFileName} is a csv file with the first line providing context for the file contents.`+
-  `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
-  `all the ingredients used in the recipes are ${dietType}. `+
-  "Include the recipe name, description, ingredient names from the csv file and their "+
-  "amounts and costs, total recipe cost, and how many it serves. Assume persons have "+
-  "basic essentials like butter, milk, eggs, oil, rice, and seasonings. Output everything "+
-  `in JSON format to a downloadable file named '${metroStoreName}_${dietType}_recipes'`;
-
-// Add the JSON format to message content request
-messageContent += '\n' + JSON.stringify(recipes, null, 2);
+    `${metroFileName} is a csv file with the first line providing context for the file contents.`+
+    `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
+    `all the ingredients used in the recipes are ${dietType}, and that there are 7 recipes. `+
+    "Include the recipe name, description, ingredient names from the csv file and their "+
+    "amounts and costs, total recipe cost, and how many it serves. Assume persons have "+
+    "basic essentials like butter, milk, eggs, oil, rice, and seasonings. Output everything "+
+    `in JSON format to a downloadable file named '${metroStoreName}_${dietType}_recipes, following this format:\n'`
+    +`[`
++`      {`
++`          "name": "Recipe 1 Name",`
++`          "description": "Description of Recipe 1",`
++`          "ingredients": [`
++`              {"name": "Ingredient 1", "amount": "Amount", "cost": "Cost"},`
++`              {"name": "Ingredient 2", "amount": "Amount", "cost": "Cost"}`
++`          ],`
++`          "total_cost": "Total Cost for Recipe 1",`
++`          "serves": "Number of Servings for Recipe 1"`
++`      },`
++`      {`
++`          "name": "Recipe 2 name",`
++`          "description": "Description of Recipe 2",`
++`          "ingredients": [`
++`              {"name": "Ingredient 1", "amount": "Amount", "cost": "Cost"},`
++`              {"name": "Ingredient 2", "amount": "Amount", "cost": "Cost"}`
++`          ],`
++`          "total_cost": "Total Cost for Recipe 2",`
++`          "serves": "Number of Servings for Recipe 2"`
++`      },`
++`      ...`
++`  ]`;
 
 
     //create message 
