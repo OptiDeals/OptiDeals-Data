@@ -71,24 +71,24 @@ const messageContent =
     `in JSON format to a downloadable file named '${metroStoreName}_${dietType}_recipes, following this format:\n'`
     +`[`
 +`      {`
-+`          "name": "Recipe 1 Name",`
-+`          "description": "Description of Recipe 1",`
++`          "name": "Recipe Name",`
++`          "description": "Description of Recipe",`
 +`          "ingredients": [`
 +`              {"name": "Ingredient 1", "amount": "Amount", "cost": "Cost"},`
 +`              {"name": "Ingredient 2", "amount": "Amount", "cost": "Cost"}`
 +`          ],`
-+`          "total_cost": "Total Cost for Recipe 1",`
-+`          "serves": "Number of Servings for Recipe 1"`
++`          "total_cost": "Total Cost for Recipe",`
++`          "serves": "Number of Servings for Recipe"`
 +`      },`
 +`      {`
-+`          "name": "Recipe 2 name",`
-+`          "description": "Description of Recipe 2",`
++`          "name": "Recipe Name",`
++`          "description": "Description of Recipe",`
 +`          "ingredients": [`
 +`              {"name": "Ingredient 1", "amount": "Amount", "cost": "Cost"},`
 +`              {"name": "Ingredient 2", "amount": "Amount", "cost": "Cost"}`
 +`          ],`
-+`          "total_cost": "Total Cost for Recipe 2",`
-+`          "serves": "Number of Servings for Recipe 2"`
++`          "total_cost": "Total Cost for Recipe",`
++`          "serves": "Number of Servings for Recipe"`
 +`      },`
 +`      ...`
 +`  ]`;
