@@ -25,7 +25,7 @@ assert JSON_FORMAT_PATH, "JSON_FORMAT_PATH is not set"
 
 try:
     with open(JSON_FORMAT_PATH, 'r') as file:
-        JSON_FORMAT = json.load(file)
+        JSON_FORMAT = file.read()
 except FileNotFoundError:
     print(f"File {JSON_FORMAT_PATH} not found")
     exit(1)
