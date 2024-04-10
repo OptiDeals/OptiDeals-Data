@@ -53,7 +53,7 @@ response = client.chat.completions.create(
 
 # Parse response and save recipes to JSON file
 recipes = response.choices[0].message.content
-recipe_file_path = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/{STORE_NAME}_{CURRENT_DATE}.csv")
+recipe_file_path = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/{STORE_NAME}_{CURRENT_DATE}.json")
 try:
     with open(recipe_file_path, 'w') as file:
         json.dump(recipes, file)
