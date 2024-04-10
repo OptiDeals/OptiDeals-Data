@@ -31,25 +31,15 @@ jobs:
 
     - name: Run script metro
       env: 
+        RECIPE_NUMBER: 7
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
-        CSV_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
-        ASSISTANT_ID: asst_x4VQbYi72W6pgafutM97jqrT # should be placed in secrets
+        DATA_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
+        RECIPE_FILE_PATH: data/requestedRecipes
         DIET_TYPE: normal
         STORE_NAME: metro
         CURRENT_DATE: ${{ steps.date.outputs.date }}
         DELAY_TIME: 90000
-      run: node scripts/requestRecipesNode.js
-
-    - name: Run script foodBasics
-      env: 
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
-        CSV_FILE_PATH: data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv
-        ASSISTANT_ID: asst_x4VQbYi72W6pgafutM97jqrT # should be placed in secrets
-        DIET_TYPE: normal
-        STORE_NAME: foodBasics
-        CURRENT_DATE: ${{ steps.date.outputs.date }}
-        DELAY_TIME: 90000
-      run: node scripts/requestRecipesNode.js
+      run: node scripts/requestRecipesNode.py
       
     - name: Commit and push if it changed
       run: |
