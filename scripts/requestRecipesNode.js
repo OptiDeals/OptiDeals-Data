@@ -1,65 +1,73 @@
 // Import necessary modules
-const dotenv = require("dotenv");
-const OpenAI = require("openai");
+import * as dotenv from "dotenv";
+import { OpenAI } from "openai";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const fs = require('fs');
 
-(async () => {
-    // Load environment variables
-    dotenv.config();
+// Load environment variables
+dotenv.config();
 
-    // Define required environment variables
-    const requiredEnvVars = ['OPENAI_API_KEY', 'ASSISTANT_ID', 'CSV_FILE_PATH', 'STORE_NAME', 'DIET_TYPE', 'DELAY_TIME'];
+// Check if necessary environment variables are set
+if (!process.env.OPENAI_API_KEY || !process.env.ASSISTANT_ID || !process.env.CSV_FILE_PATH || !process.env.STORE_NAME || !process.env.DIET_TYPE || !process.env.DELAY_TIME) {
+    console.error("Error: Missing necessary environment variables.");
+    process.exit(1);
+}
 
-    // Check if all required environment variables are set
-    for (const varName of requiredEnvVars) {
-        if (!process.env[varName]) {
-            console.error(`Error: Missing necessary environment variable ${varName}.`);
-            process.exit(1);
-        }
+// Check if the CSV file exists
+if (!fs.existsSync(process.env.CSV_FILE_PATH)) {
+    console.error(`Error: File ${process.env.CSV_FILE_PATH} does not exist.`);
+    process.exit(1);
+}
+
+// Create OpenAI object with API key
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
+
+// Loop to delete all previous files in OpenAI storage to ensure we download the most recent file
+const list = await openai.files.list();
+for await (var file of list) {
+    file = await openai.files.del(file.id);
+    console.log(file);
+}
+
+// Retrieve assistant for requests
+const assistant1 = await openai.beta.assistants.retrieve(process.env.ASSISTANT_ID);
+console.log(assistant1);
+
+// Create a new thread
+const thread = await openai.beta.threads.create();
+
+// Include filename or filepath for files to upload
+const storeFile = process.env.CSV_FILE_PATH;
+const storeFileName = `${process.env.STORE_NAME}.csv`;
+const dietType = process.env.DIET_TYPE;
+const storeName = `${process.env.STORE_NAME}`;
+const currentDate = process.env.CURRENT_DATE;
+
+// Read the file and process it
+fs.readFile(storeFile,'utf-8',async(err,data)=>{
+    if(err){
+        console.error(err);
+        return;
     }
+    // Upload file to assistant
+    const file = await openai.files.create({
+        file: fs.createReadStream(storeFile),
+        purpose: "assistants",
+    });
 
-    // Check if the CSV file exists
-    if (!fs.existsSync(process.env.CSV_FILE_PATH)) {
-        console.error(`Error: File ${process.env.CSV_FILE_PATH} does not exist.`);
-        process.exit(1);
-    }
+    // Update the assistant with the new file ID
+    await openai.beta.assistants.update(assistant1.id, {
+        file_ids: [file.id],
+    });
 
-    // Create OpenAI object with API key
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-    // Delete all previous files in OpenAI storage
-    const list = await openai.files.list();
-    for await (const file of list) {
-        await openai.files.del(file.id);
-    }
-
-    // Retrieve assistant for requests
-    const assistant = await openai.beta.assistants.retrieve(process.env.ASSISTANT_ID);
-
-    // Create a new thread
-    const thread = await openai.beta.threads.create();
-
-    // Read the file and process it
-    fs.readFile(process.env.CSV_FILE_PATH, 'utf-8', async (err, data) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-
-        // Upload file to assistant
-        const file = await openai.files.create({
-            file: fs.createReadStream(process.env.CSV_FILE_PATH),
-            purpose: "assistants",
-        });
-
-        // Update the assistant with the new file ID
-        await openai.beta.assistants.update(assistant.id, { file_ids: [file.id] });
-
-        // Create message 
-        const messageContent = 
-        `${process.env.STORE_NAME}.csv is a csv file with the first line providing context for the file contents.`+
-        `Use the food items from the csv file to create 7 ${process.env.DIET_TYPE} meal recipes. Ensure that `+
-        `all the ingredients used in the recipes are ${process.env.DIET_TYPE}, and that there are 7 recipes. `+
+    // Create the message content
+    const messageContent = 
+        `${storeFileName} is a csv file with the first line providing context for the file contents.`+
+        `Use the food items from the csv file to create 7 ${dietType} meal recipes. Ensure that `+
+        `all the ingredients used in the recipes are ${dietType}, and that there are 7 recipes. `+
         "Include the recipe name, description, ingredient names from the csv file and their "+
         "amounts and costs, total recipe cost, and how many it serves. Assume persons have "+
         "basic essentials like butter, milk, eggs, oil, rice, and seasonings. Output everything "+
@@ -70,7 +78,7 @@ const fs = require('fs');
     +`          "description": "Description of Recipe",`
     +`          "ingredients": [`
     +`              {"name": "Ingredient 1", "amount": "Amount", "cost": "Cost"},`
-    +`              {"name": "Ingredient ...", "amount": "Amount", "cost": "Cost"}`
+    +`              {"name": "Ingredient 2", "amount": "Amount", "cost": "Cost"}`
     +`          ],`
     +`          "total_cost": "Total Cost for Recipe",`
     +`          "serves": "Number of Servings for Recipe"`
@@ -80,45 +88,72 @@ const fs = require('fs');
     +`          "description": "Description of Recipe",`
     +`          "ingredients": [`
     +`              {"name": "Ingredient 1", "amount": "Amount", "cost": "Cost"},`
-    +`              {"name": "Ingredient ...", "amount": "Amount", "cost": "Cost"}`
+    +`              {"name": "Ingredient 2", "amount": "Amount", "cost": "Cost"}`
     +`          ],`
-    +`          "total_cost": "Total Cost for Recipe ",`
-    +`          "serves": "Number of Servings for Recipe "`
+    +`          "total_cost": "Total Cost for Recipe",`
+    +`          "serves": "Number of Servings for Recipe"`
     +`      },`
     +`      ...`
     +`  ]`;
-        const messages = await openai.beta.threads.messages.create(thread.id, { role: "user", content: messageContent });
 
-        // Run assistant
-        const run = await openai.beta.threads.runs.create(thread.id, { assistant_id: assistant.id });
+    // Create message 
+    const messages =  await openai.beta.threads.messages.create(thread.id,{
+        role: "user",
+        content:messageContent
+    });
 
-        // Set a delay before processing the files
-        setTimeout(async () => {
+    // Run assistant
+    const run = await openai.beta.threads.runs.create(thread.id, {
+        assistant_id: assistant1.id
+    });
 
-            // Grab list of all files in this OpenAI account
-            const list = await openai.files.list();
+    // Set a delay before processing the files
+    setTimeout(async()=>{
 
-            // Grab assistant made output file from list of files:
-            for await (const file of list) {
-                if (file.purpose == 'assistants_output') {
+        // Grab list of all files in this OpenAI account
+        const list = await openai.files.list();
+        console.log(list);
+
+        // Grab assistant made output file from list of files:
+        for await (var file of list){
+            if(file.purpose == 'assistants_output'){
+                try{
                     const fileData = await openai.files.retrieve(file.id);
 
                     // Ensuring file is ready for download
-                    if (fileData.status == 'processed') {
+                    if(fileData.status == 'processed'){
                         const fileContent = await openai.files.content(file.id);
+
                         const fileName = fileData.filename.split('/mnt/data/')[1];
+                        const storeName = getStoreName(fileName);
                         // Creating folder path and file
-                        const folderPath = `data/requestedRecipes/${process.env.STORE_NAME}`;
-                        const file_path = `${folderPath}/recipes_${process.env.CURRENT_DATE}.json`
+                        const folderPath = `data/requestedRecipes/${storeName}`;
+                        const file_path1 = `data/requestedRecipes/${storeName}/recipes_${currentDate}.json`
                         const bufferView = new Uint8Array(await fileContent.arrayBuffer());
-                        fs.writeFileSync(file_path, bufferView, 'utf8');
+                        fs.writeFileSync(`${folderPath}/recipes_${currentDate}.json`, bufferView, 'utf8');
                         fs.writeFileSync(`${folderPath}/recipes.json`, bufferView, 'utf8');
-                        console.log(`Downloaded file: ${fileName} to ${file_path}`);
-                    } else {
+                        console.log(`Downloaded file: ${fileName} to ${file_path1}`);
+                    }
+                    else{
                         console.log(`File content is undefined for file: ${file.filename}`);
                     }
+                } catch(error){
+                    console.error(`Error retrieving file content for file: ${file.filename}`);
+                    console.error(error);
                 }
             }
-        }, process.env.DELAY_TIME);
-    });
-})();
+        }
+    }, process.env.DELAY_TIME);
+});
+
+// Function to extract the store name from the filename
+function getStoreName(filename) {
+    if (filename.includes('metro')) {
+        return 'metro';
+    } else if (filename.includes('foodBasics')) {
+        return 'foodBasics';
+    } // Add more store name extraction logic as needed
+    else {
+        return 'unknown_store';
+    }
+}
