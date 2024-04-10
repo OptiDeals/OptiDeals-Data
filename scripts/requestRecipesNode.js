@@ -2,7 +2,7 @@
 const dotenv = require("dotenv");
 const OpenAI = require("openai");
 const fs = require('fs');
-
+(async () => {
 // Load environment variables
 dotenv.config();
 
@@ -120,3 +120,4 @@ fs.readFile(process.env.CSV_FILE_PATH, 'utf-8', async (err, data) => {
         }
     }, process.env.DELAY_TIME);
 });
+})();
