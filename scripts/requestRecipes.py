@@ -50,7 +50,7 @@ messages = [
     },
     {
         "role": "user",
-        "content": f"Please create {RECIPE_NUMBER} meal recipes that align with the {DIET_TYPE} diet type using the ingredients from the provided data file. Each recipe should include the name, description, ingredients with their quantities and costs, total cost of the recipe, and the number of servings it provides."
+        "content": f"Please create {RECIPE_NUMBER} meal recipes that align with the {DIET_TYPE} diet type using the ingredients from the provided data file. Each recipe should include the name, description, ingredients with their quantities and costs, total cost of the recipe, and the number of servings it provides. The ingredients available for this task are {data}"
     }
 ]
 
