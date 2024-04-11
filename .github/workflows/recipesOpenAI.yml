@@ -40,6 +40,19 @@ jobs:
         DELAY_TIME: 90000
       run: python scripts/requestRecipes.py
       
+    - name: Run script foodBasics
+      env: 
+        JSON_FORMAT_PATH: scripts/jsonFormat.txt
+        RECIPE_NUMBER: 7
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
+        DATA_FILE_PATH: data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv
+        RECIPE_FILE_PATH: data/requestedRecipes
+        DIET_TYPE: normal
+        STORE_NAME: foodBasics
+        CURRENT_DATE: ${{ steps.date.outputs.date }}
+        DELAY_TIME: 90000
+      run: python scripts/requestRecipes.py
+      
     - name: Commit and push if it changed
       run: |
         git diff
