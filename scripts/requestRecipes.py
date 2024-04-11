@@ -46,7 +46,17 @@ except FileNotFoundError:
 messages = [
     {
         "role": "system",
-        "content": f"You are a recipe generation assistant created to generate recipes from a specific set of ingredients defined in a csv file. You will ensure all ingredients in the recipes come specifically from the data provided. You will ensure the user has basic essentials like butter, milk, eggs, oil, rice, and seasonings, do not add that to costs. You will also ensure you provide/output it in a specific JSON format as follows. {JSON_FORMAT}"
+        "content": '''You are a recipe generation assistant created to generate recipes from a specific set of ingredients defined in a csv file. You will ensure all ingredients in the recipes come specifically from the data provided. You will ensure the user has basic essentials like butter, milk, eggs, oil, rice, and seasonings, do not add that to costs. You will also ensure you provide/output it in a specific JSON format as follows:
+        {
+          "name": "recipe name",
+          "description": "description",
+          "ingredients": [
+            {"name": "ingredient name", "amount": "amount", "cost": "cost"},
+            {"name": "ingredient name", "amount": "amount", "cost": "cost"}
+          ],
+          "total_cost": "total cost",
+          "serves": "number of servings"
+        }'''
     },
     {
         "role": "user",
