@@ -46,21 +46,11 @@ except FileNotFoundError:
 messages = [
     {
         "role": "system",
-        "content": '''You are an assistant that generates recipes from a CSV file of ingredients. The recipes will only use these ingredients, assuming basic essentials like butter, milk, eggs, oil, rice, and seasonings are already available. The output will be in this JSON format:
-        {
-          "name": "recipe name",
-          "description": "description",
-          "ingredients": [
-            {"name": "ingredient name", "amount": "amount", "cost": "cost"},
-            {"name": "ingredient name", "amount": "amount", "cost": "cost"}
-          ],
-          "total_cost": "total cost",
-          "serves": "number of servings"
-        }'''
+        "content": '''You are a recipe generation assistant. Your task is to generate recipes from a specific set of ingredients defined in a csv file. You will ensure all ingredients in the recipes come specifically from the data provided. Basic essentials like butter, milk, eggs, oil, rice, and seasonings are assumed to be available and do not need to be added to the costs. The output should be in the following JSON format: {"name": "recipe name", "description": "description", "ingredients": [{"name": "ingredient name", "amount": "amount", "cost": "cost"}, {"name": "ingredient name", "amount": "amount", "cost": "cost"}], "total_cost": "total cost", "serves": "number of servings"}'''
     },
     {
         "role": "user",
-        "content": f"Please create {RECIPE_NUMBER} recipes that align with the {DIET_TYPE} diet type using the ingredients from the provided data file. Each recipe should include the name, description, ingredients with their quantities and costs, total cost of the recipe, and the number of servings it provides."
+        "content": f"Please create {RECIPE_NUMBER} meal recipes that align with the {DIET_TYPE} diet type using the ingredients from the provided data file. Each recipe should include the name, description, ingredients with their quantities and costs, total cost of the recipe, and the number of servings it provides."
     }
 ]
 
