@@ -63,9 +63,17 @@ response = client.chat.completions.create(
 # Parse response and save recipes to JSON file
 recipes = response.choices[0].message.content
 recipe_file_path = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/{STORE_NAME}_{CURRENT_DATE}.json")
-try:
-    with open(recipe_file_path, 'w') as file:
-        json.dump(recipes, file)
-except FileNotFoundError:
-    print(f"Directory {os.path.dirname(recipe_file_path)} not found")
-    exit(1)
+recipe_file_path2 = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/recipes.json")
+os.makedirs(os.path.dirname(recipe_file_path), exist_ok=True)
+os.makedirs(os.path.dirname(recipe_file_path2), exist_ok=True)
+
+# Write the recipes to the first file
+with open(recipe_file_path, 'w') as file:
+    json.dump(recipes, file)
+
+# Write the recipes to the second file (recipes.json)
+with open(recipe_file_path2, 'w') as file:
+    json.dump(recipes, file)
+
+# Print a success message
+print(f"The recipes were successfully saved to {recipe_file_path} and {recipe_file_path2}.")
