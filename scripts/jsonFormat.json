@@ -1,0 +1,22 @@
+[
+  {
+    "name": "recipe name",
+    "description": "description",
+    "ingredients": [
+      {"name": "ingredient name", "amount": "amount", "cost": },
+      {"name": "ingredient name", "amount": "amount", "cost": },
+    ],
+    "total_cost": ,
+    "serves": 
+  },
+  {
+    "name": "recipe name",
+    "description": "description",
+    "ingredients": [
+      {"name": "ingredient name", "amount": "amount", "cost": },
+      {"name": "ingredient name", "amount": "amount", "cost": },
+    ],
+    "total_cost": ,
+    "serves": 
+  }
+]
