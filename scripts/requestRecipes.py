@@ -71,7 +71,7 @@ response = client.chat.completions.create(
 )
 
 # Parse response and save recipes to JSON file
-recipes = response.choices[0].message.content
+recipes = json.loads(response.choices[0].message.content)
 
 recipe_file_path = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/{STORE_NAME}_{CURRENT_DATE}.json")
 recipe_file_path2 = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/recipes.json")
