@@ -64,9 +64,6 @@ response = client.chat.completions.create(
 # Parse response and save recipes to JSON file
 recipes = response.choices[0].message.content
 
-# Convert the recipes string to a Python object
-recipes = json.loads(recipes)
-
 recipe_file_path = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/{STORE_NAME}_{CURRENT_DATE}.json")
 recipe_file_path2 = os.path.join(RECIPE_FILE_PATH, f"{STORE_NAME}/recipes.json")
 os.makedirs(os.path.dirname(recipe_file_path), exist_ok=True)
