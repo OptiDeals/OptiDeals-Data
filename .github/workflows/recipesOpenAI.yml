@@ -30,7 +30,7 @@ jobs:
     - name: Run script metro
       env: 
         JSON_FORMAT_PATH: scripts/jsonFormat.json
-        RECIPE_NUMBER: 1
+        RECIPE_NUMBER: 2
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
         DATA_FILE_PATH: data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
         RECIPE_FILE_PATH: data/requestedRecipes
@@ -43,7 +43,7 @@ jobs:
     - name: Run script foodBasics
       env: 
         JSON_FORMAT_PATH: scripts/jsonFormat.json
-        RECIPE_NUMBER: 1
+        RECIPE_NUMBER: 2
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} #should be declared in secrets
         DATA_FILE_PATH: data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv
         RECIPE_FILE_PATH: data/requestedRecipes
