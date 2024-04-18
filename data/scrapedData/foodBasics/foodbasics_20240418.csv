@@ -1,6 +1,5 @@
 Product,Amount,Price
-English Cucumber,1 un,1.50
-2-ply facial tissues,6x126 sheets,3.96
+English Cucumber,1 un,1.5
 "Honey Nut Oats Cereal, Cheerios",430 g,3.33
 Raspberries,170 g,3.98
 "Frozen Straight Cut Fries, Superfries",650 g,2.94
@@ -20,7 +19,7 @@ Bag of Avocados,5 pieces,4.98
 Grape Tomatoes,227 g,2.98
 Hothouse Yellow Pepper,,1.97
 Bacon,375 g,3.99
-Local Nantes Carrots,454 g,2.50
+Local Nantes Carrots,454 g,2.5
 12 Grains Sliced Bread,600 g,2.99
 Arugula,142 g,3.77
 Blueberries,170 g,1.83
@@ -29,15 +28,13 @@ Everything Bagels,6 un - 450 g,2.54
 Reduced Salt Bacon,375 g,3.99
 Ancient Grains and Quinoa Sliced Bread,600 g,2.99
 Red Potatoes,5 lb,3.88
-Washed Local Yellow Fleshed Potatoes,5 lb,3.88
 Thick Sliced Bacon,375 g,3.99
 Medium Size Flour Tortillas,340 g,2.54
-Washed White Potatoes,5 lb,3.88
 Strawberries,454 g,2.98
 Shredded Mozzarella Cheese,320 g,4.44
 Multigrain Sliced Bread,600 g,2.99
 "Bag of apples, Red Prince",1.13 kg,4.98
-Boneless Stewing Beef Cubes,1 pack,10.90
+Boneless Stewing Beef Cubes,1 pack,10.9
 Bavarian rye sliced bread,500 g,2.99
 Maple Flavoured Bacon,375 g,3.99
 Sesame seeds bagels,6 un - 450 g,2.54
@@ -47,7 +44,6 @@ Honey and Oatmeal Sliced Bread,600 g,2.99
 Cream Of Mushroom Condensed Soup,284 mL,0.99
 12 grains bagels,6 un - 450 g,2.54
 "2% Lactose Free Milk, Fine-Filtered",2 L,4.92
-"Chocolate Covered Marshmallow Cookies, Whippet",250 g,2.22
 Double Flax Sliced Bread,600 g,2.99
 "Frozen 5 Minute Shoestring Fries, Superfries",650 g,2.94
 Medium Whole Wheat Tortillas,340 g,2.54
@@ -97,7 +93,7 @@ Spring Mix and Spinach Half & Half Salad Mix,142 g,3.77
 Frozen Cooked Pacific White Shrimp with Tail,"340 g, size 31-40",8.49
 "Frozen Blueberry Flavoured Waffles, Eggo",280 g,3.44
 "Frozen Extra Crispy Crinkle Cut Fries, Superfries",650 g,2.94
-Mango,1 un,1.50
+Mango,1 un,1.5
 Unsweetened Vanilla Flavoured Fortified Almond Bever...,1.89 L,2.99
 "Frozen Boned Wild Pacific Salmon, Market Cuts",227 g,6.99
 Bag of Lemons,2 lb,3.98
@@ -121,7 +117,6 @@ Creamy Peanut Butter,500 g,3.95
 Low Sodium Crackers,200 g,2.22
 Extra Old White Cheddar Cheese,400 g,4.44
 "Buttery Flavoured Popping Corn, Gourmet",492 g,3.99
-"Chocolate Covered Coconut Sticks, Whippet",250 g,2.22
 "Frozen Three Meat Thin Crust Pizza, Casa Di Mama",395 g,4.46
 Original Blend Ground Coffee,930 g,17.97
 "Chocolatey Chip Waffles, Eggo",280 g,3.44
@@ -180,7 +175,7 @@ Roasted Garlic Seasoned Crackers,200 g,2.22
 Light Old Cheddar Cheese,400 g,4.44
 Coconut,1 un,1.48
 "Chocolate Flavoured Fortified Almond Beverage, So Fresh",1.89 L,2.99
-Creamer Potatoes with Garlic and Herb Seasoning,454 g,3.00
+Creamer Potatoes with Garlic and Herb Seasoning,454 g,3.0
 "Banana Bread Soft Cookies, Bear Paws",240 g,2.22
 "Apricot Jam, Pure",500 mL,3.95
 Medium Coloured Cheddar Cheese,280 g,5.98
@@ -193,13 +188,13 @@ Frozen Fettuccine Alfredo,255 g,0.99
 Cheese Flavoured Cracker Sandwiches,180 g,2.22
 Frozen Boned Sole Fillets,800 g,11.99
 Frozen English Style Fish Fillets in Batter,500 g,6.99
-Creamer Potatoes with Herb Seasoning,454 g,3.00
+Creamer Potatoes with Herb Seasoning,454 g,3.0
 Strawberry Spread without Added Sugar,310 mL,3.95
 Local Cauliflower,Sold individually,3.98
 Basil and balsamic wine seasoned crackers,200 g,2.22
 "Hazelnut Milk Chocolate Bar, Dairy Milk",100 g,2.22
 Frozen Lasagna with Meat Sauce,255 g,0.99
-Creamer Potatoes with Garlic and Parsley Seasoning,454 g,3.00
+Creamer Potatoes with Garlic and Parsley Seasoning,454 g,3.0
 "Baked Apple Soft Cookies, Bear Paws",240 g,2.22
 0% Lactose Free Skim Milk,2 L,5.49
 Frozen Lasagna Alfredo,255 g,0.99
@@ -229,7 +224,6 @@ Frankfurters Chicken Sausages,900 g,5.99
 Carbonated Natural Spring Water,10x355 mL,5.99
 Strawberry Flavoured Sparkling Water,12x355 mL - cans,5.99
 Frozen Beer Battered Fish Fillets,500 g,6.99
-Frozen Penne Pollo,255 g,0.99
 Lemon Flavoured Carbonated Natural Spring Water,10x355 mL,5.99
 "Minis Chocolate Covered Salted Caramel Cookies, Viva...",300 g,2.22
 "Minis Oatmeal Chocolate Chip Soft Cookies, Bear Paws",210 g,2.22
@@ -274,10 +268,8 @@ Frozen Buffalo Chicken Chunks,780 g,15.99
 Light Cheddar Cheese Slices,410 g,2.45
 Watermelon Fruit Beverage,1.54 L,3.99
 Shredded Mild Marble Cheddar Cheese,320 g,4.44
-"2 Ply Bathroom Tissue, UltraSoft",8 un,6.98
 Apple Flavoured Sparkling Water,12x355 mL,5.99
 Provolone Cheese Slices,180 g,4.99
-Penne with Bacon and Grilled Chicken Alfredo Sauce,908 g,12.99
 Green Pepper,,1.81
 Mozzarella Cheese Slices,410 g,2.45
 Havarti Cheese Slices,170 g,4.99
@@ -311,17 +303,15 @@ Gluten-Free Chocolate Sandwich Cookies,342 g,6.99
 Fresh Rainbow Trout Fillets,1 per tray,17.81
 Yellow Flesh Russet Potatoes,5 L,3.88
 Frozen Honey Garlic Chicken Wings,780 g,15.99
-3 Pork Rib and 6 Center Cut,,13.20
+3 Pork Rib and 6 Center Cut,,13.2
 Lactose Free Old Cheddar Cheese Block,400 g,4.44
 Reduced Fat Sliced Mozzarella Cheese,180 g,4.99
 Peppered Eye Round Steak,,6.83
-Old Cheddar Cheese,400 g,4.44
 Macaroni Cheese Salad,454 g,2.49
 2% Strawberry Skyr Yogurt,650 g,4.92
 Skinless Chicken Breast,,10.98
 Original Frozen French Toaster Sticks,270 g,3.44
 Red Grapefruit Juice,1.54 L,3.99
-"Penne with Sausage, Tomato and Grilled Peppers Sauce",908 g,12.99
 Packed Local Sweet Corn,4 units per package,3.98
 Oatmeal and Chocolate Chip Cookies,426 g,3.99
 Unsalted Roasted Pistachios,850 g,16.99
@@ -360,7 +350,6 @@ FishBburgers,515 g,6.99
 "Everything Bread, Signature",600 g,2.99
 Marble Cheddar Cheese Slices,240 g,4.99
 Frozen Roasted Garlic and Herb Seasoned Breaded Poll...,500 g,6.99
-"3-Ply White Facial Tissue, Supreme",6 un,3.96
 Old Cheddar Cheese Slices,220 g,4.99
 Medium Cheddar Cheese Slices,240 g,4.99
 Lactose Free Mozzarella Sliced Cheese,220 g,4.99
@@ -371,8 +360,7 @@ Smoked Black Forest Ham,80 g,0.99
 Jumbo Wieners,1.5 kg,11.99
 Multigrain Crackers,180 g,2.22
 Fast Fry Eye of Round Steak Marinated,,20.49
-Nantes Carrots,454 g,2.50
-Extra Lean Ground Chicken,450 g,5.99
+Nantes Carrots,454 g,2.5
 Mini Crackers,6x30 g,2.22
 "Crackers, Toppables",386 g,2.22
 Seasoned Extra Lean Ground Turkey,450 g,5.99
@@ -380,17 +368,14 @@ Seasoned Extra Lean Ground Turkey,450 g,5.99
 "Honey Cereal, Shreddies",440 g,3.33
 "Honey Roasted Cereal, Honey Bunches of Oats",340 g,3.33
 "Almond Flavoured Cereal, Honey Bunches of Oats",340 g,3.33
-"Cheddar Cheese and Jalapeno Flavoured Crackers, Ritz",200 g,2.22
 Original Flavour Crackers,180 g,2.22
 Low Sodium Crackers,180 g,2.22
 Cheddar Cheese Bits Crackers,180 g,2.22
 Cheddar Cheese Crackers,180 g,2.22
 Swiss Cheese Flavoured Crackers,180 g,2.22
-Cheddar Cheese Crackers,180 g,2.22
 Packed Sweet Corn,4 units per package,3.98
 Frozen Ravioli Florentine Meal,241 g,2.94
 Fig and Balsamic Fresh Cheese,150 g,5.99
-Yellow Onions,2 lb,1.98
 Bag of Honey Crisp Apples,3 lb,4.98
 Frozen Chicken Fettuccine Meal,262 g,2.94
 Cream Cheese Filled Croissants,272 g,3.99
@@ -410,7 +395,6 @@ Golden Chocolate Bar,80 g,2.22
 Double Smoke Cheddar Cheese Slices,140 g,5.98
 "Creamy Salted Caramel Milk Chocolate Bar, Dairy Milk",100 g,2.22
 Sliced Cheddar Cheese Aged 1 Year,140 g,5.98
-Red Potatoes,5 lb,3.88
 "Almond Dark Chocolate Bar, Burnt Almond",100 g,2.22
 "Fruit Flavoured Cereal, Fruity Pebbles",311 g,3.33
 "Frozen Wild-Caught Sole Fillets, Naturalia",400 g,7.99
@@ -445,7 +429,6 @@ Hot Genoa Salami,30 g,0.99
 Pineapple Flavoured Sparkling Water,12x355 mL,5.99
 Coconut and Pineapple Flavoured Sparkling Water,12x355 mL,5.99
 "Frozen Cod Fillets, Naturalia",400 g,7.99
-2-Ply Paper Towels,4 un,6.98
 Frozen Seasoned and Breaded Buffalo Chicken Breast C...,790 g,15.99
 1 Year Aged Smoked Gouda Cheese,170 g,5.98
 "Chocolatey Indulgence Milk Chocolate Bar, Dairy Milk",100 g,2.22
@@ -460,7 +443,7 @@ Cherry Flavoured Sparkling Water,12 x 355 mL,5.99
 Genoa Salami,30 g,0.99
 Frozen Quarter Pound Beef Burgers,1.36 kg,12.99
 Colombian Medium Roast K-cup Coffee Pods,30 un,19.99
-Creamer Potatoes with Onion and Chive Seasoning,454 g,3.00
+Creamer Potatoes with Onion and Chive Seasoning,454 g,3.0
 Asparagus,325 g,2.98
 Dark Colombian K-cup Coffee Pods,30 un,19.99
 Milk Chocolate,100 g,2.22
