@@ -1,6 +1,6 @@
 Product,Amount,Price
 Salted Butter,454 g,4.88
-English Cucumber,1 un,1.50
+English Cucumber,1 un,1.5
 Raspberries,170 g,3.98
 "Classic Flavour Chips, Value Pack",235 g,2.88
 Red Seedless Grapes,A bag contains on average 1000 g,8.77
@@ -10,12 +10,12 @@ Avocado,Sold individually,0.88
 Spring Salad Mix,142 g,3.77
 Baby Spinach,142 g,3.77
 Hothouse Red Tomato,,0.87
-Local Mini Cucumbers,397 g,2.50
+Local Mini Cucumbers,397 g,2.5
 Cauliflower,Sold individually,3.98
 Zucchini,,1.08
 Bag of Avocados,5 pieces,4.98
 Grape Tomatoes,227 g,1.98
-Local Nantes Carrots,454 g,2.50
+Local Nantes Carrots,454 g,2.5
 12 Grains Sliced Bread,600 g,2.99
 Arugula,142 g,3.77
 Blueberries,170 g,3.98
@@ -23,10 +23,8 @@ Blueberries,170 g,3.98
 Everything Bagels,6 un - 450 g,2.99
 Ancient Grains and Quinoa Sliced Bread,600 g,2.99
 Red Potatoes,5 lb,3.98
-Washed Local Yellow Fleshed Potatoes,5 lb,3.98
 "2% Milk, PurFiltre",4 L,4.88
 Unsalted Butter,454 g,4.88
-Washed White Potatoes,5 lb,3.98
 Strawberries,454 g,3.98
 Multigrain Sliced Bread,600 g,2.99
 "Bag of apples, Red Prince",1.13 kg,4.98
@@ -87,7 +85,7 @@ Wrapped Broccoli Crown,1 un,1.98
 Spring Mix and Spinach Half & Half Salad Mix,142 g,3.77
 Flaked Albacore White Tuna,170 g,1.88
 "Frozen Blueberry Flavoured Waffles, Eggo",280 g,3.44
-Mango,1 un,1.50
+Mango,1 un,1.5
 Roasted Garlic Hummus,227 g,3.49
 Bag of Lemons,2 lb,3.98
 Traditional Minestrone Soup,796 mL,1.88
@@ -120,7 +118,7 @@ Gouda Cheese,400 g,4.88
 "Shaved Hickory Smoked Chicken Breast, Natural Select...",175 g,4.88
 Frozen Roasted Garlic and Herbs Lightly Breaded Hadd...,500 g,11.99
 "Creamy Parmesan Pasta, Sidekicks",124 g,1.67
-Creamer Potatoes with Garlic and Herb Seasoning,454 g,3.00
+Creamer Potatoes with Garlic and Herb Seasoning,454 g,3.0
 Monterey Jack Cheese,400 g,4.88
 Multrigrain Sliced Bread with Prebiotic,454 g,2.99
 Old-Fashioned Bacon,1 kg,12.99
@@ -129,7 +127,6 @@ Honey and Mustard Flavoured Boneless Pork Loin Fille...,800 g,10.99
 Original Melba Canapé,150 g,1.88
 Parmesan Garlic Flavoured Crackers,200 g,1.88
 Assorted Flavour 4% Balkan Style Yogurt Variety Pack...,12x100 g,4.49
-Russet Potatoes,5 lb,3.98
 Smoked Cheddar Sausages,375 g,6.99
 Smoked and Fully Cooked Cheddar Cheese Sausages,375 g,5.99
 "Garden Herb Toasted Snack Bread, Baguettes",120 g,1.88
@@ -142,7 +139,6 @@ Smoked and Cooked Bratwurst Sausages,375 g,5.99
 Pork Sirloin Kabobs Souvlaki,640 g,11.99
 "Skim Milk, PurFiltre",4 L,4.88
 "Rosemary and Olive Oil Toasted Snack Bread, Baguettes",120 g,1.88
-"Bag of Apples, McIntosh",3 lb,4.98
 Roast Beef Au Jus,375 g,9.99
 Steel Cut Oats,709 g,2.88
 "Smoked Sausages, Oktoberfest",375 g,6.99
@@ -246,11 +242,10 @@ Carnita pork'n pull,1 kg,10.99
 Braised Beef Tortelloni,225 g,2.29
 Tortellini 4 Cheese with Grana Padano Pasta,225 g,2.29
 "Lightly Salted Original Flavour Chips Value Pack, Wavy",235 g,2.88
-Tomatillo,400 g,2.50
+Tomatillo,400 g,2.5
 Peaches and Cream Flavoured Instant Oatmeal,240 g,2.88
 "All Dressed Flavoured Cracker Chips, Veggie Crisps",100 g,1.88
 Italian Sausage with Parmigiano Reggiano Tortelloni,225 g,2.29
-"All In 1 Max™ Dishwasher Detergent Tabs, Powerball",35 un,5.99
 Bulgogi Blaze Flavoured Chip,190 g,2.88
 "Crisp and Buttery Crackers, Breton",173 g,1.88
 "Cream and Onion Flavoured Chips, Wavy",165 g,2.88
@@ -268,8 +263,7 @@ Prosciutto and Parmigiano Reggiano Tortelloni,225 g,2.29
 3 Tortellini Pasta Colours with 4 Cheese and Grana P...,225 g,2.29
 Original Flavour Wheat Crackers,180 g,1.88
 Chicken Wings,,11.44
-Nantes Carrots,454 g,2.50
-Packed Local Sweet Corn,4 units per package,3.98
+Nantes Carrots,454 g,2.5
 "White Cheddar Flavoured Potato Snack, Poppables",130 g,2.88
 Boneless Skinless Chicken Thighs,,8.59
 "Ready To Serve Texas Style Bbq Beef Soup, Chunky",515 mL,1.88
@@ -289,7 +283,6 @@ Cheese and Spinach Ravioli with Grana Padano,225 g,2.29
 "Bag of Avocados, Hass",6 pieces,4.98
 Pork Belly,,5.29
 Shredded Natural Chicken with BBQ Seasoning,250 g,7.99
-Red Potatoes,5 lb,3.98
 Orange Juice with Some Pulp,1.54 L,3.88
 "Coconut Macaroons with Chocolate Drizzle, Value Pack",420 g,5.99
 "Everything Bread, Signature",600 g,2.99
@@ -307,16 +300,12 @@ Smoky Flavoured Nacho Twisted Corn Chip,232 g,2.88
 "Honey BBQ Flavoured Potato Snacks, Poppables",130 g,2.88
 "Old Fashioned Bar-B-Q Flavoured Chips, Value Pack",235 g,2.88
 100% Whole Grain Smooth Multigrain Bread,600 g,2.99
-Jalapeno Hot Peppers,250 g,2.50
 Boneless Chicken Thighs,,19.26
 Lightly Sweetened Apple and Cinnamon Instant Oatmeal,232 g,2.88
-3 Pork Rib and 6 Center Cut,,13.20
-"Cool Cotton Scented Laundry Softener, Ultra",3.29 L,14.99
-Lean Ground Beef,,12.40
+3 Pork Rib and 6 Center Cut,,13.2
+Lean Ground Beef,,12.4
 Hot & Honey Pepperoni,375 g,6.88
 Texas BBQ Flavoured Chicken Wings,615 g,6.88
-"April Fresh Softener, Ultra",3.29 L,14.99
-"2 Ply Bathroom Tissue, UltraSoft",8 un,6.99
 Monterey Jack Cheese Slices,220 g,3.88
 Bavarian Salami Sticks,300 g,6.88
 Original Hawaiian Sweet Rolls,340 g,3.99
@@ -328,7 +317,6 @@ Yellow Flesh Russet Potatoes,5 L,3.98
 1.5% Creamy Duo Yogurt,16x100 g,5.99
 Fries and Gravy Flavoured Chips,220 g,2.88
 2% Strawberry Skyr Yogurt,650 g,4.99
-Jalapeno Hot Peppers,250 g,2.50
 Bag of Honey Crisp Apples,3 lb,4.98
 Mini Banana and Chocolate Chip Muffins,336 g,3.99
 Frozen Basa Fillet,400 g,3.49
@@ -337,7 +325,6 @@ Blueberry Muffin Flavoured Breakfast Bread,454 g,3.88
 Fiery Lime Flavoured Rolled Tortilla Chips,280 g,2.88
 "Ready to Serve Chicken and Corn Soup, Chunky",515 mL,1.88
 Cucumber Flavoured Chips,165 g,2.88
-"Ready to Serve Chicken Noodle Soup, Chunky",515 mL,1.88
 Chocolate and Lemon Flavoured Marble Cakes,600 g,5.99
 "Four Cheese Flavoured Bagels, Signature",375 g,2.99
 Medium Cheddar Cheese Slices,240 g,3.88
@@ -348,7 +335,6 @@ Maple and Brown Sugar Flavoured Lightly Sweetened In...,344 g,2.88
 Orange Juice without Pulp,1.54 L,3.88
 Cholesterol Free Corn Oil,2.84 L,7.88
 Classic Chicken Noodle Soup,515 mL,1.88
-"Original Liquid Laundry Detergent, Aroma Boost",107 loads - 4.55 L,14.99
 Frozen Crispy Breaded Pollock Fillets,350 g,3.99
 Spicy Dill Pickle Flavoured Chips,220 g,2.88
 "3.25% Homogenized Milk, UltraPur",1.5 L,4.88
@@ -366,7 +352,6 @@ Strawberry and Peach Fruit Beverage,1.54 L,3.88
 White Cheddar Flavoured Chips,220 g,2.88
 Sliced Beef Short Ribs,,8.85
 "Blueberry Bagels, Signature",375 g,2.99
-Cheddar and Jalapeno Flavoured Sausage,300 g,6.88
 "2% Milk, UltraPur",1.5 L,4.88
 Bag of Halos Clementines,2 lb,3.98
 "Roast Chicken Flavoured Chips, Value Pack",235 g,2.88
