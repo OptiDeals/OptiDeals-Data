@@ -20,7 +20,7 @@ jobs:
           # Update pip
           # python3 -m pip install --upgrade pip
           # Install other dependencies from requirements.txt
-          pip3 install -r scripts/requirements.txt
+          # pip3 install -r scripts/requirements.txt
           
       - name: Run Python Script
         run: |
