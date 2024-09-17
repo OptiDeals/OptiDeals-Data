@@ -13,8 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT }}              
-
+          token: ${{ secrets.PAT }}       
+          
+      - name: Install GIT
+        run: |
+          apt-get install git -y
+          
       - name: Install dependencies
         run: |
           # Update pip
