@@ -1,11 +1,10 @@
-#cleanData.py
 import pandas as pd
 import os
 
-print("Starting to remove duplications and unwanted words")
+print("Starting to remove duplications, unwanted words, and empty rows")
 def clean_csv_file(csv_file, unwanted_words_file):
     # Check if the file exists
-    print("Starting script to remove duplicates and unwanted words.")
+    print("Starting script to remove duplicates, unwanted words, and empty rows.")
     if not os.path.isfile(csv_file):
         print(f"The file {csv_file} does not exist.")
         return
@@ -40,6 +39,9 @@ def clean_csv_file(csv_file, unwanted_words_file):
     for word in unwanted_words:
         df = df[~df.apply(lambda row: row.astype(str).str.lower().str.contains(word).any(), axis=1)]
 
+    # Remove rows with empty items
+    df.dropna(inplace=True)
+
     try:
         # Write the DataFrame back to the CSV file
         df.to_csv(csv_file, index=False)
@@ -47,7 +49,7 @@ def clean_csv_file(csv_file, unwanted_words_file):
         print(f"An error occurred while writing to the file {csv_file}: {e}")
         return
 
-    print(f"Duplicates and rows with unwanted words have been successfully removed from {csv_file}.")
+    print(f"Duplicates, rows with unwanted words, and empty rows have been successfully removed from {csv_file}.")
 
 clean_csv_file(os.getenv('CSV_FILE_PATH'), os.getenv('UNWANTED_WORDS_FILE_PATH'))
 print("Script Finished!")
