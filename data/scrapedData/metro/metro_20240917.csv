@@ -6,7 +6,7 @@ Prosciutto,,2.99
 Butternut Squash,,3.69
 Baby Spinach,142 g,2.99
 Extra Old White Cheddar Cheese,400 g,4.88
-"Thick Sliced White Bread, Classico",675 g,3.00
+"Thick Sliced White Bread, Classico",675 g,3.0
 Raspberries,170 g,3.99
 "Hydrating Sport Drink with Coconut Water, Meta Moon",500 mL,1.99
 "Frozen Popcorn Chicken, Prime",560 g,9.99
@@ -17,47 +17,14 @@ Black currant,170 g,4.99
 Reduced Fat Light Mayonnaise Type Dressing,750 mL,5.99
 Vegan Dressing and Sandwich Spread,710 mL,5.99
 Mini Cucumbers,908 g,2.49
-Ready To Use No Salt Added Beef Broth,900 mL,2.50
-Prairie Beef Wet Dog Food,,2.50
+Ready To Use No Salt Added Beef Broth,900 mL,2.5
 Whole Natural Almonds,1 kg,9.99
 Frozen Crinkle Cut French Fries,800 g,1.99
 Thaï Tom Yum Noodle,280 g,5.99
 "Cereal Family Size, Corn Pops",515 g,5.99
-Free Run Chicken Wet Dog Food,,2.50
 "Dark Chocolate Granola Clusters, Morning Crisp",400 g,3.99
 "Extra Mature Cheddar Aged 12 Months, Tickler",1 piece,4.91
 0% Plain Lactose Free Yogurt,750 g,6.49
-"Free of Dyes and Perfumes Softener, Free & Gentle",2.63 L,9.99
-"Fully Loaded Nachos Flavoured Tortilla Chips, Late N...",210 g,3.33
-Seedless Green Grapes,A bag contains on average 1000 g,5.38
-Prosciutto,,2.99
-"Boneless Skinless Chicken Thighs, Value Pack",10 to 12 per tray,12.96
-"Lean Ground Beef, Value Pack",A tray contains on average 1200 g,11.75
-Butternut Squash,,3.69
-Baby Spinach,142 g,2.99
-Extra Old White Cheddar Cheese,400 g,4.88
-"Thick Sliced White Bread, Classico",675 g,3.00
-Raspberries,170 g,3.99
-"Hydrating Sport Drink with Coconut Water, Meta Moon",500 mL,1.99
-"Frozen Popcorn Chicken, Prime",560 g,9.99
-Organic Peach,,1.43
-Organic Nectarine,Sold individually,1.21
-Black currant,170 g,4.99
-"Creamy Jalapeño Popper Falvoured Tortilla Chips, Lat...",210 g,3.33
-Reduced Fat Light Mayonnaise Type Dressing,750 mL,5.99
-Vegan Dressing and Sandwich Spread,710 mL,5.99
-Mini Cucumbers,908 g,2.49
-Ready To Use No Salt Added Beef Broth,900 mL,2.50
-Prairie Beef Wet Dog Food,,2.50
-Whole Natural Almonds,1 kg,9.99
-Frozen Crinkle Cut French Fries,800 g,1.99
-Thaï Tom Yum Noodle,280 g,5.99
-"Cereal Family Size, Corn Pops",515 g,5.99
-Free Run Chicken Wet Dog Food,,2.50
-"Dark Chocolate Granola Clusters, Morning Crisp",400 g,3.99
-"Extra Mature Cheddar Aged 12 Months, Tickler",1 piece,4.91
-0% Plain Lactose Free Yogurt,750 g,6.49
-"Free of Dyes and Perfumes Softener, Free & Gentle",2.63 L,9.99
 "Fully Loaded Nachos Flavoured Tortilla Chips, Late N...",210 g,3.33
 Fresh Fruit Carousel,1.4 kg,11.99
 Fresh Vegetable Carousel with Dip,955 g,11.99
@@ -65,15 +32,13 @@ Cored Golden Pineapple,600 g,4.99
 Kale Slaw Salad,340 g,2.99
 "9% Blueberry Flavoured Yogurt, Extra Creamy",650 g,5.49
 "Fully Cooked Luncheon Meat, Spam",340 g,3.99
-"Original Scented Liquid Dish Soap, EZ-Squeeze",443 mL,2.99
 Herb and Garlic Cream Cheese,227 g,3.99
 Seedless Watermelon Quarter,,3.55
-30% Less Sodium Beef Broth with Red Wine,900 mL,2.50
+30% Less Sodium Beef Broth with Red Wine,900 mL,2.5
 "Original Cream Cheese, Whipped",227 g,3.99
 "Authentic Italian Calabrese Sliced Bread, baked in s...",500 g,3.49
 0% Lactose-Free Plain Greek Yogurt,750 g,5.49
 Parfait Berry Yogurt with Almonds,328 g,3.49
-Orange Juice with Added Calcium and Vitamin D,2.63 L,7.49
 Frozen Cooked Honey and Garlic Pork Back Ribs,680 g,11.99
 Dark Chocolate Covered Almonds,300 g,5.49
 Sesame seeds bagels,6 un - 450 g,3.79
@@ -81,7 +46,6 @@ Frozen Cooked Pork Back Ribs,680 g,11.99
 Original Bagels,6 un - 450 g,3.79
 Reduced Sodium Hickory Smoked Bacon,375 g,4.77
 Original Cream Cheese Brick,250 g,3.99
-"Fully Loaded Nachos Flavoured Tortilla Chips, Late N...",210 g,3.33
 12 grains bagels,6 un - 450 g,3.79
 "Strawberry Jam, Pure",500 mL,6.29
 Everything Bagels,6 un - 450 g,3.79
@@ -89,56 +53,25 @@ Frozen Lasagna Alfredo,255 g,2.49
 Bbq Sauce Flavoured Pulled Pork,400 g,8.99
 Wild Blueberry Spread without Added Sugar,310 mL,5.99
 "Maple French Toast Flavoured Bagels, Signature",375 g,3.79
-Fresh Fruit Carousel,1.4 kg,11.99
-Fresh Vegetable Carousel with Dip,955 g,11.99
-Cored Golden Pineapple,600 g,4.99
-Kale Slaw Salad,340 g,2.99
-"9% Blueberry Flavoured Yogurt, Extra Creamy",650 g,5.49
-"Fully Cooked Luncheon Meat, Spam",340 g,3.99
-"Original Scented Liquid Dish Soap, EZ-Squeeze",443 mL,2.99
-Herb and Garlic Cream Cheese,227 g,3.99
-Seedless Watermelon Quarter,,3.55
-30% Less Sodium Beef Broth with Red Wine,900 mL,2.50
-"Original Cream Cheese, Whipped",227 g,3.99
-"Authentic Italian Calabrese Sliced Bread, baked in s...",500 g,3.49
-0% Lactose-Free Plain Greek Yogurt,750 g,5.49
-Parfait Berry Yogurt with Almonds,328 g,3.49
-Orange Juice with Added Calcium and Vitamin D,2.63 L,7.49
-Frozen Cooked Honey and Garlic Pork Back Ribs,680 g,11.99
-Dark Chocolate Covered Almonds,300 g,5.49
-Sesame seeds bagels,6 un - 450 g,3.79
-Frozen Cooked Pork Back Ribs,680 g,11.99
-Original Bagels,6 un - 450 g,3.79
-Reduced Sodium Hickory Smoked Bacon,375 g,4.77
-Original Cream Cheese Brick,250 g,3.99
-"Fully Loaded Nachos Flavoured Tortilla Chips, Late N...",210 g,3.33
-12 grains bagels,6 un - 450 g,3.79
-"Strawberry Jam, Pure",500 mL,6.29
-Everything Bagels,6 un - 450 g,3.79
-Frozen Lasagna Alfredo,255 g,2.49
-Bbq Sauce Flavoured Pulled Pork,400 g,8.99
-Wild Blueberry Spread without Added Sugar,310 mL,5.99
-"Maple French Toast Flavoured Bagels, Signature",375 g,3.79
-"Rainbow Bars, Rice Krispies Squares","8 bars, 176 g",3.50
-Pineapple Banana Orange Juice,960 mL,2.50
+"Rainbow Bars, Rice Krispies Squares","8 bars, 176 g",3.5
+Pineapple Banana Orange Juice,960 mL,2.5
 Spring Salad Mix,142 g,2.99
-"Strawberry Cereal Bars, Nutri-Grain",8x295 g,3.50
-Apple Juice,960 mL,2.50
+"Strawberry Cereal Bars, Nutri-Grain",8x295 g,3.5
+Apple Juice,960 mL,2.5
 Organic Coconut and Cashew Butter Granola,312 g,3.99
-"Watermelon Apple Fruit Juice, Hydrafruit",960 mL,2.50
+"Watermelon Apple Fruit Juice, Hydrafruit",960 mL,2.5
 "Frozen Pepperoni Thin Crust Pizza, Casa Di Mama",395 g,6.99
 "Frozen Deluxe Thin Crust Pizza, Casa Di Mama",410 g,6.99
 "Frozen Three Meat Thin Crust Pizza, Casa Di Mama",395 g,6.99
 Frozen Chicken Spring Rolls,300 g,4.99
 Cheese Spread,450 g,3.99
 Blueberries,312 g,6.99
-Parfait Berry Yogurt with Almonds,328 g,3.49
 Unsweetened Original Flavour Almond Beverage,1.89 L,2.99
 "Medium Ground Beef, Value Pack",A tray contains on average 1200 g,11.48
-"Strawberry Flavoured Fruit Crisps, Special K","10 bars,125 g",3.50
+"Strawberry Flavoured Fruit Crisps, Special K","10 bars,125 g",3.5
 Grape Beverage,2 L,2.39
 Green Cabbage,,3.45
-"10"" Flour Tortillas",6 un,3.00
+"10"" Flour Tortillas",6 un,3.0
 Red Cluster Tomatoes,Approximately 5 tomatoes per cluster,4.25
 "Frozen Pepperoni Thin Crust Pizza, Ristorante",320 g,6.99
 "Fully Cooked Crumbled Bacon, Ready Crisp",85 g,4.77
@@ -146,167 +79,57 @@ Fruit Punch Drink,2 L,2.39
 Lemon-Lime Lemonade,2 L,2.39
 Arugula,142 g,2.99
 "Fully Cooked Bacon Slices, Ready Crisp",65 g,4.77
-Acorn Squash,,2.00
+Acorn Squash,,2.0
 Italian Tomato,,0.44
 "Frozen Vegetable Thin Crust Pizza, Ristorante",385 g,6.99
-"Rainbow Bars, Rice Krispies Squares","8 bars, 176 g",3.50
-Pineapple Banana Orange Juice,960 mL,2.50
-Spring Salad Mix,142 g,2.99
-"Strawberry Cereal Bars, Nutri-Grain",8x295 g,3.50
-Apple Juice,960 mL,2.50
-Organic Coconut and Cashew Butter Granola,312 g,3.99
-"Watermelon Apple Fruit Juice, Hydrafruit",960 mL,2.50
-"Frozen Pepperoni Thin Crust Pizza, Casa Di Mama",395 g,6.99
-"Frozen Deluxe Thin Crust Pizza, Casa Di Mama",410 g,6.99
-"Frozen Three Meat Thin Crust Pizza, Casa Di Mama",395 g,6.99
-Frozen Chicken Spring Rolls,300 g,4.99
-Cheese Spread,450 g,3.99
-Blueberries,312 g,6.99
-Parfait Berry Yogurt with Almonds,328 g,3.49
-Unsweetened Original Flavour Almond Beverage,1.89 L,2.99
-"Medium Ground Beef, Value Pack",A tray contains on average 1200 g,11.48
-"Strawberry Flavoured Fruit Crisps, Special K","10 bars,125 g",3.50
-Grape Beverage,2 L,2.39
-Green Cabbage,,3.45
-"10"" Flour Tortillas",6 un,3.00
-Red Cluster Tomatoes,Approximately 5 tomatoes per cluster,4.25
-"Frozen Pepperoni Thin Crust Pizza, Ristorante",320 g,6.99
-"Fully Cooked Crumbled Bacon, Ready Crisp",85 g,4.77
-Fruit Punch Drink,2 L,2.39
-Lemon-Lime Lemonade,2 L,2.39
-Arugula,142 g,2.99
-"Fully Cooked Bacon Slices, Ready Crisp",65 g,4.77
-Acorn Squash,,2.00
-Italian Tomato,,0.44
-"Frozen Vegetable Thin Crust Pizza, Ristorante",385 g,6.99
-"2-Ply Paper Towel, Select-a-Size",4 un,9.99
 "Frozen Deluxe Rising Crust Pizza, Giuseppe",785 g,6.99
-"2 Ply Bathroom Tissue, UltraSoft",12 un,9.99
 0% Vanilla Flavoured Greek Yogurt,750 g,5.49
 Orange Flavoured Soft Drink,6x710 mL,3.77
-"2-Ply Bathroom Tissue, Ultra Strong",12 un,9.99
-Organic Coconut and Cashew Butter Granola,312 g,3.99
 "Large Storage Bags, Slider",15 un,3.75
 Garden Style Vegetable Pea Soup,796 mL,3.29
-Free Run Chicken Wet Dog Food,,2.50
 Raspberry Spread without Added Sugar,310 mL,5.99
 "3.25% Lactose Free Milk, Fine-Filtered",2 L,5.99
 Tomato Ketchup,1 L,4.99
-"Fully Loaded Nachos Flavoured Tortilla Chips, Late N...",210 g,3.33
 0% Lactose Free Vanilla Greek Yogurt,750 g,6.49
 Frozen Bacon Perogies,31-35 un - 1 kg,1.99
 Wrapped Broccoli Crown,1 un,2.49
 "Peach Flavoured Sour Gummies, Fuzzy Peach",154 g,2.99
 11% Plain Yogurt,750 g,5.49
-Mini Cucumbers,908 g,2.49
 Hazelnut Spread with Cocoa,725 g,5.99
 "Frozen Rising Crust Hawaiian Pizza, Giuseppe",730 g,6.99
 Frozen Cheddar Cheese Flavoured Perogies,31-35 un - 1 kg,1.99
-"White Sourdough Bread, Artesano",540 g,3.00
+"White Sourdough Bread, Artesano",540 g,3.0
 "Blueberry Spread, Double Fruit",390 mL,5.99
 "Frozen Canadian Thin Crust Pizza, Giuseppe",501 g,6.99
-Ready To Use 30% Less Sodium Beef Broth,900 mL,2.50
-Ready To Use Beef Broth,900 mL,2.50
-"Pork Tenderloins, Value Pack",2 tenderloins per tray,6.59
-House Blend Coffee Compostable Pods,12 un,8.49
-"2-Ply Paper Towel, Select-a-Size",4 un,9.99
-"Frozen Deluxe Rising Crust Pizza, Giuseppe",785 g,6.99
-"2 Ply Bathroom Tissue, UltraSoft",12 un,9.99
-0% Vanilla Flavoured Greek Yogurt,750 g,5.49
-Orange Flavoured Soft Drink,6x710 mL,3.77
-"2-Ply Bathroom Tissue, Ultra Strong",12 un,9.99
-Organic Coconut and Cashew Butter Granola,312 g,3.99
-"Large Storage Bags, Slider",15 un,3.75
-Garden Style Vegetable Pea Soup,796 mL,3.29
-Free Run Chicken Wet Dog Food,,2.50
-Raspberry Spread without Added Sugar,310 mL,5.99
-"3.25% Lactose Free Milk, Fine-Filtered",2 L,5.99
-Tomato Ketchup,1 L,4.99
-"Fully Loaded Nachos Flavoured Tortilla Chips, Late N...",210 g,3.33
-0% Lactose Free Vanilla Greek Yogurt,750 g,6.49
-Frozen Bacon Perogies,31-35 un - 1 kg,1.99
-Wrapped Broccoli Crown,1 un,2.49
-"Peach Flavoured Sour Gummies, Fuzzy Peach",154 g,2.99
-11% Plain Yogurt,750 g,5.49
-Mini Cucumbers,908 g,2.49
-Hazelnut Spread with Cocoa,725 g,5.99
-"Frozen Rising Crust Hawaiian Pizza, Giuseppe",730 g,6.99
-Frozen Cheddar Cheese Flavoured Perogies,31-35 un - 1 kg,1.99
-"White Sourdough Bread, Artesano",540 g,3.00
-"Blueberry Spread, Double Fruit",390 mL,5.99
-"Frozen Canadian Thin Crust Pizza, Giuseppe",501 g,6.99
-Ready To Use 30% Less Sodium Beef Broth,900 mL,2.50
-Ready To Use Beef Broth,900 mL,2.50
+Ready To Use 30% Less Sodium Beef Broth,900 mL,2.5
+Ready To Use Beef Broth,900 mL,2.5
 "Pork Tenderloins, Value Pack",2 tenderloins per tray,6.59
 House Blend Coffee Compostable Pods,12 un,8.49
 "Brownie Soft Cookies, Bear Paws",240 g,2.75
 Bag of Lemons,2 lb,4.99
-Lemon Flavoured Iced Tea,960 mL,2.50
-Rosemary & Olive Oil Seasoned Crackers,200 g,3.50
+Lemon Flavoured Iced Tea,960 mL,2.5
+Rosemary & Olive Oil Seasoned Crackers,200 g,3.5
 Monterey Jack Cheese,400 g,4.88
-Dark Chocolate Sandwich Cookies,261 g,3.50
-"Chocolate Cookies, The Original",270 g,3.50
-"Vanilla Flavoured Sandwich Cookies, Golden",261 g,3.50
-Cinnamon Buns Flavoured Chocolate Sandwich Cookies,261 g,3.50
+Dark Chocolate Sandwich Cookies,261 g,3.5
+"Chocolate Cookies, The Original",270 g,3.5
+"Vanilla Flavoured Sandwich Cookies, Golden",261 g,3.5
+Cinnamon Buns Flavoured Chocolate Sandwich Cookies,261 g,3.5
 Gouda Cheese,400 g,4.88
-"Vanilla Flavoured Sandwich Cookies, Golden",270 g,3.50
-"Chocolate Chip Cookies, Chewy",271 g,3.50
-Double Stuffed Chocolate Sandwich Cookies,261 g,3.50
-"Garden Veggie Flavoured Cracker, Triscuit",185 g,3.50
-Original Cookies,303 g,3.50
-Triple Chocolate Chunks Cookies,251 g,3.50
-"Classic Wheat Cracker, Triscuit",185 g,3.50
-Carbonated Natural Spring Water,10x355 mL,6.50
-Sea Salt Original Seasoned Crackers,200 g,3.50
-Birthday Cake Flavoured  Sandwich Cookies,261 g,3.50
+"Vanilla Flavoured Sandwich Cookies, Golden",270 g,3.5
+"Chocolate Chip Cookies, Chewy",271 g,3.5
+Double Stuffed Chocolate Sandwich Cookies,261 g,3.5
+"Garden Veggie Flavoured Cracker, Triscuit",185 g,3.5
+Original Cookies,303 g,3.5
+Triple Chocolate Chunks Cookies,251 g,3.5
+"Classic Wheat Cracker, Triscuit",185 g,3.5
+Carbonated Natural Spring Water,10x355 mL,6.5
+Sea Salt Original Seasoned Crackers,200 g,3.5
+Birthday Cake Flavoured  Sandwich Cookies,261 g,3.5
 "Cheese Flavoured Tortilla Chips, Cool Ranch",235 g,3.33
-Mint Cream Flavoured Sandwich Cookies,261 g,3.50
+Mint Cream Flavoured Sandwich Cookies,261 g,3.5
 "Cheese Flavoured Tortilla Chips, Zesty Cheese",235 g,3.33
-Caramilk Chocolate Chip Cookies,253 g,3.50
-Family Shortcake Cookies,300 g,3.50
-"Puffs Snacks, Cheese",260 g,3.33
-"Crunchy Puffs Snacks, Cheese",285 g,3.33
-"Chocolate Chip Soft Cookies, Bear Paws",240 g,2.75
-"Cinnamon Flavoured Cereal Value Pack, Cinnamon Toast...",591 g,5.99
-"Cheese Flavoured Tortilla Chips, Sweet Chili Heat!",235 g,3.33
-"Brownie Soft Cookies, Bear Paws",240 g,2.75
-Bag of Lemons,2 lb,4.99
-Lemon Flavoured Iced Tea,960 mL,2.50
-Rosemary & Olive Oil Seasoned Crackers,200 g,3.50
-Monterey Jack Cheese,400 g,4.88
-Dark Chocolate Sandwich Cookies,261 g,3.50
-"Chocolate Cookies, The Original",270 g,3.50
-"Vanilla Flavoured Sandwich Cookies, Golden",261 g,3.50
-Cinnamon Buns Flavoured Chocolate Sandwich Cookies,261 g,3.50
-Gouda Cheese,400 g,4.88
-"Vanilla Flavoured Sandwich Cookies, Golden",270 g,3.50
-"Chocolate Chip Cookies, Chewy",271 g,3.50
-Double Stuffed Chocolate Sandwich Cookies,261 g,3.50
-"Garden Veggie Flavoured Cracker, Triscuit",185 g,3.50
-Original Cookies,303 g,3.50
-Triple Chocolate Chunks Cookies,251 g,3.50
-"Classic Wheat Cracker, Triscuit",185 g,3.50
-Carbonated Natural Spring Water,10x355 mL,6.50
-Sea Salt Original Seasoned Crackers,200 g,3.50
-Birthday Cake Flavoured  Sandwich Cookies,261 g,3.50
-"Cheese Flavoured Tortilla Chips, Cool Ranch",235 g,3.33
-Mint Cream Flavoured Sandwich Cookies,261 g,3.50
-"Cheese Flavoured Tortilla Chips, Zesty Cheese",235 g,3.33
-Caramilk Chocolate Chip Cookies,253 g,3.50
-Family Shortcake Cookies,300 g,3.50
-"Puffs Snacks, Cheese",260 g,3.33
-"Crunchy Puffs Snacks, Cheese",285 g,3.33
-"Chocolate Chip Soft Cookies, Bear Paws",240 g,2.75
-"Cinnamon Flavoured Cereal Value Pack, Cinnamon Toast...",591 g,5.99
-"Cheese Flavoured Tortilla Chips, Sweet Chili Heat!",235 g,3.33
-Carbonated Natural Spring Water,10x355 mL,6.50
-Sea Salt Original Seasoned Crackers,200 g,3.50
-Birthday Cake Flavoured  Sandwich Cookies,261 g,3.50
-"Cheese Flavoured Tortilla Chips, Cool Ranch",235 g,3.33
-Mint Cream Flavoured Sandwich Cookies,261 g,3.50
-"Cheese Flavoured Tortilla Chips, Zesty Cheese",235 g,3.33
-Caramilk Chocolate Chip Cookies,253 g,3.50
-Family Shortcake Cookies,300 g,3.50
+Caramilk Chocolate Chip Cookies,253 g,3.5
+Family Shortcake Cookies,300 g,3.5
 "Puffs Snacks, Cheese",260 g,3.33
 "Crunchy Puffs Snacks, Cheese",285 g,3.33
 "Chocolate Chip Soft Cookies, Bear Paws",240 g,2.75
@@ -314,101 +137,38 @@ Family Shortcake Cookies,300 g,3.50
 "Cheese Flavoured Tortilla Chips, Sweet Chili Heat!",235 g,3.33
 Flamin Hot Sweet Chili Heat Crunchy Puffs Snack,268 g,3.33
 "Cheese Flavoured Tortilla Chips, Nacho",235 g,3.33
-Original Chocolate Chip Cookies,258 g,3.50
-"White Loaf Bread, Rustico",550 g,3.00
+Original Chocolate Chip Cookies,258 g,3.5
+"White Loaf Bread, Rustico",550 g,3.0
 Old Cheddar Cheese,400 g,4.88
-Strawberry 7 Grain Soft Baked Cereal Bars,175 g,3.50
+Strawberry 7 Grain Soft Baked Cereal Bars,175 g,3.5
 "Crunchy Puffs Snacks, Cheddar Jalapeño",285 g,3.33
-Old Cheddar Cheese,400 g,4.88
 Pizza Mozzarella Cheese,400 g,4.88
 Small Pumpkin for Pies,1 un,2.99
-"Classic Oatmeal Cookies with Chocolate Chips, Dad's",305 g,3.50
+"Classic Oatmeal Cookies with Chocolate Chips, Dad's",305 g,3.5
 Organic Medjool Dates,340 g,8.99
-Frosted Strawberry Flavoured Pastries,384 g,3.50
-Peach Nectar,960 mL,2.50
-18% Table Cream,473 mL,4.25
-5% Crémette,1 L,4.25
-Shaved Beef Au Jus,400 g,8.99
-Carbonated Natural Spring Water,10x355 mL,6.50
-Sea Salt Original Seasoned Crackers,200 g,3.50
-Birthday Cake Flavoured  Sandwich Cookies,261 g,3.50
-"Cheese Flavoured Tortilla Chips, Cool Ranch",235 g,3.33
-Mint Cream Flavoured Sandwich Cookies,261 g,3.50
-"Cheese Flavoured Tortilla Chips, Zesty Cheese",235 g,3.33
-Caramilk Chocolate Chip Cookies,253 g,3.50
-Family Shortcake Cookies,300 g,3.50
-"Puffs Snacks, Cheese",260 g,3.33
-"Crunchy Puffs Snacks, Cheese",285 g,3.33
-"Chocolate Chip Soft Cookies, Bear Paws",240 g,2.75
-"Cinnamon Flavoured Cereal Value Pack, Cinnamon Toast...",591 g,5.99
-"Cheese Flavoured Tortilla Chips, Sweet Chili Heat!",235 g,3.33
-Flamin Hot Sweet Chili Heat Crunchy Puffs Snack,268 g,3.33
-"Cheese Flavoured Tortilla Chips, Nacho",235 g,3.33
-Original Chocolate Chip Cookies,258 g,3.50
-"White Loaf Bread, Rustico",550 g,3.00
-Old Cheddar Cheese,400 g,4.88
-Strawberry 7 Grain Soft Baked Cereal Bars,175 g,3.50
-"Crunchy Puffs Snacks, Cheddar Jalapeño",285 g,3.33
-Old Cheddar Cheese,400 g,4.88
-Pizza Mozzarella Cheese,400 g,4.88
-Small Pumpkin for Pies,1 un,2.99
-"Classic Oatmeal Cookies with Chocolate Chips, Dad's",305 g,3.50
-Organic Medjool Dates,340 g,8.99
-Frosted Strawberry Flavoured Pastries,384 g,3.50
-Peach Nectar,960 mL,2.50
+Frosted Strawberry Flavoured Pastries,384 g,3.5
+Peach Nectar,960 mL,2.5
 18% Table Cream,473 mL,4.25
 5% Crémette,1 L,4.25
 Shaved Beef Au Jus,400 g,8.99
 2% Coconut Flavoured Greek Yogurt,750 g,6.49
-Bone-in Chicken Breasts,4 per tray,16.50
+Bone-in Chicken Breasts,4 per tray,16.5
 "Family Size Cereal, Frosted Flakes",580 g,5.99
-Swedish style light rye sliced bread,454 g,3.00
 Frozen Pacific Wild Salmon Fillets,680 g,10.99
-"Thick Sliced Whole Wheat Bread, Italian Style",675 g,3.00
+"Thick Sliced Whole Wheat Bread, Italian Style",675 g,3.0
 "Orange Marmalade, Pure",500 mL,6.29
-"Hamburger Buns, Toscana",8 un,3.00
+"Hamburger Buns, Toscana",8 un,3.0
 "Family Size Cereal, Corn Flakes",600 g,5.99
-"Thick Sliced White Bread with Sesame Seeds, Italian ...",675 g,3.00
+"Thick Sliced White Bread with Sesame Seeds, Italian ...",675 g,3.0
 Old-Fashioned Smoked Ham,675 g,7.99
 Black Forest Smoked Ham,675 g,7.99
-Vegetable Wheat Crackers,180 g,3.50
-Original Flavour Crackers,180 g,3.50
-Multigrain Crackers,180 g,3.50
-"Crackers, Sociables",180 g,3.50
-Original Flavour Wheat Crackers,180 g,3.50
-Pineapple Nectar,960 mL,2.50
-Ready To Use Vegetable Broth,900 mL,2.50
-"Frozen Canadian Thin Crust Pizza, Giuseppe",501 g,6.99
-Tomato Condensed Soup,284 mL,1.79
-Habanero Flavoured Monterey Jack Cheese,400 g,7.49
-Light Medium Cheddar Cheese Slices,240 g,5.99
-Monterey Jack Cheese Slices With Jalapeño Peppers,220 g,5.99
-Gouda Cheese,400 g,7.49
-Sliced Marble Cheddar,240 g,5.99
-"2% Lactose Free Milk, Fine-Filtered",2 L,5.99
-"Family Size, Cereals, Vector",550 g,5.99
-"Oven-Toasted Rice Grain Cereal Value Pack, Rice Kris...",560 g,5.99
-Soft Drink,6x710 mL,3.77
-2% Coconut Flavoured Greek Yogurt,750 g,6.49
-Bone-in Chicken Breasts,4 per tray,16.50
-"Family Size Cereal, Frosted Flakes",580 g,5.99
-Swedish style light rye sliced bread,454 g,3.00
-Frozen Pacific Wild Salmon Fillets,680 g,10.99
-"Thick Sliced Whole Wheat Bread, Italian Style",675 g,3.00
-"Orange Marmalade, Pure",500 mL,6.29
-"Hamburger Buns, Toscana",8 un,3.00
-"Family Size Cereal, Corn Flakes",600 g,5.99
-"Thick Sliced White Bread with Sesame Seeds, Italian ...",675 g,3.00
-Old-Fashioned Smoked Ham,675 g,7.99
-Black Forest Smoked Ham,675 g,7.99
-Vegetable Wheat Crackers,180 g,3.50
-Original Flavour Crackers,180 g,3.50
-Multigrain Crackers,180 g,3.50
-"Crackers, Sociables",180 g,3.50
-Original Flavour Wheat Crackers,180 g,3.50
-Pineapple Nectar,960 mL,2.50
-Ready To Use Vegetable Broth,900 mL,2.50
-"Frozen Canadian Thin Crust Pizza, Giuseppe",501 g,6.99
+Vegetable Wheat Crackers,180 g,3.5
+Original Flavour Crackers,180 g,3.5
+Multigrain Crackers,180 g,3.5
+"Crackers, Sociables",180 g,3.5
+Original Flavour Wheat Crackers,180 g,3.5
+Pineapple Nectar,960 mL,2.5
+Ready To Use Vegetable Broth,900 mL,2.5
 Tomato Condensed Soup,284 mL,1.79
 Habanero Flavoured Monterey Jack Cheese,400 g,7.49
 Light Medium Cheddar Cheese Slices,240 g,5.99
@@ -430,200 +190,53 @@ Reduced Fat Light Mayonnaise Type Dressing with Oliv...,890 mL,5.99
 "Original Cheddar Processed Cheese Product Slices, Si...",410 g,3.99
 Original Roast Coffee Compostable Pods,12 un,8.49
 "Medium Roast Ground Coffee, Traditional",930 g,16.99
-0% Vanilla Flavoured Greek Yogurt,750 g,5.49
-Orange Flavoured Soft Drink,6x710 mL,3.77
 "Processed Cheese Product Slices, Velveeta",410 g,3.99
-"Large Storage Bags, Slider",15 un,3.75
-Garden Style Vegetable Pea Soup,796 mL,3.29
 "Boneless Pork Sirloin Chop, Value Pack",6 per tray,4.72
-Raspberry Spread without Added Sugar,310 mL,5.99
 Tomato Ketchup,750 mL,4.99
-"3.25% Lactose Free Milk, Fine-Filtered",2 L,5.99
 "Oats Cereal Value Pack, Cheerios",570 g,5.99
 Lactose-Free Swiss Cheese Slices,210 g,3.99
 Reduced Fat Light Mayonnaise Type Dressing,890 mL,5.99
 Spinach,284 g,3.49
 "Triple Berry Flavoured Oat Cereal Value Pack, Oatmea...",570 g,5.99
-0% Lactose Free Vanilla Greek Yogurt,750 g,6.49
 "Oat Cereal with Almonds Value Pack, Oatmeal Crisp",628 g,5.99
 Mayonnaise,750 mL,5.99
 "Chocolate Cereal, Value Pack",525 g,5.99
-"2-Ply Paper Towel, Select-a-Size",4 un,9.99
-Light Cream Cheese Spread Brick,250 g,3.99
-Mayonnaise,890 mL,5.99
-Shredded Double Cheddar Cheese Blend,320 g,4.88
-"Shredded Four Cheese Blend, Italiano",320 g,4.88
-Frozen Spinach and Feta Perogies,907 g,1.99
-Radicchio,,2.04
-Reduced Fat Light Mayonnaise Type Dressing with Oliv...,890 mL,5.99
-"Bran and Raisin Cereal Value Pack, Two Scoops Raisin...",625 g,5.99
-"Original Cheddar Processed Cheese Product Slices, Si...",410 g,3.99
-Original Roast Coffee Compostable Pods,12 un,8.49
-"Medium Roast Ground Coffee, Traditional",930 g,16.99
-0% Vanilla Flavoured Greek Yogurt,750 g,5.49
-Orange Flavoured Soft Drink,6x710 mL,3.77
-"Processed Cheese Product Slices, Velveeta",410 g,3.99
-"Large Storage Bags, Slider",15 un,3.75
-Garden Style Vegetable Pea Soup,796 mL,3.29
-"Boneless Pork Sirloin Chop, Value Pack",6 per tray,4.72
-Raspberry Spread without Added Sugar,310 mL,5.99
-Tomato Ketchup,750 mL,4.99
-"3.25% Lactose Free Milk, Fine-Filtered",2 L,5.99
-"Oats Cereal Value Pack, Cheerios",570 g,5.99
-Lactose-Free Swiss Cheese Slices,210 g,3.99
-Reduced Fat Light Mayonnaise Type Dressing,890 mL,5.99
-Spinach,284 g,3.49
-"Triple Berry Flavoured Oat Cereal Value Pack, Oatmea...",570 g,5.99
-0% Lactose Free Vanilla Greek Yogurt,750 g,6.49
-"Oat Cereal with Almonds Value Pack, Oatmeal Crisp",628 g,5.99
-Mayonnaise,750 mL,5.99
-"Chocolate Cereal, Value Pack",525 g,5.99
-"2-Ply Paper Towel, Select-a-Size",4 un,9.99
 "Vanilla Flavoured 5% Extra Creamy Greek Yogurt, Greek",650 g,6.49
 "Family Size Flakes Cereal, All-Bran",560 g,5.99
 Cinnamon Dolce Latte Liquid Coffee Enhancer,828 mL,7.49
 Frozen Beef Macaroni,215 g,1.99
-Juicy White Peach Flavoured Chewable Vitamin C,120 un - chewable tablets,5.69
-"Blueberry Spread, Double Fruit",390 mL,5.99
-"Cereal Family Size, Corn Pops",515 g,5.99
 Medium Cheddar Cheese Slices,230 g,3.99
 Cinnamon raisin bagels,6 un - 450 g,3.79
-"Extra Mature Cheddar Aged 12 Months, Tickler",1 piece,4.91
-0% Plain Lactose Free Yogurt,750 g,6.49
 Marble Cheddar Cheese Slices,240 g,5.99
 "Family Size Original Cereal, Mini Wheats",650 g,5.99
 "Organic Ancient Grain Flakes and Granola Medley, Her...",400 g,3.99
-Organic Coconut and Cashew Butter Granola,312 g,3.99
 Marble Cheddar Cheese,400 g,7.49
 Extra Old White Cheddar Cheese,400 g,7.49
 Old White Cheddar Cheese,400 g,7.49
 "Brown Sugar Flavoured Cereal, Value Pack, Mini-Wheats!",650 g,5.99
-Frozen Bacon Perogies,31-35 un - 1 kg,1.99
-11% Plain Yogurt,750 g,5.49
 Frozen Pepperoni Bacon Stuffed Crust Pizza,840 g,6.99
-Hazelnut Spread with Cocoa,725 g,5.99
 Mild Genoa Salami,,2.99
 Philly-Style Shaved Steak,400 g,8.99
 Original Cheddar Processed Cheese Product Thick Slic...,410 g,3.99
 Angus Beef Inside Round Steak,1 per tray,5.75
 "Original Flavoured Crunchy Cereal, Fibre 1",587 g,5.99
-Frozen Spinach and Feta Perogies,907 g,1.99
-"Pork Loin Rib Chop, Value Pack",,3.31
-"Vanilla Flavoured 5% Extra Creamy Greek Yogurt, Greek",650 g,6.49
-"Family Size Flakes Cereal, All-Bran",560 g,5.99
-Cinnamon Dolce Latte Liquid Coffee Enhancer,828 mL,7.49
-Frozen Beef Macaroni,215 g,1.99
-Juicy White Peach Flavoured Chewable Vitamin C,120 un - chewable tablets,5.69
-"Blueberry Spread, Double Fruit",390 mL,5.99
-"Cereal Family Size, Corn Pops",515 g,5.99
-Medium Cheddar Cheese Slices,230 g,3.99
-Cinnamon raisin bagels,6 un - 450 g,3.79
-"Extra Mature Cheddar Aged 12 Months, Tickler",1 piece,4.91
-0% Plain Lactose Free Yogurt,750 g,6.49
-Marble Cheddar Cheese Slices,240 g,5.99
-"Family Size Original Cereal, Mini Wheats",650 g,5.99
-"Organic Ancient Grain Flakes and Granola Medley, Her...",400 g,3.99
-Organic Coconut and Cashew Butter Granola,312 g,3.99
-Marble Cheddar Cheese,400 g,7.49
-Extra Old White Cheddar Cheese,400 g,7.49
-Old White Cheddar Cheese,400 g,7.49
-"Brown Sugar Flavoured Cereal, Value Pack, Mini-Wheats!",650 g,5.99
-Frozen Bacon Perogies,31-35 un - 1 kg,1.99
-11% Plain Yogurt,750 g,5.49
-Frozen Pepperoni Bacon Stuffed Crust Pizza,840 g,6.99
-Hazelnut Spread with Cocoa,725 g,5.99
-Mild Genoa Salami,,2.99
-Philly-Style Shaved Steak,400 g,8.99
-Original Cheddar Processed Cheese Product Thick Slic...,410 g,3.99
-Angus Beef Inside Round Steak,1 per tray,5.75
-"Original Flavoured Crunchy Cereal, Fibre 1",587 g,5.99
-Frozen Spinach and Feta Perogies,907 g,1.99
 "Pork Loin Rib Chop, Value Pack",,3.31
 Frozen Fettuccine Alfredo,215 g,1.99
-"Boneless Pork Sirloin Chop, Value Pack",6 per tray,4.72
 "Frozen 4 Meat Thin Crust Pizza, Giuseppe",494 g,6.99
 "Frozen 5 Cheese Thin Crust Pizza, Giuseppe",439 g,6.99
-Tomato Ketchup,1 L,4.99
 Olive Oil Mayonnaise,750 mL,5.99
 Frozen 3-Cheese Perogies,907 g,1.99
 Paula Red Apples,3 lb,4.99
-Wrapped Broccoli Crown,1 un,2.49
 Soft Drink,6x710 mL,3.77
-"Peach Flavoured Sour Gummies, Fuzzy Peach",154 g,2.99
 Pea Soup with Smoked Ham,796 mL,3.29
-Ready To Use No Salt Added Chicken Broth,900 mL,2.50
-Reduced Salt Ready-to-Use Chicken Broth,900 mL,2.50
+Ready To Use No Salt Added Chicken Broth,900 mL,2.5
+Reduced Salt Ready-to-Use Chicken Broth,900 mL,2.5
 "Shredded Three Cheese Blend, Tex Mex",320 g,4.88
 "Cinnamon Flavoured Rice Cereal, Chex",345 g,3.99
 Sliced Mozzarella Cheese,240 g,5.99
 Frozen Spaghetti Bolognese,215 g,1.99
 Swiss Cheese Slices,220 g,5.99
 Medium Cheddar Cheese,400 g,4.88
-Mayonnaise,890 mL,5.99
-Shredded Double Cheddar Cheese Blend,320 g,4.88
-"Shredded Four Cheese Blend, Italiano",320 g,4.88
-"Bran and Raisin Cereal Value Pack, Two Scoops Raisin...",625 g,5.99
 Whole White Mushrooms,227 g,2.99
 "Soft Drink, DrPepper",6x710 mL,3.77
-"Original Cheddar Processed Cheese Product Slices, Si...",410 g,3.99
-"Processed Cheese Product Slices, Velveeta",410 g,3.99
-Tomato Ketchup,750 mL,4.99
-"Oats Cereal Value Pack, Cheerios",570 g,5.99
-Frozen Fettuccine Alfredo,215 g,1.99
-"Boneless Pork Sirloin Chop, Value Pack",6 per tray,4.72
-"Frozen 4 Meat Thin Crust Pizza, Giuseppe",494 g,6.99
-"Frozen 5 Cheese Thin Crust Pizza, Giuseppe",439 g,6.99
-Tomato Ketchup,1 L,4.99
-Olive Oil Mayonnaise,750 mL,5.99
-Frozen 3-Cheese Perogies,907 g,1.99
-Paula Red Apples,3 lb,4.99
-Wrapped Broccoli Crown,1 un,2.49
-Soft Drink,6x710 mL,3.77
-"Peach Flavoured Sour Gummies, Fuzzy Peach",154 g,2.99
-Pea Soup with Smoked Ham,796 mL,3.29
-Ready To Use No Salt Added Chicken Broth,900 mL,2.50
-Reduced Salt Ready-to-Use Chicken Broth,900 mL,2.50
-"Shredded Three Cheese Blend, Tex Mex",320 g,4.88
-"Cinnamon Flavoured Rice Cereal, Chex",345 g,3.99
-Sliced Mozzarella Cheese,240 g,5.99
-Frozen Spaghetti Bolognese,215 g,1.99
-Swiss Cheese Slices,220 g,5.99
-Medium Cheddar Cheese,400 g,4.88
-Mayonnaise,890 mL,5.99
-Shredded Double Cheddar Cheese Blend,320 g,4.88
-"Shredded Four Cheese Blend, Italiano",320 g,4.88
-"Bran and Raisin Cereal Value Pack, Two Scoops Raisin...",625 g,5.99
-Whole White Mushrooms,227 g,2.99
-"Soft Drink, DrPepper",6x710 mL,3.77
-"Original Cheddar Processed Cheese Product Slices, Si...",410 g,3.99
-"Processed Cheese Product Slices, Velveeta",410 g,3.99
-Tomato Ketchup,750 mL,4.99
-"Oats Cereal Value Pack, Cheerios",570 g,5.99
-"Cinnamon Flavoured Rice Cereal, Chex",345 g,3.99
-Sliced Mozzarella Cheese,240 g,5.99
-Frozen Spaghetti Bolognese,215 g,1.99
-Habanero Flavoured Monterey Jack Cheese,400 g,7.49
-Swiss Cheese Slices,220 g,5.99
-Light Medium Cheddar Cheese Slices,240 g,5.99
-Monterey Jack Cheese Slices With Jalapeño Peppers,220 g,5.99
-Gouda Cheese,400 g,7.49
-Ready To Use Vegetable Broth,900 mL,2.50
 Natural Spring Water,24x500 mL,4.99
-Medium Cheddar Cheese,400 g,4.88
-Sliced Marble Cheddar,240 g,5.99
-Whole White Mushrooms,227 g,2.99
-"Soft Drink, DrPepper",6x710 mL,3.77
-"Cinnamon Flavoured Rice Cereal, Chex",345 g,3.99
-Sliced Mozzarella Cheese,240 g,5.99
-Frozen Spaghetti Bolognese,215 g,1.99
-Habanero Flavoured Monterey Jack Cheese,400 g,7.49
-Swiss Cheese Slices,220 g,5.99
-Light Medium Cheddar Cheese Slices,240 g,5.99
-Monterey Jack Cheese Slices With Jalapeño Peppers,220 g,5.99
-Gouda Cheese,400 g,7.49
-Ready To Use Vegetable Broth,900 mL,2.50
-Natural Spring Water,24x500 mL,4.99
-Medium Cheddar Cheese,400 g,4.88
-Sliced Marble Cheddar,240 g,5.99
-Whole White Mushrooms,227 g,2.99
-"Soft Drink, DrPepper",6x710 mL,3.77
