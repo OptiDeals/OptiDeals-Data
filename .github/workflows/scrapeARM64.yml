@@ -17,6 +17,7 @@ jobs:
                                
       - name: Install dependencies
         run: |
+           sudo apt-get upgrade libc6
           # Update pip
            python3 -m pip install --upgrade pip
           # Install other dependencies from requirements.txt
