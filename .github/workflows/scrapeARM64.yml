@@ -13,12 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT }}
-                               
-      - name: Install GLIBC 2.28
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libc6
+          token: ${{ secrets.PAT }}              
 
       - name: Install dependencies
         run: |
