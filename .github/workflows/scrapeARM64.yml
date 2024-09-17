@@ -15,9 +15,8 @@ jobs:
         with:
           token: ${{ secrets.PAT }}       
           
-      - name: Install GIT
-        run: |
-          sudo apt-get install git -y
+      - name: Setup Git
+      uses: actions/setup-git@v1
           
       - name: Install dependencies
         run: |
