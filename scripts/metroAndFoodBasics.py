@@ -95,6 +95,6 @@ def get_unwanted_words(unwanted_words_file):
 # Call the function with the URLs, store names, and unwanted words
 unwanted_words = get_unwanted_words(os.getenv('UNWANTED_WORDS_FILE_PATH'))
 print("Scraping Food Basics...")
-scrape_products(foodBasicsURL, "foodbasics", unwanted_words)
+scrape_products(foodBasicsURL, "testfoodbasics", unwanted_words)
 print("Scraping Metro...")
-scrape_products(metroURL, "metro", unwanted_words)
+scrape_products(metroURL, "testmetro", unwanted_words)
