@@ -66,7 +66,7 @@ def scrape_products(base_url, store_name, unwanted_words):
         time.sleep(5)  # Add a delay of 5 seconds
 
     # Connect to the SQLite database
-    conn = sqlite3.connect('f"data/optideals.db"')
+    conn = sqlite3.connect('data/optideals.db')
     cursor = conn.cursor()
 
     # Insert the data into the database
