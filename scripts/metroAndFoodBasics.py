@@ -1,7 +1,7 @@
 # Import necessary libraries
 import requests
 from bs4 import BeautifulSoup
-import csv
+import sqlite3
 import time
 from datetime import datetime
 
@@ -11,8 +11,9 @@ today = datetime.today().strftime('%Y%m%d')
 # Define the URLs for the Food Basics and Metro websites
 foodBasicsURL = "https://www.foodbasics.ca/search?sortOrder=relevance&filter=%3Arelevance%3Adeal%3AFLYER_DEAL"
 metroURL = "https://www.metro.ca/en/online-grocery/flyer-page-{page}?sortOrder=relevance&filter=%3Arelevance%3Adeal%3AFlyer+%26+Deals"
-# Define a function to scrape product data from a given URL and store it in two files
-def scrape_products(base_url, csv_file_path, store_name):
+
+# Define a function to scrape product data from a given URL and store it in a database
+def scrape_products(base_url, store_name):
     product_data = []  # Initialize an empty list to store product data
 
     # Get the first page to find the last page number
@@ -29,7 +30,7 @@ def scrape_products(base_url, csv_file_path, store_name):
     # Loop through each page until the last page
     for page_number in range(1, last_page_number + 1):
         url = base_url.format(page=page_number)  # Format the URL with the current page number
-        response = requests.get(url,)  # Send a GET request to the URL
+        response = requests.get(url)  # Send a GET request to the URL
         if response.status_code == 403:
             print("Error 403: Forbidden")  # Print an error message if the status code is 403
         elif response.status_code != 200:
@@ -58,36 +59,26 @@ def scrape_products(base_url, csv_file_path, store_name):
 
         time.sleep(5)  # Add a delay of 5 seconds
 
-    # Write the data to a CSV file
-    with open(csv_file_path, mode='w', newline='', encoding='utf-8') as file:
-        fieldnames = ["Product", "Amount", "Price"]  # Define the fieldnames for the CSV file
-        writer = csv.DictWriter(file, fieldnames=fieldnames)  # Create a CSV writer
+    # Connect to the SQLite database (or create it if it doesn't exist)
+    conn = sqlite3.connect('f"data/optideals.db')
+    cursor = conn.cursor()
 
-        # Write header
-        writer.writeheader()
 
-        # Write data
-        for product in product_data:
-            writer.writerow(product)  # Write each product to the CSV file
+    # Insert the data into the database
+    for product in product_data:
+        cursor.execute('''
+            INSERT INTO grocery_ingredients (grocery_ingredient, grocery_amount, grocery_cost, grocery_store, date_scraped)
+            VALUES (?, ?, ?, ?, ?)
+        ''', (product["Product"], product["Amount"], product["Price"], store_name, today))
 
-    print(f"Data has been successfully written to {csv_file_path}.")  # Print a success message
+    # Commit the changes and close the connection
+    conn.commit()
+    conn.close()
 
-    # Write the data to a CSV file with just the store name
-    with open(f"{store_name}.csv", mode='w', newline='', encoding='utf-8') as file:
-        fieldnames = ["Product", "Amount", "Price"]  # Define the fieldnames for the CSV file
-        writer = csv.DictWriter(file, fieldnames=fieldnames)  # Create a CSV writer
+    print(f"Data has been successfully added to the database.")  # Print a success message
 
-        # Write header
-        writer.writeheader()
-
-        # Write data
-        for product in product_data:
-            writer.writerow(product)  # Write each product to the CSV file
-
-    print(f"Data has been successfully written to {store_name}.csv.")  # Print a success message
-
-# Call the function with the URLs and output files
+# Call the function with the URLs and store names
 print("Scraping Food Basics...")
-scrape_products(foodBasicsURL, f"data/scrapedData/foodBasics/foodbasics_{today}.csv", "foodBasics")
+scrape_products(foodBasicsURL, "foodbasics")
 print("Scraping Metro...")
-scrape_products(metroURL, f"data/scrapedData/metro/metro_{today}.csv", "metro")
+scrape_products(metroURL, "metro")
