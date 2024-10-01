@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import sqlite3
 import time
 from datetime import datetime
+import os
 
 # Get today's date in the format YYYYMMDD
 today = datetime.today().strftime('%Y%m%d')
@@ -13,7 +14,7 @@ foodBasicsURL = "https://www.foodbasics.ca/search?sortOrder=relevance&filter=%3A
 metroURL = "https://www.metro.ca/en/online-grocery/flyer-page-{page}?sortOrder=relevance&filter=%3Arelevance%3Adeal%3AFlyer+%26+Deals"
 
 # Define a function to scrape product data from a given URL and store it in a database
-def scrape_products(base_url, store_name):
+def scrape_products(base_url, store_name, unwanted_words):
     product_data = []  # Initialize an empty list to store product data
 
     # Get the first page to find the last page number
@@ -55,14 +56,18 @@ def scrape_products(base_url, store_name):
 
             price_div = product_tile.find('div', {'data-main-price': True})  # Find the price element
             price = price_div['data-main-price'] if price_div else None  # Get the price, if the element exists
+
+            # Check for unwanted words
+            if any(word in product_name.lower() for word in unwanted_words):
+                continue
+
             product_data.append({"Product": product_name, "Amount": product_amount, "Price": price})  # Append the product data to the list
 
         time.sleep(5)  # Add a delay of 5 seconds
 
-    # Connect to the SQLite database (or create it if it doesn't exist)
-    conn = sqlite3.connect('f"data/optideals.db')
+    # Connect to the SQLite database
+    conn = sqlite3.connect('f"data/optideals.db"')
     cursor = conn.cursor()
-
 
     # Insert the data into the database
     for product in product_data:
@@ -77,8 +82,18 @@ def scrape_products(base_url, store_name):
 
     print(f"Data has been successfully added to the database.")  # Print a success message
 
-# Call the function with the URLs and store names
+# Read unwanted words from file
+def get_unwanted_words(unwanted_words_file):
+    try:
+        with open(unwanted_words_file, 'r') as f:
+            return [line.strip().lower() for line in f]
+    except Exception as e:
+        print(f"An error occurred while reading the file {unwanted_words_file}: {e}")
+        return []
+
+# Call the function with the URLs, store names, and unwanted words
+unwanted_words = get_unwanted_words(os.getenv('UNWANTED_WORDS_FILE_PATH'))
 print("Scraping Food Basics...")
-scrape_products(foodBasicsURL, "foodbasics")
+scrape_products(foodBasicsURL, "Food Basics", unwanted_words)
 print("Scraping Metro...")
-scrape_products(metroURL, "metro")
+scrape_products(metroURL, "Metro", unwanted_words)
