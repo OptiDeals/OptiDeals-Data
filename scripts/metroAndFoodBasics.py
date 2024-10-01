@@ -75,7 +75,7 @@ def scrape_products(base_url, store_name, unwanted_words):
             INSERT INTO grocery_ingredients (grocery_ingredient, grocery_amount, grocery_cost, grocery_store, date_scraped)
             VALUES (?, ?, ?, ?, ?)
         ''', (product["Product"], product["Amount"], product["Price"], store_name, today))
-        print(product["Product"]
+        print(product["Product"])
 
     # Commit the changes and close the connection
     conn.commit()
