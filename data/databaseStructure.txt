@@ -1,0 +1,25 @@
+CREATE TABLE recipes (
+    id INTEGER PRIMARY KEY,
+    recipe_title TEXT,
+    recipe_description TEXT,
+    recipe_serving_size INTEGER,
+    recipe_total_cost REAL
+);
+
+CREATE TABLE recipe_ingredients (
+    id INTEGER PRIMARY KEY,
+    recipe_id INTEGER,
+    recipe_ingredient TEXT,
+    recipe_ingredient_amount TEXT,
+    recipe_ingredient_cost REAL,
+    FOREIGN KEY (recipe_id) REFERENCES recipes (id)
+);
+
+CREATE TABLE grocery_ingredients (
+    id INTEGER PRIMARY KEY,
+    grocery_ingredient TEXT,
+    grocery_amount TEXT,
+    grocery_cost REAL,
+    grocery_store TEXT,
+    date_scraped DATE
+);
