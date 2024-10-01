@@ -1,0 +1,57 @@
+name: Clean Data
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['ARM Weekly Python Scraper']
+    types: 
+      - completed
+    branches: 
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+          
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
+          
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Get current date
+        id: date
+        run: |
+          echo "::set-output name=date::$(TZ=America/Toronto date +'%Y%m%d')"
+
+      - name: Process CSV files
+        run: |
+          for CSV_FILE_PATH in data/scrapedData/foodBasics/foodbasics_${{ steps.date.outputs.date }}.csv data/scrapedData/metro/metro_${{ steps.date.outputs.date }}.csv
+          do
+            export CSV_FILE_PATH=${CSV_FILE_PATH}
+            export UNWANTED_WORDS_FILE_PATH=scripts/unwanted_words.txt
+            python scripts/cleanData.py
+          done
+
+      - name: Commit and push if it changed
+        run: |
+          git diff
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/*
+          git commit -m "Cleaning scraped data." -a || echo "No changes to commit"
+          git pull origin main --rebase
+          git push origin main
