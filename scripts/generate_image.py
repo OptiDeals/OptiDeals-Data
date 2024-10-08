@@ -7,7 +7,8 @@ import requests
 import urllib.request
 from selenium.webdriver.chrome.options import Options
 
-food_prompt = "Onion Soup"
+recipe_id = os.getenv('RECIPE_ID')
+food_prompt = os.getenv('PROMPT')
 
 print("Configuring WebDriver options")
 # Configure WebDriver options for headless mode
