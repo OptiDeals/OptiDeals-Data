@@ -29,7 +29,7 @@ jobs:
           PROMPT: "Watermelon Pie"
           RECIPE_ID: "1004"
         run: |
-          xvfb-run -a python3 scripts/generate_image.py
+          python3 scripts/generate_image.py
 
       - name: Commit and push if it changed
         run: |
