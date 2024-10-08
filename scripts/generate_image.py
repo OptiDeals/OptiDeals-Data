@@ -6,6 +6,7 @@ import time
 import requests
 import urllib.request
 from selenium.webdriver.chrome.options import Options
+import os
 
 recipe_id = os.getenv('RECIPE_ID')
 food_prompt = os.getenv('PROMPT')
