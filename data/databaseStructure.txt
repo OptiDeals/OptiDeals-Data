@@ -4,6 +4,7 @@ CREATE TABLE recipes (
     recipe_description TEXT,
     recipe_serving_size INTEGER,
     recipe_total_cost REAL
+    recipe_image BLOB
 );
 
 CREATE TABLE recipe_ingredients (
