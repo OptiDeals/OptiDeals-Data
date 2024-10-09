@@ -10,15 +10,11 @@ import os
 
 def is_server_reachable(url):
     try:
-        response = requests.get(url, timeout=10)
-        if response.status_code == 200:
-            return True
-        else:
-            print(f"Server returned status code {response.status_code}")
-            return False
+        response = requests.get(url)
+        response.raise_for_status()
+        print(f"Server is reachable. Status code: {response.status_code}")
     except requests.exceptions.RequestException as e:
-        print(f"Error reaching the server: {e}")
-        return False
+        print(f"Failed to reach the server: {e}")
 
 # Define the API URL
 web_ui_url = "http://172.30.1.6:9091/"
