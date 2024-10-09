@@ -2,35 +2,33 @@ name: Generate Image Action
 
 on:
   workflow_dispatch:
-
+  
 jobs:
-  generate-image:
+  build:
     runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
-
+          token: ${{ secrets.PAT }}       
+          
+      - name: Setup Git
+        uses: actions/setup-node@v4
+        with:
+          token: ${{ secrets.PAT }} 
+          
       - name: Install dependencies
         run: |
-          apt-get update
-          apt-get install -y unzip xvfb libxi6 libgconf-2-4
-          apt-get install -y google-chrome-stable
+          # Update pip
           python3 -m pip install --upgrade pip
-          pip3 install selenium webdriver_manager
-
+          # Install other dependencies from requirements.txt
+          pip3 install -r scripts/requirements.txt
+          
       - name: Run Python Script
-        env:
-          PROMPT: "Watermelon Pie"
-          RECIPE_ID: "1004"
         run: |
           python3 scripts/generate_image.py
-
+          
       - name: Commit and push if it changed
         run: |
           git diff
