@@ -21,7 +21,7 @@ def is_server_reachable(url):
         return False
 
 # Define the API URL
-web_ui_url = "http://localhost:9091/"
+web_ui_url = "http://172.30.1.6:9091/"
 
 if not is_server_reachable(web_ui_url):
     print("Server is not reachable. Exiting.")
