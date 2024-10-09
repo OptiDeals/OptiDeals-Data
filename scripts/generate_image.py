@@ -15,13 +15,11 @@ def is_server_reachable(url):
         print(f"Server is reachable. Status code: {response.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"Failed to reach the server: {e}")
+        exit(1)
 
 # Define the API URL
 web_ui_url = "http://172.30.1.6:9091/"
-
-if not is_server_reachable(web_ui_url):
-    print("Server is not reachable. Exiting.")
-    exit(1)
+is_server_reachable(web_ui_url)
 
 recipe_id = os.getenv('RECIPE_ID')
 food_prompt = os.getenv('PROMPT')
