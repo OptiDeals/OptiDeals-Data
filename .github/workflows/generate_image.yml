@@ -18,9 +18,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y unzip xvfb libxi6 libgconf-2-4
-          sudo apt-get install -y google-chrome-stable
+          apt-get update
+          apt-get install -y unzip xvfb libxi6 libgconf-2-4
+          apt-get install -y google-chrome-stable
           python3 -m pip install --upgrade pip
           pip3 install selenium webdriver_manager
 
