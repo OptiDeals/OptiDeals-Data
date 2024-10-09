@@ -8,6 +8,25 @@ import urllib.request
 from selenium.webdriver.chrome.options import Options
 import os
 
+def is_server_reachable(url):
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            return True
+        else:
+            print(f"Server returned status code {response.status_code}")
+            return False
+    except requests.exceptions.RequestException as e:
+        print(f"Error reaching the server: {e}")
+        return False
+
+# Define the API URL
+web_ui_url = "http://172.30.1.6:9091/"
+
+if not is_server_reachable(web_ui_url):
+    print("Server is not reachable. Exiting.")
+    exit(1)
+
 recipe_id = os.getenv('RECIPE_ID')
 food_prompt = os.getenv('PROMPT')
 
@@ -26,7 +45,7 @@ driver = webdriver.Chrome(options=chrome_options)
 
 print("Opening the web UI")
 # Open the web UI
-driver.get("http://172.30.1.6:9091/")  # Replace with your actual web UI URL
+driver.get(web_ui_url)
 
 try:
     print("Clicking 'Use Default Settings' to reset the browser")
@@ -60,6 +79,10 @@ finally:
 print("Fetching the latest image from the API")
 # Define the API URL to fetch the latest image
 api_url = "http://172.30.1.6:9091/api/v1/images/"
+
+if not is_server_reachable(api_url):
+    print("API server is not reachable. Exiting.")
+    exit(1)
 
 # Send a GET request to the API to fetch image details
 response = requests.get(api_url, params={"limit": 1, "offset": 0})
