@@ -10,16 +10,20 @@ import os
 
 def is_server_reachable(url):
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=10)
         response.raise_for_status()
-        print(f"Server is reachable. Status code: {response.status_code}")
+        return True
     except requests.exceptions.RequestException as e:
-        print(f"Failed to reach the server: {e}")
-        exit(1)
+        print(f"Error reaching the server: {e}")
+        return False
 
 # Define the API URL
 web_ui_url = "http://172.30.1.6:9091/"
-is_server_reachable(web_ui_url)
+
+# Check if the web UI server is reachable
+if not is_server_reachable(web_ui_url):
+    print("Server is not reachable. Exiting.")
+    exit(1)
 
 recipe_id = os.getenv('RECIPE_ID')
 food_prompt = os.getenv('PROMPT')
@@ -74,6 +78,7 @@ print("Fetching the latest image from the API")
 # Define the API URL to fetch the latest image
 api_url = "http://172.30.1.6:9091/api/v1/images/"
 
+# Check if the API server is reachable
 if not is_server_reachable(api_url):
     print("API server is not reachable. Exiting.")
     exit(1)
@@ -95,4 +100,3 @@ if response.status_code == 200:
 else:
     print("Failed to fetch image details.")
     print("Status code:", response.status_code)
-    print("Response:", response.text)
