@@ -68,18 +68,18 @@ def scrape_products(base_url, store_name, unwanted_words):
     # Connect to the SQLite database
     conn = sqlite3.connect('data/optideals.db')
     cursor = conn.cursor()
-
+    count = 0
     # Insert the data into the database
     for product in product_data:
         cursor.execute('''
             INSERT INTO grocery_ingredients (grocery_ingredient, grocery_amount, grocery_cost, grocery_store, date_scraped)
             VALUES (?, ?, ?, ?, ?)
         ''', (product["Product"], product["Amount"], product["Price"], store_name, today))
-        count = count + 1
+        count +=1
 
     # Commit the changes and close the connection
     print(count + "items scraped from " + storeName + " and placed in database.")
-    count=0
+    
     conn.commit()
     conn.close()
 
