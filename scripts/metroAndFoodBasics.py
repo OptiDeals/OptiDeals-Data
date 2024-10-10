@@ -78,8 +78,7 @@ def scrape_products(base_url, store_name, unwanted_words):
         count +=1
 
     # Commit the changes and close the connection
-    print(count + "items scraped from " + storeName + " and placed in database.")
-    
+    print(f"{count} items scraped from {store_name} and placed in database.")
     conn.commit()
     conn.close()
 
