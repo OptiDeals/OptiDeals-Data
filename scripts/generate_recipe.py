@@ -6,6 +6,7 @@ import time
 import random
 from transformers import LlamaTokenizer
 import datetime
+import os
 
 # Variables
 db_path = 'data/optideals.db'
