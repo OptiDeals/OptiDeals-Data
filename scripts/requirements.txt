@@ -3,9 +3,4 @@ beautifulsoup4
 pandas
 selenium
 webdriver_manager
-subprocess
-json
-time
-random
 transformers
-datetime
