@@ -3,8 +3,10 @@ CREATE TABLE recipes (
     recipe_title TEXT,
     recipe_description TEXT,
     recipe_serving_size INTEGER,
-    recipe_total_cost REAL
-    recipe_image BLOB
+    recipe_total_cost REAL,
+    recipe_image BLOB,
+    recipe_date DATE
+    recipe_store TEXT
 );
 
 CREATE TABLE recipe_ingredients (
