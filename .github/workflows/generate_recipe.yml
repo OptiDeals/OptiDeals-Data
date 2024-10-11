@@ -26,9 +26,14 @@ jobs:
     strategy:
       matrix:
         store: [metro, foodbasics]
-        attempt: [1, 2]
+        attempt: [1, 2, 3, 4, 5]
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+
       - name: Set environment variable
         run: echo "STORE_NAME=${{ matrix.store }}" >> $GITHUB_ENV
 
@@ -41,22 +46,19 @@ jobs:
     needs: generate_recipe
 
     steps:
-      - name: Checkout code
+      - name: Checkout code again
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }}
 
       - name: Setup Git
         run: |
-        
-          # Update pip
-          python3 -m pip install --upgrade pip
-          
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
       - name: Commit and push all changes
         run: |
           git diff
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git add data/*
           git commit -m "Pushing all generated data" -a || echo "No changes to commit"
           git pull origin main --rebase
