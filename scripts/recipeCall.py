@@ -8,8 +8,8 @@ from transformers import LlamaTokenizer
 import datetime
 
 # Variables
-db_path = './optideals.db'
-store_name = 'metro'
+db_path = 'data/optideals.db'
+store_name = os.getenv('STORE_NAME')
 max_retries = 10
 api_url = "http://172.30.1.6:11434/api/generate"
 model_name = "llama3.1:8b"
@@ -70,8 +70,8 @@ def generate_recipes(db_path, store_name, prompt_template, max_retries):
         prompt = prompt_template.replace("Ingredients list:", f"Ingredients list:\n{ingredients_text}")
 
         # Tokenize and count tokens using LLaMA tokenizer
-        tokens = tokenizer(prompt)["input_ids"]
-        print(f"Token size of the prompt: {len(tokens)}")
+        # tokens = tokenizer(prompt)["input_ids"]
+        # print(f"Token size of the prompt: {len(tokens)}")
 
         print("Writing prompt to a temporary file...")
         with open(prompt_file, "w") as f:
