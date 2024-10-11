@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apt-get update
+          
           # Update pip
           python3 -m pip install --upgrade pip
           # Install other dependencies from requirements.txt
