@@ -4,13 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  generate_recipe:
+  setup:
     runs-on: self-hosted
-
-    strategy:
-      matrix:
-        store: [metro, foodbasics]
-        attempt: [1, 2, 3, 4, 5]
 
     steps:
       - name: Checkout code
@@ -18,25 +13,29 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
 
-      - name: Setup Git
-        uses: actions/setup-node@v4
-        with:
-          token: ${{ secrets.PAT }}
-
-      - name: Install dependencies
+      - name: Setup Git and Install dependencies
         run: |
           # Update pip
           python3 -m pip install --upgrade pip
           # Install other dependencies from requirements.txt
           pip3 install -r scripts/requirements.txt
 
+  generate_recipe:
+    runs-on: self-hosted
+    needs: setup
+    strategy:
+      matrix:
+        store: [metro, foodbasics]
+        attempt: [1, 2, 3, 4, 5]
+
+    steps:
       - name: Set environment variable
         run: echo "STORE_NAME=${{ matrix.store }}" >> $GITHUB_ENV
 
       - name: Run Python Script
         run: |
           python3 scripts/generate_recipe.py
-          
+
   commit_changes:
     runs-on: self-hosted
     needs: generate_recipe
@@ -48,10 +47,11 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Setup Git
-        uses: actions/setup-node@v4
-        with:
-          token: ${{ secrets.PAT }}
-
+        run: |
+          apt-get update
+          # Update pip
+          python3 -m pip install --upgrade pip
+          
       - name: Commit and push all changes
         run: |
           git diff
