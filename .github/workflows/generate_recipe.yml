@@ -26,7 +26,7 @@ jobs:
           do
             for i in {1..5}
             do
-              echo "STORE_NAME=$store" >> $GITHUB_ENV
+              export STORE_NAME=$store
               python3 scripts/generate_recipe.py
             done
           done
