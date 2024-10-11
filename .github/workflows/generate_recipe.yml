@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         store: [metro, foodbasics]
-        attempt: [1, 2, 3, 4, 5]
+        attempt: [1, 2]
 
     steps:
       - name: Set environment variable
