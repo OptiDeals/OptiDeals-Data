@@ -58,14 +58,24 @@ def fetch_latest_ingredients_from_db(db_path, store_name):
     print("Ingredients fetched from the database.")
     return [(ingredient, amount, f"${cost}") for ingredient, amount, cost in ingredients]
 
+def validate_recipe(recipe):
+    required_fields = ['title', 'description', 'serving_size', 'ingredients']
+    for field in required_fields:
+        if not recipe.get(field):
+            return False
+    for ingredient in recipe['ingredients']:
+        if not all([ingredient.get('name'), ingredient.get('quantity'), ingredient.get('cost')]):
+            return False
+    return True
+
 def generate_recipes(db_path, store_name, prompt_template, max_retries):
     tokenizer = LlamaTokenizer.from_pretrained("hf-internal-testing/llama-tokenizer")
     for attempt in range(max_retries):
         print(f"Attempt {attempt + 1} to generate recipes...")
-        
+
         # Fetch and randomize the ingredients for each attempt
         ingredients_list = fetch_latest_ingredients_from_db(db_path, store_name)
-        
+
         print("Constructing the full prompt with ingredients list...")
         ingredients_text = "\n".join(f"{idx+1}. {name}, {quantity}, {cost}" for idx, (name, quantity, cost) in enumerate(ingredients_list))
         prompt = prompt_template.replace("Ingredients list:", f"Ingredients list:\n{ingredients_text}")
@@ -94,8 +104,12 @@ def generate_recipes(db_path, store_name, prompt_template, max_retries):
                 response_json = full_response_json["response"]
                 print("Parsing the response...")
                 recipes = [json.loads(recipe) for recipe in response_json.split('\n\n') if recipe.strip()]
-                print("Recipes parsed successfully.")
-                return recipes
+                validated_recipes = [recipe for recipe in recipes if validate_recipe(recipe)]
+                if validated_recipes:
+                    print("Recipes parsed successfully.")
+                    return validated_recipes
+                else:
+                    print("No valid recipes found, retrying...")
             except json.JSONDecodeError as e:
                 print(f"Error decoding JSON: {e}")
         else:
