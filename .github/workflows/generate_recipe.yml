@@ -4,8 +4,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  generate_recipe:
     runs-on: self-hosted
+
+    strategy:
+      matrix:
+        store: [metro, foodbasics]
+        count: [1, 2, 3, 4, 5]
 
     steps:
       - name: Checkout code
@@ -20,14 +25,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          
+          apt-get update
           # Update pip
           python3 -m pip install --upgrade pip
           # Install other dependencies from requirements.txt
           pip3 install -r scripts/requirements.txt
 
       - name: Set environment variable
-        run: echo "STORE_NAME=metro" >> $GITHUB_ENV
+        run: echo "STORE_NAME=${{ matrix.store }}" >> $GITHUB_ENV
 
       - name: Run Python Script
         run: |
