@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT }}
-
+      
       - name: Setup Git and Install dependencies
         run: |
           # Update pip
@@ -20,45 +20,22 @@ jobs:
           # Install other dependencies from requirements.txt
           pip3 install -r scripts/requirements.txt
 
-  generate_recipe:
-    runs-on: self-hosted
-    needs: setup
-    strategy:
-      matrix:
-        store: [metro, foodbasics]
-        attempt: [1, 2, 3, 4, 5]
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT }}
-
-      - name: Set environment variable
-        run: echo "STORE_NAME=${{ matrix.store }}" >> $GITHUB_ENV
-
-      - name: Run Python Script
+      - name: Set environment variable and run scripts
         run: |
-          python3 scripts/generate_recipe.py
-
-  commit_changes:
-    runs-on: self-hosted
-    needs: generate_recipe
-
-    steps:
-      - name: Checkout code again
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT }}
-
-      - name: Setup Git
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          for store in metro foodbasics
+          do
+            for i in {1..5}
+            do
+              echo "STORE_NAME=$store" >> $GITHUB_ENV
+              python3 scripts/generate_recipe.py
+            done
+          done
 
       - name: Commit and push all changes
         run: |
           git diff
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add data/*
           git commit -m "Pushing all generated data" -a || echo "No changes to commit"
           git pull origin main --rebase
