@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         store: [metro, foodbasics]
-        count: [1, 2, 3, 4, 5]
+        attempt: [1, 2, 3, 4, 5]
 
     steps:
       - name: Checkout code
@@ -36,13 +36,28 @@ jobs:
       - name: Run Python Script
         run: |
           python3 scripts/generate_recipe.py
+          
+  commit_changes:
+    runs-on: self-hosted
+    needs: generate_recipe
 
-      - name: Commit and push if it changed
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Setup Git
+        uses: actions/setup-node@v4
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Commit and push all changes
         run: |
           git diff
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data/*
-          git commit -m "Pushing scraped data." -a || echo "No changes to commit"
+          git commit -m "Pushing all generated data" -a || echo "No changes to commit"
           git pull origin main --rebase
           git push origin main
