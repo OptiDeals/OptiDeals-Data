@@ -48,7 +48,7 @@ jobs:
 
       - name: Setup Git
         run: |
-          apt-get update
+        
           # Update pip
           python3 -m pip install --upgrade pip
           
