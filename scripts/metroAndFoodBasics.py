@@ -37,10 +37,8 @@ def scrape_products(base_url, store_name, unwanted_words):
         elif response.status_code != 200:
             print(f"Error accessing page {page_number}. Continuing to next page.")  # Print an error message if the status code is not 200
             continue
-
         soup = BeautifulSoup(response.content, 'html.parser')  # Parse the HTML content of the page
         product_tiles = soup.find_all('div', class_='default-product-tile')  # Find all product tiles on the page
-
         if not product_tiles:
             print(f"No more products found on page {page_number}. Continuing to next page.")  # Print a message if no more products are found
             continue
@@ -53,7 +51,6 @@ def scrape_products(base_url, store_name, unwanted_words):
             # Check if the element is present before accessing its text attribute
             product_amount_elem = product_tile.find('span', class_='head__unit-details')  # Find the product amount element
             product_amount = product_amount_elem.text.strip() if product_amount_elem else None  # Get the text of the product amount element, if it exists
-
             price_div = product_tile.find('div', {'data-main-price': True})  # Find the price element
             price = price_div['data-main-price'] if price_div else None  # Get the price, if the element exists
 
@@ -62,26 +59,34 @@ def scrape_products(base_url, store_name, unwanted_words):
                 continue
 
             product_data.append({"Product": product_name, "Amount": product_amount, "Price": price})  # Append the product data to the list
-
         time.sleep(5)  # Add a delay of 5 seconds
 
     # Connect to the SQLite database
     conn = sqlite3.connect('data/optideals.db')
     cursor = conn.cursor()
     count = 0
+
     # Insert the data into the database
     for product in product_data:
+        # Check for duplicates
         cursor.execute('''
-            INSERT INTO grocery_ingredients (grocery_ingredient, grocery_amount, grocery_cost, grocery_store, date_scraped)
-            VALUES (?, ?, ?, ?, ?)
+            SELECT COUNT(*)
+            FROM grocery_ingredients
+            WHERE grocery_ingredient = ? AND grocery_amount = ? AND grocery_cost = ? AND grocery_store = ? AND date_scraped = ?
         ''', (product["Product"], product["Amount"], product["Price"], store_name, today))
-        count +=1
+        if cursor.fetchone()[0] == 0:
+            cursor.execute('''
+                INSERT INTO grocery_ingredients (grocery_ingredient, grocery_amount, grocery_cost, grocery_store, date_scraped)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (product["Product"], product["Amount"], product["Price"], store_name, today))
+            count += 1
+        else:
+            print(f"Skipped duplicate: {product['Product']}")
 
     # Commit the changes and close the connection
     print(f"{count} items scraped from {store_name} and placed in database.")
     conn.commit()
     conn.close()
-
     print(f"Data has been successfully added to the database.")  # Print a success message
 
 # Read unwanted words from file
