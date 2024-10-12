@@ -24,7 +24,7 @@ prompt_template = f'''
 Using the provided list of ingredients, create {recipe_generation_amount} dinner recipe(s) in the following JSON format without any extra text:
 {{
   "title": "Recipe Title",
-  "description": "Recipe Description",
+  "description": "Creative Recipe Description",
   "serving_size": "Number of people",
   "ingredients": [
     {{"name": "ingredient1", "quantity": "amount1", "cost": "cost1"}},
