@@ -21,7 +21,7 @@ ingredient_limit = 75
 recipe_generation_amount = 1
 
 prompt_template = f'''
-Using the provided list of ingredients, create {recipe_generation_amount} dinner recipe(s) in the following JSON format without any extra text:
+Using the provided list of ingredients, create {recipe_generation_amount} dinner recipe(s) in the following JSON format without any extra text and do not do math include the whole prices for the whole ingredient:
 {{
   "title": "Recipe Title",
   "description": "Creative Recipe Description",
