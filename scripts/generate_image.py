@@ -50,12 +50,22 @@ cursor.execute('SELECT MAX(recipe_date) FROM recipes')
 latest_date = cursor.fetchone()[0]
 
 # Get all recipes with the latest date where recipe_image is NULL
-cursor.execute('SELECT id, recipe_title, recipe_description FROM recipes WHERE recipe_date = ? AND recipe_image IS NULL', (latest_date,))
+cursor.execute("SELECT recipe_id, recipe_title, recipe_description FROM recipes")
 recipes = cursor.fetchall()
 
 for recipe_id, recipe_title, recipe_description in recipes:
-    food_prompt = f"{recipe_title} - {recipe_description}"
-    print(f"Processing recipe ID: {recipe_id}, Prompt: {food_prompt}")
+    # Fetch ingredients for the current recipe
+    cursor.execute("SELECT recipe_ingredient, recipe_ingredient_amount FROM recipe_ingredients WHERE recipe_id = ?", (recipe_id,))
+    ingredients = cursor.fetchall()
+    
+    # Construct the ingredients list
+    ingredients_list = ", ".join([f"{amount} of {ingredient}" for ingredient, amount in ingredients])
+    
+    # Create the food prompt
+    food_prompt = f"{recipe_title} - {recipe_description}. Ingredients: {ingredients_list}"
+    
+    # Print the processing message
+    print(f"Processing recipe ID: {recipe_id}, Prompt: {food_prompt}"
 
     # Open the web UI
     driver.get(web_ui_url)
