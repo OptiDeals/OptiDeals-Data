@@ -8,7 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import subprocess
 
 def is_server_reachable(url):
     try:
@@ -18,7 +17,6 @@ def is_server_reachable(url):
     except requests.exceptions.RequestException as e:
         print(f"Error reaching the server: {e}")
         return False
-
 
 # Define the URLs
 web_ui_url = "http://172.30.1.6:9091/"
@@ -33,13 +31,13 @@ if not is_server_reachable(api_url):
     print("API server is not reachable. Exiting.")
     exit(1)
 
-
 # Configure WebDriver options for headless mode
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.binary_location = "/usr/bin/google-chrome"
 
 # Initialize WebDriver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
@@ -70,10 +68,11 @@ for id, recipe_title, recipe_description in recipes:
     # Print the processing message
     print(f"Processing recipe ID: {id}, Prompt: {food_prompt}")
 
-    # Open the web UI
     try:
+        # Open the web UI
         driver.get(web_ui_url)
         print(f"Successfully opened {web_ui_url}")
+
         # Click 'Use Default Settings' to reset the browser
         use_default_settings_button = WebDriverWait(driver, 60).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Use Default Settings']"))
@@ -99,13 +98,28 @@ for id, recipe_title, recipe_description in recipes:
     finally:
         driver.quit()
 
-    # Fetch the latest image from the API
-    response = requests.get(api_url, params={"limit": 1, "offset": 0})
-    if response.status_code == 200:
-        image_data = response.json()
-        latest_image = image_data['items'][0]
-        image_url = f"http://172.30.1.6:9091/{latest_image['image_url']}"
+    try:
+        # Fetch the latest image from the API
+        response = requests.get(api_url, params={"limit": 1, "offset": 0})
+        if response.status_code == 200:
+            image_data = response.json()
+            latest_image = image_data['items'][0]
+            image_url = f"http://172.30.1.6:9091/{latest_image['image_url']}"
 
-        # Fetch the image as binary data without saving it to a file
-        image_response = requests.get(image_url)
-        image
+            # Fetch the image as binary data without saving it to a file
+            image_response = requests.get(image_url)
+            image_blob = image_response.content
+
+            # Update the database with the image BLOB
+            cursor.execute('UPDATE recipes SET recipe_image = ? WHERE id = ?', (image_blob, id))
+            conn.commit()
+        else:
+            print("Failed to fetch image details.")
+            print("Status code:", response.status_code)
+            print("Response:", response.text)
+    except Exception as e:
+        print(f"Exception occurred while fetching the image: {e}")
+
+# Close the database connection
+conn.close()
+print("All images have been processed and stored in the database.")
