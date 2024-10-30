@@ -33,8 +33,6 @@ if not is_server_reachable(api_url):
     print("API server is not reachable. Exiting.")
     exit(1)
 
-# Install ChromeDriver dependencies
-install_chrome_dependencies()
 
 # Configure WebDriver options for headless mode
 chrome_options = webdriver.ChromeOptions()
