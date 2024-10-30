@@ -70,43 +70,57 @@ for id, recipe_title, recipe_description in recipes:
     # Print the processing message
     print(f"Processing recipe ID: {id}, Prompt: {food_prompt}")
 
+    import sys  # Import sys to allow exiting
+
     try:
-        # Open the web UI
-        driver.get(web_ui_url)
-        print(f"Successfully opened {web_ui_url}")
+    # Open the web UI
+    driver.get(web_ui_url)
+    print(f"Successfully opened {web_ui_url}")
 
-        # Explicit wait for the main container to be present
-        WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.ID, "invoke-app-wrapper"))
-        )
+    # Explicit wait for the main container to be present
+    print("Waiting for main container to be present...")
+    WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.ID, "invoke-app-wrapper"))
+    )
+    print("Main container is present.")
 
-        # Use default settings button
-        use_default_settings_button = WebDriverWait(driver, 60).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Use Default Settings']"))
-        )
-        use_default_settings_button.click()
+    # Use default settings button
+    print("Waiting for 'Use Default Settings' button to be clickable...")
+    use_default_settings_button = WebDriverWait(driver, 60).until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Use Default Settings']"))
+    )
+    use_default_settings_button.click()
+    print("'Use Default Settings' button clicked.")
 
-        # Enter the prompt
-        prompt_input = WebDriverWait(driver, 60).until(
-            EC.presence_of_element_located((By.ID, "prompt"))
-        )
-        prompt_input.send_keys(food_prompt)
+    # Enter the prompt
+    print("Waiting for the prompt input to be present...")
+    prompt_input = WebDriverWait(driver, 60).until(
+        EC.presence_of_element_located((By.ID, "prompt"))
+    )
+    prompt_input.send_keys(food_prompt)
+    print("Entered the prompt.")
 
-        # Click the generate button
-        generate_button = WebDriverWait(driver, 60).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, ".chakra-button.css-cos6y7"))
-        )
-        generate_button.click()
+    # Click the generate button
+    print("Waiting for the generate button to be clickable...")
+    generate_button = WebDriverWait(driver, 60).until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, ".chakra-button.css-cos6y7"))
+    )
+    generate_button.click()
+    print("Generate button clicked.")
 
-        # Wait for the image to be generated
-        time.sleep(100)  # Adjust based on your server's processing time
+    # Wait for the image to be generated
+    print("Waiting for the image to be generated...")
+    time.sleep(100)  # Adjust based on your server's processing time
+    print("Image generation complete.")
+
     except Exception as e:
-        print(f"Exception occurred: {e}")
-        print(driver.page_source)  # Print page source for debugging
-        all_images_processed = False
-        break  # Stop processing further recipes
+    print(f"Exception occurred: {e}")
+    print(driver.page_source)  # Print page source for debugging
+    driver.quit()  # Ensure driver is closed
+    sys.exit("Exiting due to failure in loading the web UI.")  # Exit script
     finally:
-        driver.quit()
+    driver.quit()
+
 
     try:
         # Fetch the latest image from the API
