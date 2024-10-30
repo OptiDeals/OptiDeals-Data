@@ -65,7 +65,7 @@ for recipe_id, recipe_title, recipe_description in recipes:
     food_prompt = f"{recipe_title} - {recipe_description}. Ingredients: {ingredients_list}"
     
     # Print the processing message
-    print(f"Processing recipe ID: {recipe_id}, Prompt: {food_prompt}"
+    print(f"Processing recipe ID: {recipe_id}, Prompt: {food_prompt}")
 
     # Open the web UI
     driver.get(web_ui_url)
