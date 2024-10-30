@@ -93,7 +93,7 @@ for id, recipe_title, recipe_description in recipes:
         )
         use_default_settings_button.click()
         print("'Use Default Settings' button clicked.")
-    
+        
         # Enter the prompt
         print("Waiting for the prompt input to be present...")
         prompt_input = WebDriverWait(driver, 60).until(
@@ -101,7 +101,7 @@ for id, recipe_title, recipe_description in recipes:
         )
         prompt_input.send_keys(food_prompt)
         print("Entered the prompt.")
-    
+        
         # Click the generate button
         print("Waiting for the generate button to be clickable...")
         generate_button = WebDriverWait(driver, 60).until(
@@ -109,19 +109,21 @@ for id, recipe_title, recipe_description in recipes:
         )
         generate_button.click()
         print("Generate button clicked.")
-    
+        
         # Wait for the image to be generated
         print("Waiting for the image to be generated...")
         time.sleep(100)  # Adjust based on your server's processing time
         print("Image generation complete.")
     
     except Exception as e:
-        print(f"Exception occurred: {e}")
-        print(driver.page_source)  # Print page source for debugging
+        #print(f"Exception occurred: {e}")
+        #print(driver.page_source)  # Print page source for debugging
         driver.quit()  # Ensure driver is closed
         sys.exit("Exiting due to failure in loading the web UI.")  # Exit script
+    
     finally:
         driver.quit()
+
 
 
 
