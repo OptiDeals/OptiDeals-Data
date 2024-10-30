@@ -95,6 +95,7 @@ for id, recipe_title, recipe_description in recipes:
         time.sleep(100)  # Adjust based on your server's processing time
     except Exception as e:
         print(f"Exception occurred: {e}")
+        break  # Stop processing further recipes
     finally:
         driver.quit()
 
@@ -119,6 +120,7 @@ for id, recipe_title, recipe_description in recipes:
             print("Response:", response.text)
     except Exception as e:
         print(f"Exception occurred while fetching the image: {e}")
+        break  # Stop processing further recipes
 
 # Close the database connection
 conn.close()
