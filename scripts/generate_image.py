@@ -140,4 +140,4 @@ conn.close()
 if all_images_processed:
     print("All images have been processed and stored in the database.")
 else:
-    print("Some images could not be processed. Check the error messages for details
+    print("Some images could not be processed. Check the error messages for details")
