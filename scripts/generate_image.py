@@ -50,12 +50,12 @@ cursor.execute('SELECT MAX(recipe_date) FROM recipes')
 latest_date = cursor.fetchone()[0]
 
 # Get all recipes with the latest date where recipe_image is NULL
-cursor.execute("SELECT recipe_id, recipe_title, recipe_description FROM recipes")
+cursor.execute("SELECT id, recipe_title, recipe_description FROM recipes")
 recipes = cursor.fetchall()
 
-for recipe_id, recipe_title, recipe_description in recipes:
+for id, recipe_title, recipe_description in recipes:
     # Fetch ingredients for the current recipe
-    cursor.execute("SELECT recipe_ingredient, recipe_ingredient_amount FROM recipe_ingredients WHERE recipe_id = ?", (recipe_id,))
+    cursor.execute("SELECT recipe_ingredient, recipe_ingredient_amount FROM recipe_ingredients WHERE recipe_id = ?", (id,))
     ingredients = cursor.fetchall()
     
     # Construct the ingredients list
@@ -65,7 +65,7 @@ for recipe_id, recipe_title, recipe_description in recipes:
     food_prompt = f"{recipe_title} - {recipe_description}. Ingredients: {ingredients_list}"
     
     # Print the processing message
-    print(f"Processing recipe ID: {recipe_id}, Prompt: {food_prompt}")
+    print(f"Processing recipe ID: {id}, Prompt: {food_prompt}")
 
     # Open the web UI
     driver.get(web_ui_url)
@@ -106,7 +106,7 @@ for recipe_id, recipe_title, recipe_description in recipes:
         image_blob = image_response.content
         
         # Update the database with the image BLOB
-        cursor.execute('UPDATE recipes SET recipe_image = ? WHERE id = ?', (image_blob, recipe_id))
+        cursor.execute('UPDATE recipes SET recipe_image = ? WHERE id = ?', (image_blob, id))
         conn.commit()
 
     else:
