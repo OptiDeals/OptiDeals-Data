@@ -87,12 +87,12 @@ for id, recipe_title, recipe_description in recipes:
         print("Main container is present.")
     
         # Use default settings button
-        print("Waiting for 'Use Default Settings' button to be clickable...")
-        use_default_settings_button = WebDriverWait(driver, 60).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Use Default Settings']"))
-        )
-        use_default_settings_button.click()
-        print("'Use Default Settings' button clicked.")
+        ##print("Waiting for 'Use Default Settings' button to be clickable...")
+        #use_default_settings_button = WebDriverWait(driver, 60).until(
+           # EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Use Default Settings']"))
+       # )
+       # use_default_settings_button.click()
+       # print("'Use Default Settings' button clicked.")
         
         # Enter the prompt
         print("Waiting for the prompt input to be present...")
