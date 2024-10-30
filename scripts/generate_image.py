@@ -97,6 +97,7 @@ for id, recipe_title, recipe_description in recipes:
         time.sleep(100)  # Adjust based on your server's processing time
     except Exception as e:
         print(f"Exception occurred: {e}")
+        print(driver.page_source)  # Print page source for debugging
         all_images_processed = False
         break  # Stop processing further recipes
     finally:
