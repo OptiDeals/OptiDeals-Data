@@ -54,6 +54,8 @@ latest_date = cursor.fetchone()[0]
 cursor.execute("SELECT id, recipe_title, recipe_description FROM recipes")
 recipes = cursor.fetchall()
 
+all_images_processed = True  # Flag to track if all images were processed successfully
+
 for id, recipe_title, recipe_description in recipes:
     # Fetch ingredients for the current recipe
     cursor.execute("SELECT recipe_ingredient, recipe_ingredient_amount FROM recipe_ingredients WHERE recipe_id = ?", (id,))
@@ -95,6 +97,7 @@ for id, recipe_title, recipe_description in recipes:
         time.sleep(100)  # Adjust based on your server's processing time
     except Exception as e:
         print(f"Exception occurred: {e}")
+        all_images_processed = False
         break  # Stop processing further recipes
     finally:
         driver.quit()
@@ -118,10 +121,17 @@ for id, recipe_title, recipe_description in recipes:
             print("Failed to fetch image details.")
             print("Status code:", response.status_code)
             print("Response:", response.text)
+            all_images_processed = False
+            break  # Stop processing further recipes
     except Exception as e:
         print(f"Exception occurred while fetching the image: {e}")
+        all_images_processed = False
         break  # Stop processing further recipes
 
 # Close the database connection
 conn.close()
-print("All images have been processed and stored in the database.")
+
+if all_images_processed:
+    print("All images have been processed and stored in the database.")
+else:
+    print("Some images could not be processed. Check the error messages for details.")
