@@ -75,19 +75,20 @@ for id, recipe_title, recipe_description in recipes:
         driver.get(web_ui_url)
         print(f"Successfully opened {web_ui_url}")
 
-        # Click 'Use Default Settings' to reset the browser
+        # Increase the wait time
+        time.sleep(10)
+
+        # Use explicit wait to ensure elements are present
         use_default_settings_button = WebDriverWait(driver, 60).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Use Default Settings']"))
         )
         use_default_settings_button.click()
 
-        # Enter the prompt
         prompt_input = WebDriverWait(driver, 60).until(
             EC.presence_of_element_located((By.ID, "prompt"))
         )
         prompt_input.send_keys(food_prompt)
 
-        # Click the generate button
         generate_button = WebDriverWait(driver, 60).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, ".chakra-button.css-cos6y7"))
         )
