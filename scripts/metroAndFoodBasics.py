@@ -6,8 +6,8 @@ import time
 from datetime import datetime
 import os
 
-# Get today's date in the format YYYYMMDD
-today = datetime.today().strftime('%Y%m%d')
+# Get today's date in the format YYYY-MM-DD
+today = datetime.today().strftime('%Y-%m-%d')
 
 # Define the URLs for the Food Basics and Metro websites
 foodBasicsURL = "https://www.foodbasics.ca/search?sortOrder=relevance&filter=%3Arelevance%3Adeal%3AFLYER_DEAL"
@@ -16,7 +16,6 @@ metroURL = "https://www.metro.ca/en/online-grocery/flyer-page-{page}?sortOrder=r
 # Define a function to scrape product data from a given URL and store it in a database
 def scrape_products(base_url, store_name, unwanted_words):
     product_data = []  # Initialize an empty list to store product data
-
     # Get the first page to find the last page number
     response = requests.get(base_url.format(page=1))  # Send a GET request to the URL
     soup = BeautifulSoup(response.content, 'html.parser')  # Parse the HTML content of the page
@@ -27,7 +26,6 @@ def scrape_products(base_url, store_name, unwanted_words):
     else:
         last_page_number = int(pagination.find_all('a', class_='ppn--element')[-2].text)
         print(f"Found {last_page_number} pages of products.")
-
     # Loop through each page until the last page
     for page_number in range(1, last_page_number + 1):
         url = base_url.format(page=page_number)  # Format the URL with the current page number
@@ -42,30 +40,24 @@ def scrape_products(base_url, store_name, unwanted_words):
         if not product_tiles:
             print(f"No more products found on page {page_number}. Continuing to next page.")  # Print a message if no more products are found
             continue
-
         # Loop through each product tile and extract the product data
         for product_tile in product_tiles:
             product_name = product_tile.find('div', class_='head__title')  # Find the product name element
             product_name = product_name.text.strip() if product_name else None  # Get the text of the product name element, if it exists
-
             # Check if the element is present before accessing its text attribute
             product_amount_elem = product_tile.find('span', class_='head__unit-details')  # Find the product amount element
             product_amount = product_amount_elem.text.strip() if product_amount_elem else None  # Get the text of the product amount element, if it exists
             price_div = product_tile.find('div', {'data-main-price': True})  # Find the price element
             price = price_div['data-main-price'] if price_div else None  # Get the price, if the element exists
-
             # Check for unwanted words
             if any(word in product_name.lower() for word in unwanted_words):
                 continue
-
             product_data.append({"Product": product_name, "Amount": product_amount, "Price": price})  # Append the product data to the list
         time.sleep(5)  # Add a delay of 5 seconds
-
     # Connect to the SQLite database
     conn = sqlite3.connect('data/optideals.db')
     cursor = conn.cursor()
     count = 0
-
     # Insert the data into the database
     for product in product_data:
         # Check for duplicates
@@ -82,7 +74,6 @@ def scrape_products(base_url, store_name, unwanted_words):
             count += 1
         else:
             print(f"Skipped duplicate: {product['Product']}")
-
     # Commit the changes and close the connection
     print(f"{count} items scraped from {store_name} and placed in database.")
     conn.commit()
