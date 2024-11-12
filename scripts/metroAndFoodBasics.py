@@ -80,6 +80,9 @@ def scrape_products(base_url, store_name, unwanted_words):
     conn.close()
     print(f"Data has been successfully added to the database.")  # Print a success message
 
+    # Delete duplicates from the database
+    delete_duplicates()
+
 # Read unwanted words from file
 def get_unwanted_words(unwanted_words_file):
     try:
@@ -88,6 +91,23 @@ def get_unwanted_words(unwanted_words_file):
     except Exception as e:
         print(f"An error occurred while reading the file {unwanted_words_file}: {e}")
         return []
+
+# Define a function to delete duplicates from the database
+def delete_duplicates():
+    # Connect to the SQLite database
+    conn = sqlite3.connect('data/optideals.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        DELETE FROM grocery_ingredients
+        WHERE rowid NOT IN (
+            SELECT MIN(rowid)
+            FROM grocery_ingredients
+            GROUP BY date_scraped, grocery_ingredient, grocery_amount, grocery_cost, grocery_store
+        );
+    ''')
+    conn.commit()
+    conn.close()
+    print("Duplicates have been successfully deleted from the database.")
 
 # Call the function with the URLs, store names, and unwanted words
 unwanted_words = get_unwanted_words('scripts/unwanted_words.txt')
