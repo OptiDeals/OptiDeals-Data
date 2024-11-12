@@ -105,7 +105,9 @@ def delete_duplicates():
             GROUP BY date_scraped, grocery_ingredient, grocery_amount, grocery_cost, grocery_store
         );
     ''')
-    conn.commit()
+    conn.commit() 
+    cursor.execute('VACUUM;') # Vacuum the database to clean and resize the file 
+    conn.commit() 
     conn.close()
     print("Duplicates have been successfully deleted from the database.")
 
