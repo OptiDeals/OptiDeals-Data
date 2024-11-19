@@ -37,26 +37,30 @@ Ingredients list:
 
 # Functions
 def fetch_latest_ingredients_from_db(db_path, store_name):
-    print("Connecting to the database...")
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-    print(f"Fetching the latest date for store: {store_name}")
-    cursor.execute(
-        "SELECT date_scraped FROM grocery_ingredients WHERE grocery_store = ? ORDER BY date_scraped DESC LIMIT 1",
-        (store_name,)
-    )
-    latest_date = cursor.fetchone()[0]
-    print(f"Latest date found: {latest_date}")
+    try:
+        print("Connecting to the database...")
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+        print(f"Fetching the latest date for store: {store_name}")
+        cursor.execute(
+            "SELECT date_scraped FROM grocery_ingredients WHERE grocery_store = ? ORDER BY date_scraped DESC LIMIT 1",
+            (store_name,)
+        )
+        latest_date = cursor.fetchone()[0]
+        print(f"Latest date found: {latest_date}")
 
-    print(f"Fetching ingredients for the latest date: {latest_date}")
-    cursor.execute(
-        f"SELECT grocery_ingredient, grocery_amount, grocery_cost FROM grocery_ingredients WHERE grocery_store = ? AND date_scraped = ? ORDER BY RANDOM() LIMIT {ingredient_limit}",
-        (store_name, latest_date)
-    )
-    ingredients = cursor.fetchall()
-    conn.close()
-    print("Ingredients fetched from the database.")
-    return [(ingredient, amount, f"${cost}") for ingredient, amount, cost in ingredients]
+        print(f"Fetching ingredients for the latest date: {latest_date}")
+        cursor.execute(
+            f"SELECT grocery_ingredient, grocery_amount, grocery_cost FROM grocery_ingredients WHERE grocery_store = ? AND date_scraped = ? ORDER BY RANDOM() LIMIT {ingredient_limit}",
+            (store_name, latest_date)
+        )
+        ingredients = cursor.fetchall()
+        conn.close()
+        print("Ingredients fetched from the database.")
+        return [(ingredient, amount, f"${cost}") for ingredient, amount, cost in ingredients]
+    except Exception as e:
+        print(f"Error fetching ingredients from database: {e}")
+        return None
 
 def validate_recipe(recipe):
     required_fields = ['title', 'description', 'serving_size', 'ingredients']
@@ -69,12 +73,14 @@ def validate_recipe(recipe):
     return True
 
 def generate_recipes(db_path, store_name, prompt_template, max_retries):
+    ingredients_list = fetch_latest_ingredients_from_db(db_path, store_name)
+    if not ingredients_list:
+        print("Failed to fetch ingredients from database. Aborting recipe generation.")
+        return None
+
     tokenizer = LlamaTokenizer.from_pretrained("hf-internal-testing/llama-tokenizer")
     for attempt in range(max_retries):
         print(f"Attempt {attempt + 1} to generate recipes...")
-
-        # Fetch and randomize the ingredients for each attempt
-        ingredients_list = fetch_latest_ingredients_from_db(db_path, store_name)
 
         print("Constructing the full prompt with ingredients list...")
         ingredients_text = "\n".join(f"{idx+1}. {name}, {quantity}, {cost}" for idx, (name, quantity, cost) in enumerate(ingredients_list))
@@ -122,27 +128,30 @@ def generate_recipes(db_path, store_name, prompt_template, max_retries):
     return None
 
 def insert_recipe_data(recipes, db_path, store_name):
-    print("Connecting to the database...")
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
+    try:
+        print("Connecting to the database...")
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
 
-    current_date = datetime.date.today().strftime(date_format)
+        current_date = datetime.date.today().strftime(date_format)
 
-    for recipe in recipes:
-        cursor.execute(
-            "INSERT INTO recipes (recipe_title, recipe_description, recipe_serving_size, recipe_total_cost, recipe_date, recipe_store) VALUES (?, ?, ?, ?, ?, ?)",
-            (recipe['title'], recipe['description'], recipe['serving_size'], sum(float(ingredient['cost'].replace('$', '')) for ingredient in recipe['ingredients']), current_date, store_name)
-        )
-        recipe_id = cursor.lastrowid
-        for ingredient in recipe['ingredients']:
+        for recipe in recipes:
             cursor.execute(
-                "INSERT INTO recipe_ingredients (recipe_id, recipe_ingredient, recipe_ingredient_amount, recipe_ingredient_cost) VALUES (?, ?, ?, ?)",
-                (recipe_id, ingredient['name'], ingredient['quantity'], float(ingredient['cost'].replace('$', '')))
+                "INSERT INTO recipes (recipe_title, recipe_description, recipe_serving_size, recipe_total_cost, recipe_date, recipe_store) VALUES (?, ?, ?, ?, ?, ?)",
+                (recipe['title'], recipe['description'], recipe['serving_size'], sum(float(ingredient['cost'].replace('$', '')) for ingredient in recipe['ingredients']), current_date, store_name)
             )
+            recipe_id = cursor.lastrowid
+            for ingredient in recipe['ingredients']:
+                cursor.execute(
+                    "INSERT INTO recipe_ingredients (recipe_id, recipe_ingredient, recipe_ingredient_amount, recipe_ingredient_cost) VALUES (?, ?, ?, ?)",
+                    (recipe_id, ingredient['name'], ingredient['quantity'], float(ingredient['cost'].replace('$', '')))
+                )
 
-    conn.commit()
-    conn.close()
-    print("Data inserted into the database.")
+        conn.commit()
+        conn.close()
+        print("Data inserted into the database.")
+    except Exception as e:
+        print(f"Error inserting data into the database: {e}")
 
 # Running Code
 print("Generating recipes...")
